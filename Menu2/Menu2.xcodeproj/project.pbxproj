@@ -11,7 +11,7 @@
 		DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F320D4F9F30074DC6D /* RootViewController.swift */; };
 		DC7367F920D4F9F30074DC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7367F820D4F9F30074DC6D /* Assets.xcassets */; };
 		DC7367FC20D4F9F30074DC6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7367FA20D4F9F30074DC6D /* LaunchScreen.storyboard */; };
-		DC73680920D4FEA00074DC6D /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73680820D4FEA00074DC6D /* MenuModel.swift */; };
+		DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73680820D4FEA00074DC6D /* CoredataUtils.swift */; };
 		DC73680C20D4FED20074DC6D /* Menu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC73680A20D4FED20074DC6D /* Menu.xcdatamodeld */; };
 		DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73680D20D4FF060074DC6D /* ContextManager.swift */; };
 /* End PBXBuildFile section */
@@ -23,7 +23,7 @@
 		DC7367F820D4F9F30074DC6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC7367FB20D4F9F30074DC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC7367FD20D4F9F30074DC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC73680820D4FEA00074DC6D /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		DC73680820D4FEA00074DC6D /* CoredataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataUtils.swift; sourceTree = "<group>"; };
 		DC73680B20D4FED20074DC6D /* Menu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Menu.xcdatamodel; sourceTree = "<group>"; };
 		DC73680D20D4FF060074DC6D /* ContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +89,7 @@
 		DC73680520D4FDCE0074DC6D /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DC73680820D4FEA00074DC6D /* MenuModel.swift */,
+				DC73680820D4FEA00074DC6D /* CoredataUtils.swift */,
 			);
 			path = "Model Classes";
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 				DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */,
 				DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */,
 				DC73680C20D4FED20074DC6D /* Menu.xcdatamodeld in Sources */,
-				DC73680920D4FEA00074DC6D /* MenuModel.swift in Sources */,
+				DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
