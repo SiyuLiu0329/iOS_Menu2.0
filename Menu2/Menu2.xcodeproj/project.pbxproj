@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC34F11B20D65F6900176FB0 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC34F11A20D65F6900176FB0 /* UnitTests.swift */; };
 		DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F120D4F9F30074DC6D /* AppDelegate.swift */; };
 		DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F320D4F9F30074DC6D /* RootViewController.swift */; };
 		DC7367F920D4F9F30074DC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7367F820D4F9F30074DC6D /* Assets.xcassets */; };
@@ -14,9 +15,27 @@
 		DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73680820D4FEA00074DC6D /* CoredataUtils.swift */; };
 		DC73680C20D4FED20074DC6D /* Menu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC73680A20D4FED20074DC6D /* Menu.xcdatamodeld */; };
 		DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73680D20D4FF060074DC6D /* ContextManager.swift */; };
+		DC81039C20D92C14008EB752 /* OrderNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC81039B20D92C14008EB752 /* OrderNavigationController.swift */; };
+		DC81039E20D92CBC008EB752 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC81039D20D92CBC008EB752 /* MenuCoordinator.swift */; };
+		DC8103A020D92E64008EB752 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC81039F20D92E64008EB752 /* BaseCoordinator.swift */; };
+		DC8103A220D934F9008EB752 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8103A120D934F9008EB752 /* OrderViewController.swift */; };
+		DC8103A520D93B44008EB752 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8103A420D93B44008EB752 /* Colours.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC34F11D20D65F6900176FB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC7367E620D4F9F30074DC6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC7367ED20D4F9F30074DC6D;
+			remoteInfo = Menu2;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		DC34F11820D65F6900176FB0 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC34F11A20D65F6900176FB0 /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
+		DC34F11C20D65F6900176FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC7367EE20D4F9F30074DC6D /* Menu2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7367F120D4F9F30074DC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC7367F320D4F9F30074DC6D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -26,9 +45,21 @@
 		DC73680820D4FEA00074DC6D /* CoredataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataUtils.swift; sourceTree = "<group>"; };
 		DC73680B20D4FED20074DC6D /* Menu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Menu.xcdatamodel; sourceTree = "<group>"; };
 		DC73680D20D4FF060074DC6D /* ContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextManager.swift; sourceTree = "<group>"; };
+		DC81039B20D92C14008EB752 /* OrderNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNavigationController.swift; sourceTree = "<group>"; };
+		DC81039D20D92CBC008EB752 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		DC81039F20D92E64008EB752 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		DC8103A120D934F9008EB752 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		DC8103A420D93B44008EB752 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DC34F11520D65F6900176FB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC7367EB20D4F9F30074DC6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC34F11920D65F6900176FB0 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC34F11A20D65F6900176FB0 /* UnitTests.swift */,
+				DC34F11C20D65F6900176FB0 /* Info.plist */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 		DC7367E520D4F9F30074DC6D = {
 			isa = PBXGroup;
 			children = (
 				DC7367F020D4F9F30074DC6D /* Menu2 */,
+				DC34F11920D65F6900176FB0 /* UnitTests */,
 				DC7367EF20D4F9F30074DC6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7367EE20D4F9F30074DC6D /* Menu2.app */,
+				DC34F11820D65F6900176FB0 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +100,7 @@
 		DC7367F020D4F9F30074DC6D /* Menu2 */ = {
 			isa = PBXGroup;
 			children = (
+				DC8103A320D93B21008EB752 /* Extensions */,
 				DC7367FD20D4F9F30074DC6D /* Info.plist */,
 				DC73680320D4FD580074DC6D /* Supporting File */,
 				DC73680420D4FDB30074DC6D /* Screens */,
@@ -81,7 +124,9 @@
 		DC73680420D4FDB30074DC6D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DC81039F20D92E64008EB752 /* BaseCoordinator.swift */,
 				DC7367F320D4F9F30074DC6D /* RootViewController.swift */,
+				DC81039A20D92BFD008EB752 /* Orders */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -102,9 +147,45 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		DC81039A20D92BFD008EB752 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				DC81039B20D92C14008EB752 /* OrderNavigationController.swift */,
+				DC8103A120D934F9008EB752 /* OrderViewController.swift */,
+				DC81039D20D92CBC008EB752 /* MenuCoordinator.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		DC8103A320D93B21008EB752 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DC8103A420D93B44008EB752 /* Colours.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DC34F11720D65F6900176FB0 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC34F12120D65F6900176FB0 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				DC34F11420D65F6900176FB0 /* Sources */,
+				DC34F11520D65F6900176FB0 /* Frameworks */,
+				DC34F11620D65F6900176FB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC34F11E20D65F6900176FB0 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = DC34F11820D65F6900176FB0 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DC7367ED20D4F9F30074DC6D /* Menu2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC73680020D4F9F30074DC6D /* Build configuration list for PBXNativeTarget "Menu2" */;
@@ -132,6 +213,10 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Siyu Liu";
 				TargetAttributes = {
+					DC34F11720D65F6900176FB0 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = DC7367ED20D4F9F30074DC6D;
+					};
 					DC7367ED20D4F9F30074DC6D = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -151,11 +236,19 @@
 			projectRoot = "";
 			targets = (
 				DC7367ED20D4F9F30074DC6D /* Menu2 */,
+				DC34F11720D65F6900176FB0 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DC34F11620D65F6900176FB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC7367EC20D4F9F30074DC6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,19 +261,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DC34F11420D65F6900176FB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC34F11B20D65F6900176FB0 /* UnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC7367EA20D4F9F30074DC6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */,
+				DC8103A520D93B44008EB752 /* Colours.swift in Sources */,
 				DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */,
 				DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */,
 				DC73680C20D4FED20074DC6D /* Menu.xcdatamodeld in Sources */,
 				DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */,
+				DC81039C20D92C14008EB752 /* OrderNavigationController.swift in Sources */,
+				DC81039E20D92CBC008EB752 /* MenuCoordinator.swift in Sources */,
+				DC8103A020D92E64008EB752 /* BaseCoordinator.swift in Sources */,
+				DC8103A220D934F9008EB752 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC34F11E20D65F6900176FB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC7367ED20D4F9F30074DC6D /* Menu2 */;
+			targetProxy = DC34F11D20D65F6900176FB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC7367FA20D4F9F30074DC6D /* LaunchScreen.storyboard */ = {
@@ -194,6 +308,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DC34F11F20D65F6900176FB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXW27E4TDZ;
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = david.liu.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Menu2.app/Menu2";
+			};
+			name = Debug;
+		};
+		DC34F12020D65F6900176FB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HXW27E4TDZ;
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = david.liu.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Menu2.app/Menu2";
+			};
+			name = Release;
+		};
 		DC7367FE20D4F9F30074DC6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -323,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = david.liu.Menu2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -342,13 +498,22 @@
 				PRODUCT_BUNDLE_IDENTIFIER = david.liu.Menu2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DC34F12120D65F6900176FB0 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC34F11F20D65F6900176FB0 /* Debug */,
+				DC34F12020D65F6900176FB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DC7367E920D4F9F30074DC6D /* Build configuration list for PBXProject "Menu2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
