@@ -10,6 +10,12 @@ import UIKit
 
 class OrderViewController: UIViewController {
     weak var coordinator: BaseCoordinator?
+    lazy var pageMenu: PageMenuRootView = {
+        let view = PageMenuRootView()
+        view.dataSource = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,11 +29,22 @@ class OrderViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.backgroundColourMain
         setUpNavBar()
-        
+        layoutViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func layoutViews() {
+        view.addSubview(pageMenu)
+        NSLayoutConstraint.activate([
+            pageMenu.leftAnchor.constraint(equalTo: view.leftAnchor),
+            pageMenu.rightAnchor.constraint(equalTo: view.rightAnchor),
+            pageMenu.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            pageMenu.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        
     }
     
     private func setUpNavBar() {

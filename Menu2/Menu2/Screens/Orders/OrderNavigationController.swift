@@ -10,9 +10,11 @@ import UIKit
 
 class OrderNavigationController: UINavigationController, Presentor {
     weak var coordinator: BaseCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.backgroundColourMain
+        navigationBar.barTintColor = UIColor.themeColour
     }
 }
 
