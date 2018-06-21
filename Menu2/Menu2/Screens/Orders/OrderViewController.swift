@@ -10,12 +10,18 @@ import UIKit
 
 class OrderViewController: UIViewController {
     weak var coordinator: BaseCoordinator?
-    lazy var pageMenu: PageMenuRootView = {
-        let view = PageMenuRootView()
-        view.dataSource = self
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    let cellId = "cellId"
+    let preferredSectionHeight: CGFloat = 220
+    
+    lazy var horizontalCollectionView: HorizontalCollectionView = {
+        let collectionView = HorizontalCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(OrderCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,14 +43,13 @@ class OrderViewController: UIViewController {
     }
     
     private func layoutViews() {
-        view.addSubview(pageMenu)
+        view.addSubview(horizontalCollectionView)
         NSLayoutConstraint.activate([
-            pageMenu.leftAnchor.constraint(equalTo: view.leftAnchor),
-            pageMenu.rightAnchor.constraint(equalTo: view.rightAnchor),
-            pageMenu.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            pageMenu.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            horizontalCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            horizontalCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            horizontalCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            horizontalCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
-        
     }
     
     private func setUpNavBar() {
@@ -58,3 +63,5 @@ class OrderViewController: UIViewController {
 
 
 }
+
+
