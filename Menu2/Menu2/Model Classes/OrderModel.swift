@@ -56,7 +56,7 @@ class OrderModel {
             let orders = orders.sorted { (obj1, obj2) -> Bool in
                 let order1 = obj1 as! Order
                 let order2 = obj2 as! Order
-                return order1.number < order2.number
+                return order1.number > order2.number
             }
             
             orders.forEach { (obj) in

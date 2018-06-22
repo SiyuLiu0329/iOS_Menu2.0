@@ -17,6 +17,7 @@ extension OrderViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: section0Id, for: indexPath) as! Section0CollectionViewCell
+            cell.delegate = self
             return cell
         }
         
@@ -30,3 +31,4 @@ extension OrderViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
 }
+

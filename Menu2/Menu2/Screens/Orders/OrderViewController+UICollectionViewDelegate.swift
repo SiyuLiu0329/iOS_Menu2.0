@@ -11,6 +11,9 @@ import UIKit
 
 extension OrderViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+            return CGSize(width: view.frame.width, height: 60)
+        }
         return CGSize(width: view.frame.width, height: preferredSectionHeight)
     }
     
@@ -18,4 +21,14 @@ extension OrderViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 25, left: 0, bottom: 25, right: 0)
     }
     
+}
+
+extension OrderViewController: OrderCellDalegate {
+    func didAddNewBooking() {
+        
+    }
+    
+    func didAddNewOrder() {
+        coordinator?.createNewOrder()
+    }
 }

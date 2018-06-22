@@ -34,4 +34,10 @@ class MenuCoordinator: BaseCoordinator {
         self.presentor.coordinator = self
     }
     
+    func createNewOrder() {
+        if let presentor = presentor as? UINavigationController {
+            presentor.pushViewController(UIViewController(), animated: true)
+        }
+    }
+    
 }

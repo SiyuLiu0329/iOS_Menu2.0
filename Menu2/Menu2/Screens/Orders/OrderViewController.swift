@@ -9,7 +9,7 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-    weak var coordinator: BaseCoordinator?
+    weak var coordinator: MenuCoordinator?
     let cellId = "cellId"
     let section0Id = "section0cell"
     let preferredSectionHeight: CGFloat = 220
