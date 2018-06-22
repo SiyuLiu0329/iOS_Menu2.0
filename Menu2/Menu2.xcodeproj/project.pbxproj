@@ -19,6 +19,7 @@
 		DC8103A020D92E64008EB752 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC81039F20D92E64008EB752 /* BaseCoordinator.swift */; };
 		DC8103A220D934F9008EB752 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8103A120D934F9008EB752 /* OrderViewController.swift */; };
 		DC8103A520D93B44008EB752 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8103A420D93B44008EB752 /* Colours.swift */; };
+		DCB0E6A020DC9F850098AD36 /* Section0CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0E69F20DC9F850098AD36 /* Section0CollectionViewCell.swift */; };
 		DCB626FE20DBED4D0089F72A /* HorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB626FD20DBED4D0089F72A /* HorizontalCollectionView.swift */; };
 		DCB6270220DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6270120DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift */; };
 		DCB6270420DBF0270089F72A /* OrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6270320DBF0270089F72A /* OrderCollectionViewCell.swift */; };
@@ -55,6 +56,7 @@
 		DC81039F20D92E64008EB752 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DC8103A120D934F9008EB752 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		DC8103A420D93B44008EB752 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		DCB0E69F20DC9F850098AD36 /* Section0CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section0CollectionViewCell.swift; sourceTree = "<group>"; };
 		DCB626FD20DBED4D0089F72A /* HorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionView.swift; sourceTree = "<group>"; };
 		DCB6270120DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		DCB6270320DBF0270089F72A /* OrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				DC8103A120D934F9008EB752 /* OrderViewController.swift */,
 				DCB6270520DBF2320089F72A /* OrderViewController+UICollectionViewDelegate.swift */,
 				DCB6270120DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift */,
+				DCB0E69F20DC9F850098AD36 /* Section0CollectionViewCell.swift */,
 				DCB6270320DBF0270089F72A /* OrderCollectionViewCell.swift */,
 				DCB6270920DBF6B50089F72A /* OrderCollectionViewCell+UICollectionViewDelegate.swift */,
 				DCB6270720DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift */,
@@ -292,6 +295,7 @@
 				DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */,
 				DC73680C20D4FED20074DC6D /* Menu.xcdatamodeld in Sources */,
 				DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */,
+				DCB0E6A020DC9F850098AD36 /* Section0CollectionViewCell.swift in Sources */,
 				DCB6270820DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift in Sources */,
 				DCB6270E20DC68290089F72A /* OrderModel.swift in Sources */,
 				DC81039C20D92C14008EB752 /* OrderNavigationController.swift in Sources */,

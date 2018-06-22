@@ -11,12 +11,17 @@ import UIKit
 
 extension OrderViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return orderModel.numberOfSections
+        return orderModel.numberOfSections + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: section0Id, for: indexPath) as! Section0CollectionViewCell
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! OrderCollectionViewCell
-        cell.loadOrderSection(fromData: orderModel.sections[indexPath.row])
+        cell.loadOrderSection(fromData: orderModel.sections[indexPath.row - 1])
         return cell
     }
     

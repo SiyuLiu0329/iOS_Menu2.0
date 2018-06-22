@@ -11,6 +11,7 @@ import UIKit
 class OrderViewController: UIViewController {
     weak var coordinator: BaseCoordinator?
     let cellId = "cellId"
+    let section0Id = "section0cell"
     let preferredSectionHeight: CGFloat = 220
     let orderModel = OrderModel()
     
@@ -19,6 +20,7 @@ class OrderViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(OrderCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(Section0CollectionViewCell.self, forCellWithReuseIdentifier: section0Id)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
