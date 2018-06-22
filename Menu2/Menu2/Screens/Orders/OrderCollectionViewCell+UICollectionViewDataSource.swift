@@ -10,14 +10,15 @@
 import UIKit
 extension OrderCollectionViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return loadedSection?.orders.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! OrderCell
-        cell.orderNumberLabel.text = String(indexPath.row)
+        if let loadedSection = loadedSection {
+            cell.loadOrder(from: loadedSection.orders[indexPath.row])
+        }
+        
         return cell
     }
-    
-    
 }

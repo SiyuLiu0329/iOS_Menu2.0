@@ -25,7 +25,6 @@ class OrderCell: UICollectionViewCell {
         label.clipsToBounds = true
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 44, weight: .thin)
-        
         return label
     }()
     
@@ -48,6 +47,10 @@ class OrderCell: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
+    
+    func loadOrder(from data: Order) {
+        orderNumberLabel.text = "\(data.number)"
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -12,6 +12,7 @@ class OrderViewController: UIViewController {
     weak var coordinator: BaseCoordinator?
     let cellId = "cellId"
     let preferredSectionHeight: CGFloat = 220
+    let orderModel = OrderModel()
     
     lazy var horizontalCollectionView: HorizontalCollectionView = {
         let collectionView = HorizontalCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())

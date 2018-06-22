@@ -1,60 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.9" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="customer" inverseEntity="Order" syncable="YES"/>
-    </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="items" inverseEntity="Menu" syncable="YES"/>
-        <relationship name="options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Option" inverseName="items" inverseEntity="Option" syncable="YES"/>
-        <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="items" inverseEntity="Order" syncable="YES"/>
-        <relationship name="paymentMethod" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PaymentMethod" inverseName="item" inverseEntity="PaymentMethod" syncable="YES"/>
-        <relationship name="status" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemStatus" inverseName="items" inverseEntity="ItemStatus" syncable="YES"/>
-    </entity>
-    <entity name="ItemStatus" representedClassName="ItemStatus" syncable="YES" codeGenerationType="class">
-        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="status" inverseEntity="Item" syncable="YES"/>
-    </entity>
-    <entity name="Menu" representedClassName="Menu" syncable="YES" codeGenerationType="class">
-        <attribute name="menuDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="menu" inverseEntity="Item" syncable="YES"/>
-    </entity>
-    <entity name="Option" representedClassName="Option" syncable="YES" codeGenerationType="class">
-        <attribute name="isSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="options" inverseEntity="Item" syncable="YES"/>
-    </entity>
     <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class">
+        <attribute name="bookingArrived" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isBooking" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="paid" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="refunded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="served" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="table" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="timeFinished" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="orders" inverseEntity="Customer" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="order" inverseEntity="Item" syncable="YES"/>
-        <relationship name="orderStatus" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderStatus" inverseName="order" inverseEntity="OrderStatus" syncable="YES"/>
+        <relationship name="shift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shift" inverseName="orders" inverseEntity="Shift" syncable="YES"/>
     </entity>
-    <entity name="OrderStatus" representedClassName="OrderStatus" syncable="YES" codeGenerationType="class">
-        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="orderStatus" inverseEntity="Order" syncable="YES"/>
-    </entity>
-    <entity name="PaymentMethod" representedClassName="PaymentMethod" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="item" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="paymentMethod" inverseEntity="Item" syncable="YES"/>
+    <entity name="Shift" representedClassName="Shift" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="shift" inverseEntity="Order" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Customer" positionX="-1013.86328125" positionY="112.0078125" width="128" height="75"/>
-        <element name="Item" positionX="-461.03515625" positionY="94.0625" width="128" height="165"/>
-        <element name="ItemStatus" positionX="-252.38671875" positionY="308.34375" width="128" height="88"/>
-        <element name="Menu" positionX="-645.1328125" positionY="23.20703125" width="128" height="90"/>
-        <element name="Option" positionX="-149.8359375" positionY="64.99609375" width="128" height="105"/>
-        <element name="Order" positionX="-844.671875" positionY="16.6484375" width="128" height="135"/>
-        <element name="OrderStatus" positionX="-774" positionY="218" width="128" height="90"/>
-        <element name="PaymentMethod" positionX="-55.07421875" positionY="216.98828125" width="128" height="75"/>
+        <element name="Order" positionX="-844.671875" positionY="16.6484375" width="128" height="180"/>
+        <element name="Shift" positionX="-1087.29296875" positionY="182.8984375" width="128" height="75"/>
     </elements>
 </model>

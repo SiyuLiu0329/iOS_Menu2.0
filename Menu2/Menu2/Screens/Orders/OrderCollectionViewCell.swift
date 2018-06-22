@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol OrderCollectionViewCellDelegate: class {
+    func orderForItem(in section: Int, with index: Int) -> Order
+}
+
 class OrderCollectionViewCell: UICollectionViewCell {
     let cellId = "cellId"
     let cellWidth: CGFloat = 150
+    var loadedSection: OrderSection?
     lazy private var orderSectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -24,6 +29,11 @@ class OrderCollectionViewCell: UICollectionViewCell {
         return collectionView
     }()
     
+    func loadOrderSection(fromData data: OrderSection) {
+        sectionTitle.text = data.sectionName
+        loadedSection = data
+    }
+    
     let divider: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -36,7 +46,6 @@ class OrderCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        label.text = "Section 1"
         return label
     }()
     
