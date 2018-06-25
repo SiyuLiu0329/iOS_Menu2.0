@@ -54,7 +54,7 @@ class Section0CollectionViewCell: UICollectionViewCell {
     }
     
     private func layoutSectionView() {
-        newOrderView.text = "New Orer"
+        newOrderView.text = "New Order"
         newBookingView.text = "New Booking"
         
         addSubview(newOrderView)

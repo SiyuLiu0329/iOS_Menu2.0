@@ -29,6 +29,6 @@ extension OrderViewController: OrderCellDalegate {
     }
     
     func didAddNewOrder() {
-        coordinator?.createNewOrder()
     }
 }
+

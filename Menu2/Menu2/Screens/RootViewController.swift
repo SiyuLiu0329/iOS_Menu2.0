@@ -9,7 +9,6 @@
 import UIKit
 
 class RootViewController: UIViewController {
-    var menuCoordinator: BaseCoordinator?
     let orderViewController = OrderNavigationController()
     
     let button: UIButton = {
@@ -33,8 +32,8 @@ class RootViewController: UIViewController {
             button.widthAnchor.constraint(equalToConstant: 100)
             ])
         
-        menuCoordinator = MenuCoordinator(presentor: orderViewController, parent: nil)
-        menuCoordinator?.start()
+        let initalViewController = OrderViewController()
+        orderViewController.viewControllers = [initalViewController]
     }
     
     @objc private func onButtonPressed() {

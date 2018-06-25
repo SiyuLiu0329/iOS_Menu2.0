@@ -8,8 +8,7 @@
 
 import UIKit
 
-class OrderNavigationController: UINavigationController, Presentor {
-    weak var coordinator: BaseCoordinator?
+class OrderNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
