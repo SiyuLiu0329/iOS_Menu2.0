@@ -12,9 +12,12 @@ class OrderItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
+        view.backgroundColor = .white
     }
     
     private func setUpNavBar() {
+        navigationController?.navigationBar.barTintColor = UIColor.themeColour
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.topItem?.title = "Items"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.onCancelPressed))
     }
