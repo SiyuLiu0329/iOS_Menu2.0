@@ -25,7 +25,6 @@ extension OrderViewController: UICollectionViewDelegateFlowLayout {
 
 extension OrderViewController: OrderCellDalegate {
     func didAddNewBooking() {
-        
     }
     
     func didAddNewOrder() {
@@ -36,6 +35,22 @@ extension OrderViewController: OrderCellDalegate {
         let menuViewController = MenuViewController()
         splitViewController.viewControllers = [masterViewController, menuViewController]
         present(splitViewController, animated: true, completion: nil)
+        
+        // create a new order and associate with the shift
+        orderItemViewController.order = orderModel.createNewOrder()
+        
+    }
+    
+    func didSelectOrder(in section: String, at index: Int) {
+        let splitViewController = OrderSplitViewController()
+        let orderItemViewController = OrderItemsViewController()
+        let masterViewController = UINavigationController()
+        masterViewController.viewControllers = [orderItemViewController]
+        let menuViewController = MenuViewController()
+        splitViewController.viewControllers = [masterViewController, menuViewController]
+        present(splitViewController, animated: true, completion: nil)
+        
+        orderItemViewController.order = orderModel.getOrder(in: section, at: index)
     }
 }
 

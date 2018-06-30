@@ -11,6 +11,7 @@ import UIKit
 protocol OrderCellDalegate: class {
     func didAddNewOrder()
     func didAddNewBooking()
+    func didSelectOrder(in section: String, at index: Int)
 }
 
 /*
@@ -24,6 +25,7 @@ class Section0CollectionViewCell: UICollectionViewCell {
         let label = CreateOrderButton(frame: CGRect.zero)
         let recogniser = UITapGestureRecognizer(target: self, action: #selector(self.newOrderTapped))
         label.addGestureRecognizer(recogniser)
+        label.text = "New Order"
         return label
     }()
     
@@ -31,6 +33,7 @@ class Section0CollectionViewCell: UICollectionViewCell {
         let label = CreateOrderButton(frame: CGRect.zero)
         let recogniser = UITapGestureRecognizer(target: self, action: #selector(self.newBookingTapped))
         label.addGestureRecognizer(recogniser)
+        label.text = "New Booking"
         return label
     }()
     
@@ -57,8 +60,6 @@ class Section0CollectionViewCell: UICollectionViewCell {
     }
     
     private func layoutSectionView() {
-        newOrderView.text = "New Order"
-        newBookingView.text = "New Booking"
         
         addSubview(newOrderView)
         NSLayoutConstraint.activate([
@@ -80,11 +81,13 @@ class CreateOrderButton: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.themeColour
+        backgroundColor = UIColor.white
+        layer.borderColor = UIColor.themeColour.cgColor
+        layer.borderWidth = 1
         layer.cornerRadius = 10
         clipsToBounds = true
-        textColor = .white
-        font = UIFont.systemFont(ofSize: 18, weight: .light)
+        textColor = UIColor.themeColour
+        font = UIFont.systemFont(ofSize: 20, weight: .light)
         textAlignment = .center
         isUserInteractionEnabled = true
     }

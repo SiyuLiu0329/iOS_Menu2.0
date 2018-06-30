@@ -24,6 +24,7 @@ extension OrderViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! OrderCollectionViewCell
         cell.loadOrderSection(fromData: orderModel.sections[indexPath.row - 1])
+        cell.delegate = self
         return cell
     }
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1F30DE20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F30DD20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift */; };
+		DC1F30E020E7A26100EB1232 /* OrderItemsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F30DF20E7A26100EB1232 /* OrderItemsViewController+DataSource.swift */; };
 		DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F120D4F9F30074DC6D /* AppDelegate.swift */; };
 		DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F320D4F9F30074DC6D /* RootViewController.swift */; };
 		DC7367F920D4F9F30074DC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7367F820D4F9F30074DC6D /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1F30DD20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderItemsViewController+Delegates.swift"; sourceTree = "<group>"; };
+		DC1F30DF20E7A26100EB1232 /* OrderItemsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderItemsViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DC34F11820D65F6900176FB0 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7367EE20D4F9F30074DC6D /* Menu2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7367F120D4F9F30074DC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				DCB6270320DBF0270089F72A /* OrderCollectionViewCell.swift */,
 				DCB6270920DBF6B50089F72A /* OrderCollectionViewCell+UICollectionViewDelegate.swift */,
 				DCB6270720DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift */,
+				DCB6270B20DBF72F0089F72A /* OrderCell.swift */,
 			);
 			path = OrderSections;
 			sourceTree = "<group>";
@@ -226,7 +231,6 @@
 				DC81039B20D92C14008EB752 /* OrderNavigationController.swift */,
 				DC147BFC20DE528A00FF8BA4 /* OrderViewController */,
 				DC147BFD20DE529D00FF8BA4 /* OrderSections */,
-				DCB6270B20DBF72F0089F72A /* OrderCell.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -267,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				DCC3416920E120250020616F /* OrderItemsViewController.swift */,
+				DC1F30DD20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift */,
+				DC1F30DF20E7A26100EB1232 /* OrderItemsViewController+DataSource.swift */,
 				DCC064B620E711D10041256C /* OrderItemsTableView.swift */,
 			);
 			path = OrderItems;
@@ -430,7 +436,9 @@
 				DCB6270220DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift in Sources */,
 				DC9EE76420E3469A002C8BE0 /* OrderSectionCollectionView.swift in Sources */,
 				DCA5D68B20E622A1002E91BA /* MenuViewController+Delegate.swift in Sources */,
+				DC1F30DE20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift in Sources */,
 				DC9EE76620E34838002C8BE0 /* MenuModel.swift in Sources */,
+				DC1F30E020E7A26100EB1232 /* OrderItemsViewController+DataSource.swift in Sources */,
 				DCB24D6E20E63B3F002E1B1D /* CoreDataUtils+Order.swift in Sources */,
 				DC8103A220D934F9008EB752 /* OrderViewController.swift in Sources */,
 				DCB6270A20DBF6B50089F72A /* OrderCollectionViewCell+UICollectionViewDelegate.swift in Sources */,

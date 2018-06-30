@@ -9,6 +9,7 @@
 import UIKit
 
 class OrderItemsViewController: UIViewController {
+    var order: Order?
     
     let statusBarBackgroundView: UIView = {
         let view = UIView()
@@ -20,6 +21,7 @@ class OrderItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
+        print(order?.items?.count)
         view.backgroundColor = .white
         navigationController?.view.addSubview(statusBarBackgroundView)
         layoutViews()
@@ -34,7 +36,7 @@ class OrderItemsViewController: UIViewController {
     private func setUpNavBar() {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.topItem?.title = "Items"
+        navigationController?.navigationBar.topItem?.title = "Order #\(order?.number ?? 0)"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.onCancelPressed))
         
         // title colour

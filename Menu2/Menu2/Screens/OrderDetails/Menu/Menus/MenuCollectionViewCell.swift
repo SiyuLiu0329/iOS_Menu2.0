@@ -36,7 +36,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpCell() {
-        layer.addBorder(edge: .right, color: .lightGray, thickness: 0.5, inset: 30)
+        
         
         addSubview(menuItemCollectionView)
         NSLayoutConstraint.activate([
@@ -44,5 +44,6 @@ class MenuCollectionViewCell: UICollectionViewCell {
             menuItemCollectionView.rightAnchor.constraint(equalTo: rightAnchor),
             menuItemCollectionView.topAnchor.constraint(equalTo: topAnchor),
             menuItemCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        layer.addBorder(edge: .right, color: .lightGray, thickness: 0.5, inset: 20)
     }
 }

@@ -8,13 +8,10 @@
 
 import UIKit
 
-protocol OrderCollectionViewCellDelegate: class {
-    func orderForItem(in section: Int, with index: Int) -> Order
-}
-
 class OrderCollectionViewCell: UICollectionViewCell {
     let cellId = "cellId"
     let cellWidth: CGFloat = 150
+    weak var delegate: OrderCellDalegate?
     var loadedSection: OrderSection? {
         didSet {
             orderSectionView.reloadData() // resolve collection view loading problem

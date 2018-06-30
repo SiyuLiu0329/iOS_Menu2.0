@@ -20,7 +20,7 @@ extension CoredataUtils {
         return nil
     }
     
-    static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool) {
+    static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool, save: Bool) -> Order {
         let order = Order(context: context)
         order.paid = paid
         order.number = Int32(number)
@@ -30,7 +30,20 @@ extension CoredataUtils {
         order.refunded = refunded
         order.timeCreated = Date()
         order.shift = shift
+        if save {
+            saveContext()
+        }
+        return order
+    }
+    
+    static func add(item: Item, to order: Order) {
+        item.order = order
         saveContext()
     }
+    
+    static func delete(order: Order) {
+        context.delete(order)
+    }
+    
 
 }

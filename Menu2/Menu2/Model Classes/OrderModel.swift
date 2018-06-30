@@ -22,13 +22,49 @@ enum SectionName: String {
 }
 
 class OrderModel {
-    private var shift: Shift?
+    var shift: Shift?
     var sections: [OrderSection] = [
         (sectionName: SectionName.inProgress.rawValue, orders: []),
         (sectionName: SectionName.bookings.rawValue, orders: []),
         (sectionName: SectionName.completed.rawValue, orders: []),
         (sectionName: SectionName.all.rawValue, orders: []),
     ]
+    
+    // look up an order based on section name and index in that section
+    // used to find the order selected ...
+    func getOrder(in sectionName: String, at index: Int) -> Order? {
+        var order: Order? = nil
+        sections.forEach { (section) in
+            if section.sectionName == sectionName {
+                order = section.orders[index]
+            }
+        }
+        return order
+    }
+    
+    // called when create new order button is hit, object is not saved to context by default
+    func createNewOrder() -> Order? {
+        if let shift = shift {
+            let order = CoredataUtils.insertOrder(into: shift, number: numberOfOrders + 1, paid: false, served: false, refunded: false, isBooking: false, bookingArrived: false, save: false)
+            return order
+        }
+        
+        return nil
+    }
+    
+    func deleteOrder(order: Order) {
+        CoredataUtils.delete(order: order)
+    }
+    
+    var numberOfOrders: Int {
+        var n = 0
+        sections.forEach { (section) in
+            if section.sectionName == SectionName.all.rawValue {
+                n = section.orders.count
+            }
+        }
+        return n
+    }
     
     var numberOfSections: Int {
         return sections.count
@@ -61,6 +97,7 @@ class OrderModel {
             
             orders.forEach { (obj) in
                 let order = obj as! Order
+                testInsertItems(into: order) //TODO: remove this
                 if order.paid && order.served {
                     sections[2].orders.append(order) // completed
                 } else {
@@ -78,4 +115,18 @@ class OrderModel {
         }
     }
     
+}
+
+extension OrderModel {
+    private func testInsertItems(into order: Order) {
+        if order.items?.count != 0 {
+            return
+        }
+        let n = Int.random(in: (5...20))
+        for i in 1...n {
+            let item = Item(context: CoredataUtils.context)
+            item.name = "item \(i)"
+            CoredataUtils.add(item: item, to: order)
+        }
+    }
 }

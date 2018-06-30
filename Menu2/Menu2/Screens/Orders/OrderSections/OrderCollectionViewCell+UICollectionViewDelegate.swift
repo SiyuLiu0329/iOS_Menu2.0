@@ -17,4 +17,9 @@ extension OrderCollectionViewCell: UICollectionViewDelegate, UICollectionViewDel
         return UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let delegate = delegate {
+            delegate.didSelectOrder(in: sectionTitle.text ?? "", at: indexPath.row)
+        }
+    }
 }

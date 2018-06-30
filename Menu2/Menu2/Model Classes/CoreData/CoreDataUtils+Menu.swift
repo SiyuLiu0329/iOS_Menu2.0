@@ -26,4 +26,9 @@ extension CoredataUtils {
         saveContext()
         return menu
     }
+    
+    static func add(item: Item, to menu: Menu) {
+        menu.addToItems(item)
+        saveContext()
+    }
 }
