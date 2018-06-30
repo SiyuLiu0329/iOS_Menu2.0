@@ -46,7 +46,21 @@ extension MenuModel {
     
     private func addTestItemsToMenus() {
         menus.forEach { (menu) in
+            if let items = menu.items {
+                if items.count != 0 {
+                    print(items.count)
+                    return
+                }
+            }
             
+            let nItems = Int.random(in: (5...30))
+            var n = 1
+            for _ in 5...nItems {
+                let item = Item(context: CoredataUtils.context)
+                item.name = "Item \(n)"
+                CoredataUtils.add(item: item, to: menu)
+                n += 1
+            }
         }
     }
     

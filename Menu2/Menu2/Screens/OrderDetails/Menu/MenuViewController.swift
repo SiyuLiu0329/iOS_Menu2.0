@@ -11,6 +11,13 @@ import UIKit
 class MenuViewController: UIViewController {
     let menuModel = MenuModel()
     
+    let statusBarBackgroundView: UIView = {
+        let view = UIView()
+        view.frame = UIApplication.shared.statusBarFrame
+        view.backgroundColor = UIColor.themeColour
+        return view
+    }()
+    
     lazy var topBar: PageMenuTitles = {
         let topBarView = PageMenuTitles()
         topBarView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,5 +72,7 @@ class MenuViewController: UIViewController {
             sectionCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             sectionCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
             sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+        
+        view.addSubview(statusBarBackgroundView)
     }
 }

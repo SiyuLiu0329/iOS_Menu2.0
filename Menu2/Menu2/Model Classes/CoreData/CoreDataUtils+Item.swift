@@ -11,6 +11,7 @@ import CoreData
 
 extension CoredataUtils {
     static func add(item: Item, to menu: Menu) {
-        
+        menu.addToItems(item)
+        saveContext()
     }
 }

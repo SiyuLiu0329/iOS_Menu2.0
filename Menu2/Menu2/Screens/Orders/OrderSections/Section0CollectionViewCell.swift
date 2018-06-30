@@ -13,6 +13,9 @@ protocol OrderCellDalegate: class {
     func didAddNewBooking()
 }
 
+/*
+ This is a header cell that holds buttons to add new orders
+ */
 class Section0CollectionViewCell: UICollectionViewCell {
     
     weak var delegate: OrderCellDalegate?

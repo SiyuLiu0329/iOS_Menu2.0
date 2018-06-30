@@ -29,7 +29,7 @@ extension OrderViewController: OrderCellDalegate {
     }
     
     func didAddNewOrder() {
-        let splitViewController = UISplitViewController()
+        let splitViewController = OrderSplitViewController()
         let orderItemViewController = OrderItemsViewController()
         let masterViewController = UINavigationController()
         masterViewController.viewControllers = [orderItemViewController]

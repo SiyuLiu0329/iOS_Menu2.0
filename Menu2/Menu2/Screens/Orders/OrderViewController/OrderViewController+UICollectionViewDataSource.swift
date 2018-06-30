@@ -16,6 +16,7 @@ extension OrderViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
+            // if it is the first row, load the header cell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: section0Id, for: indexPath) as! Section0CollectionViewCell
             cell.delegate = self
             return cell

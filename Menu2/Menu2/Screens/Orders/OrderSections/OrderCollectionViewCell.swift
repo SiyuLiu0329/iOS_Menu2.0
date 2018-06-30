@@ -15,7 +15,13 @@ protocol OrderCollectionViewCellDelegate: class {
 class OrderCollectionViewCell: UICollectionViewCell {
     let cellId = "cellId"
     let cellWidth: CGFloat = 150
-    var loadedSection: OrderSection?
+    var loadedSection: OrderSection? {
+        didSet {
+            orderSectionView.reloadData() // resolve collection view loading problem
+        }
+    }
+    
+    // A horizontal section of the order screen
     lazy private var orderSectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

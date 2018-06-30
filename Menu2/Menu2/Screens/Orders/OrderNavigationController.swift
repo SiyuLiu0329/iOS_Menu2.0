@@ -8,12 +8,18 @@
 
 import UIKit
 
+
 class OrderNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.backgroundColourMain
         navigationBar.barTintColor = UIColor.themeColour
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

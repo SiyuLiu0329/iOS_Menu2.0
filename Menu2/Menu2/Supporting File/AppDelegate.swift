@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().barStyle = .blackOpaque
         UINavigationBar.appearance().tintColor = .white
         
         window = UIWindow(frame: UIScreen.main.bounds)

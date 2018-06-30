@@ -17,7 +17,6 @@ extension UIColor {
 extension CALayer {
     
     func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat, inset: CGFloat) {
-        
         let border = CALayer()
         
         switch edge {
@@ -38,3 +37,5 @@ extension CALayer {
         addSublayer(border)
     }
 }
+
+

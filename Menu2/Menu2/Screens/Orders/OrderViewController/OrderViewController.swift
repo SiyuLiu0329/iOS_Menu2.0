@@ -57,6 +57,7 @@ class OrderViewController: UIViewController {
     private func setUpNavBar() {
         navigationItem.title = "Orders"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.onCancelPressed))
+
     }
     
     @objc private func onCancelPressed() {

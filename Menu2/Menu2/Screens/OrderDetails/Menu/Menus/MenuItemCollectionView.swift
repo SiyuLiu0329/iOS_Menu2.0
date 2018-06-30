@@ -1,16 +1,18 @@
 //
-//  HorizontalCollectionView.swift
+//  MenuItemCollectionView.swift
 //  Menu2
 //
-//  Created by Siyu Liu on 22/6/18.
+//  Created by Siyu Liu on 29/6/18.
 //  Copyright © 2018 Siyu Liu. All rights reserved.
 //
 
 import UIKit
-/*
- This is a collection view that holds all the horizontal sections (ie "All", "Completed"...)
- */
-class HorizontalCollectionView: UICollectionView {
+
+class MenuItemCollectionView: UICollectionView {
+    let preferredNumberOfItemsPerRow = 5
+    let preferredInterItemSpacing: CGFloat = 10
+    let preferredInset: CGFloat = 20
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         backgroundColor = .white
@@ -19,4 +21,5 @@ class HorizontalCollectionView: UICollectionView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
