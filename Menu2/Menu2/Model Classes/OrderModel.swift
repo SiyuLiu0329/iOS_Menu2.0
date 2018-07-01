@@ -87,9 +87,9 @@ class OrderModel {
     
     private func loadOrders() {
         guard let shift = shift else { return }
-//        CoredataUtils.insertOrder(into: shift, number: 8, paid: true, served: false, refunded: false, isBooking: false, bookingArrived: false)
         if let orders = shift.orders {
             let orders = orders.sorted { (obj1, obj2) -> Bool in
+                // sort orders by number, the UI will show them in this order
                 let order1 = obj1 as! Order
                 let order2 = obj2 as! Order
                 return order1.number > order2.number
@@ -97,7 +97,9 @@ class OrderModel {
             
             orders.forEach { (obj) in
                 let order = obj as! Order
-                testInsertItems(into: order) //TODO: remove this
+                
+                
+                // categorise order based on their attributes (ie paid, served ...)
                 if order.paid && order.served {
                     sections[2].orders.append(order) // completed
                 } else {
@@ -110,23 +112,8 @@ class OrderModel {
                 }
                 
                 sections[3].orders.append(order) // All
-                
             }
         }
     }
-    
 }
 
-extension OrderModel {
-    private func testInsertItems(into order: Order) {
-        if order.items?.count != 0 {
-            return
-        }
-        let n = Int.random(in: (5...20))
-        for i in 1...n {
-            let item = Item(context: CoredataUtils.context)
-            item.name = "item \(i)"
-            CoredataUtils.add(item: item, to: order)
-        }
-    }
-}

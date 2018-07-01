@@ -21,13 +21,6 @@ class MenuModel {
             menus = loadedMenus
             print(menus)
         }
-        
-        if menus.count == 0 {
-            insertTestMenus()
-        }
-        
-        addTestItemsToMenus()
-        
     }
     
     func getMenuTitles() -> [String] {
@@ -39,29 +32,4 @@ class MenuModel {
     
 }
 
-extension MenuModel {
-    private func insertTestMenus() {
-        (1...10).forEach({_ = CoredataUtils.insertMenu(name: "Menu\($0)")})
-    }
-    
-    private func addTestItemsToMenus() {
-        menus.forEach { (menu) in
-            if let items = menu.items {
-                if items.count != 0 {
-                    print(items.count)
-                    return
-                }
-            }
-            
-            let nItems = Int.random(in: (5...30))
-            var n = 1
-            for _ in 5...nItems {
-                let item = Item(context: CoredataUtils.context)
-                item.name = "Item \(n)"
-                CoredataUtils.add(item: item, to: menu)
-                n += 1
-            }
-        }
-    }
-    
-}
+

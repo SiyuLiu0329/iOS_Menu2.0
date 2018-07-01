@@ -8,11 +8,14 @@
 
 import UIKit
 
+/*
+ This VC is responsible for showing all orders associated with a shift
+ */
 class OrderViewController: UIViewController {
     let cellId = "cellId"
     let section0Id = "section0cell"
     let preferredSectionHeight: CGFloat = 220
-    let orderModel = OrderModel()
+    let orderModel = OrderModel() // TODO: make shift settable in the future
     
     lazy var horizontalCollectionView: HorizontalCollectionView = {
         let collectionView = HorizontalCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())

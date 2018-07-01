@@ -23,6 +23,7 @@ extension OrderViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
+// new vcs are instantiated by these functions
 extension OrderViewController: OrderCellDalegate {
     func didAddNewBooking() {
     }
@@ -37,7 +38,10 @@ extension OrderViewController: OrderCellDalegate {
         present(splitViewController, animated: true, completion: nil)
         
         // create a new order and associate with the shift
-        orderItemViewController.order = orderModel.createNewOrder()
+        if let newOrder = orderModel.createNewOrder() {
+            let newOrderModel = OrderItemsModel(order: newOrder)
+            orderItemViewController.itemModel = newOrderModel
+        }
         
     }
     
@@ -50,7 +54,10 @@ extension OrderViewController: OrderCellDalegate {
         splitViewController.viewControllers = [masterViewController, menuViewController]
         present(splitViewController, animated: true, completion: nil)
         
-        orderItemViewController.order = orderModel.getOrder(in: section, at: index)
+        if let order = orderModel.getOrder(in: section, at: index) {
+            let loadOrderModel = OrderItemsModel(order: order)
+            orderItemViewController.itemModel = loadOrderModel
+        }
     }
 }
 
