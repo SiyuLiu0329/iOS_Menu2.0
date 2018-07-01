@@ -49,6 +49,7 @@
 		DCC064B720E711D10041256C /* OrderItemsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064B620E711D10041256C /* OrderItemsTableView.swift */; };
 		DCC3416A20E120250020616F /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC3416920E120250020616F /* OrderItemsViewController.swift */; };
 		DCC3416C20E131C70020616F /* PageMenuTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC3416B20E131C70020616F /* PageMenuTitles.swift */; };
+		DCD1AEE820E908F80097FB14 /* OrderItemTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		DCC064B620E711D10041256C /* OrderItemsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsTableView.swift; sourceTree = "<group>"; };
 		DCC3416920E120250020616F /* OrderItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsViewController.swift; sourceTree = "<group>"; };
 		DCC3416B20E131C70020616F /* PageMenuTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuTitles.swift; sourceTree = "<group>"; };
+		DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemTableViewHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				DC1F30DD20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift */,
 				DC1F30DF20E7A26100EB1232 /* OrderItemsViewController+DataSource.swift */,
 				DC97842420E853CE00AAAF94 /* OrderItemTableViewCell.swift */,
+				DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */,
 				DCC064B620E711D10041256C /* OrderItemsTableView.swift */,
 			);
 			path = OrderItems;
@@ -446,6 +449,7 @@
 				DC1F30DE20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift in Sources */,
 				DC9EE76620E34838002C8BE0 /* MenuModel.swift in Sources */,
 				DC1F30E020E7A26100EB1232 /* OrderItemsViewController+DataSource.swift in Sources */,
+				DCD1AEE820E908F80097FB14 /* OrderItemTableViewHeaderView.swift in Sources */,
 				DCB24D6E20E63B3F002E1B1D /* CoreDataUtils+Order.swift in Sources */,
 				DC97842520E853CE00AAAF94 /* OrderItemTableViewCell.swift in Sources */,
 				DC8103A220D934F9008EB752 /* OrderViewController.swift in Sources */,

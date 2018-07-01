@@ -30,6 +30,7 @@ class OrderItemsViewController: UIViewController {
         let tableView = OrderItemsTableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(OrderItemTableViewCell.self, forCellReuseIdentifier: OrderItemTableViewCell.cellId)
+        tableView.register(OrderItemTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: OrderItemTableViewHeaderView.viewId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
