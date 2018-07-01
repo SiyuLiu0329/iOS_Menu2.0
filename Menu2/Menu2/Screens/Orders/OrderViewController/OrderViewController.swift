@@ -32,9 +32,6 @@ class OrderViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    deinit {
-        print(self, "deinited.")
-    }
     
     init() {
         super.init(nibName: nil, bundle: nil)
