@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuCollectionViewCellDelegate: class {
-    
+    func didPressEdit(cell: UICollectionViewCell)
 }
 
 class MenuCollectionViewCell: UICollectionViewCell {
@@ -37,8 +37,15 @@ class MenuCollectionViewCell: UICollectionViewCell {
         let view = MenuCollectionViewCellTitleView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
+        view.editButton.addTarget(self, action: #selector(self.onEditPressed), for: .touchUpInside)
         return view
     }()
+    
+    @objc private func onEditPressed() {
+        if let delegate = delegate {
+            delegate.didPressEdit(cell: self)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

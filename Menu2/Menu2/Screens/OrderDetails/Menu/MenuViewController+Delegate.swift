@@ -28,4 +28,11 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
 extension MenuViewController: MenuCollectionViewCellDelegate {
     // called when the edit button on each menu page is pressed
 
+    func didPressEdit(cell: UICollectionViewCell) {
+        if let indexPath = sectionCollectionView.indexPath(for: cell) {
+            print(indexPath.row)
+        }
+    }
+    
+    
 }
