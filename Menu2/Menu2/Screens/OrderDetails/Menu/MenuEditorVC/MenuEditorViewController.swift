@@ -9,7 +9,9 @@
 import UIKit
 
 class MenuEditorViewController: UIViewController {
-
+    
+    var menuModel: MenuModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.themeColour
@@ -17,7 +19,6 @@ class MenuEditorViewController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
 

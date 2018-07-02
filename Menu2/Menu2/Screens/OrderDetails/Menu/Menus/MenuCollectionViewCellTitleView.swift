@@ -29,28 +29,12 @@ class MenuCollectionViewCellTitleView: UIView {
         
     }()
     
-    var editButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Edit", for: .normal)
-        button.setTitleColor(UIColor.themeColour, for: .normal)
-        button.tintColor = UIColor.themeColour
-        
-        return button
-    }()
-    
     private func setUpView() {
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)])
         
-        addSubview(editButton)
-        NSLayoutConstraint.activate([
-            editButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            editButton.rightAnchor.constraint(equalTo: rightAnchor),
-            editButton.widthAnchor.constraint(equalToConstant: 50),
-            editButton.heightAnchor.constraint(equalToConstant: 24)])
     }
     
     func setTitle(_ title: String) {

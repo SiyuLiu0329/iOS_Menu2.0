@@ -11,6 +11,7 @@ import UIKit
 
 extension OrderViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // if this is the header view
         if indexPath.row == 0 {
             return CGSize(width: view.frame.width, height: 60)
         }

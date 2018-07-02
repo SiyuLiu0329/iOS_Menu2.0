@@ -17,7 +17,7 @@ class OrderViewController: UIViewController {
     let preferredSectionHeight: CGFloat = 220
     let orderModel = OrderModel() // TODO: make shift settable in the future
     
-    lazy var horizontalCollectionView: HorizontalCollectionView = {
+    lazy var AllOrdersCollectionView: HorizontalCollectionView = {
         let collectionView = HorizontalCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -45,12 +45,12 @@ class OrderViewController: UIViewController {
     }
     
     private func layoutViews() {
-        view.addSubview(horizontalCollectionView)
+        view.addSubview(AllOrdersCollectionView)
         NSLayoutConstraint.activate([
-            horizontalCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            horizontalCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            horizontalCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            horizontalCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            AllOrdersCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            AllOrdersCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            AllOrdersCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            AllOrdersCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
     

@@ -9,9 +9,10 @@
 import UIKit
 
 class RootViewController: UIViewController {
-    let orderViewController = OrderNavigationController()
+    let orderViewController = OrderNavigationController() // keep a reference here so this wont be deinited when dismissed
     
     let button: UIButton = {
+        // a button used for dev purpose only, push the order view controller on pressed
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Button", for: .normal)

@@ -28,9 +28,9 @@ class MenuViewController: UIViewController {
         return collectionView
     }()
     
-    lazy var sectionCollectionView: MenuSectionCollectionView = {
+    lazy var menuCollectionView: MenuCollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let sectionView = MenuSectionCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        let sectionView = MenuCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
         sectionView.translatesAutoresizingMaskIntoConstraints = false
         sectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.cellId)
@@ -57,6 +57,7 @@ class MenuViewController: UIViewController {
     
     @objc private func onSettingPressed() {
         let menuEditorViewController = MenuEditorViewController()
+        menuEditorViewController.menuModel = menuModel
         let navigationController = UINavigationController()
         navigationController.viewControllers = [menuEditorViewController]
         navigationController.modalPresentationStyle = .popover
@@ -89,12 +90,12 @@ class MenuViewController: UIViewController {
             titleCollectionView.heightAnchor.constraint(equalToConstant: titleCollectionView.preferredHeight)
             ])
         
-        view.addSubview(sectionCollectionView)
+        view.addSubview(menuCollectionView)
         NSLayoutConstraint.activate([
-            sectionCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            sectionCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            sectionCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            sectionCollectionView.bottomAnchor.constraint(equalTo: titleCollectionView.topAnchor)])
+            menuCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            menuCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            menuCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            menuCollectionView.bottomAnchor.constraint(equalTo: titleCollectionView.topAnchor)])
         
         view.addSubview(statusBarBackgroundView)
 

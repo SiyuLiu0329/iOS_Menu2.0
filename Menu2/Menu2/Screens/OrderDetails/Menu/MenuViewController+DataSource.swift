@@ -15,11 +15,12 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == sectionCollectionView {
+        // check which collection view it is ( there are 2 collection views, one used to show menu items the other used to show titles at the bottom of the screen)
+        if collectionView == menuCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellId, for: indexPath) as! MenuCollectionViewCell
             cell.menu = menuModel.menus[indexPath.row]
-            cell.delegate = self
             return cell
+            
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuTitleCollectionViewCell.cellId, for: indexPath) as! MenuTitleCollectionViewCell
             cell.label.text = menuModel.menus[indexPath.row].name ?? "Unamed Menu"

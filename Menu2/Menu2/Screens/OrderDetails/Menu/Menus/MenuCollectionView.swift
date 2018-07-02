@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuSectionCollectionView: UICollectionView {
+class MenuCollectionView: UICollectionView {
 
     /*
     // Only override draw() if you perform custom drawing.
