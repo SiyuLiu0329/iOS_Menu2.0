@@ -23,7 +23,7 @@ class MenuCollectionViewCellTitleView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Unamed Menu"
-        label.font = UIFont.systemFont(ofSize: 32, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textColor = UIColor.themeColour
         return label
         
@@ -35,6 +35,7 @@ class MenuCollectionViewCellTitleView: UIView {
         button.setTitle("Edit", for: .normal)
         button.setTitleColor(UIColor.themeColour, for: .normal)
         button.tintColor = UIColor.themeColour
+        
         return button
     }()
     

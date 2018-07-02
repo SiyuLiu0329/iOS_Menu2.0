@@ -63,7 +63,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
             sectionTitleView.topAnchor.constraint(equalTo: topAnchor, constant: 40),
             sectionTitleView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             sectionTitleView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            sectionTitleView.heightAnchor.constraint(equalToConstant: 44)])
+            sectionTitleView.heightAnchor.constraint(equalToConstant: 30)])
         
         addSubview(menuItemCollectionView)
         NSLayoutConstraint.activate([
@@ -72,6 +72,6 @@ class MenuCollectionViewCell: UICollectionViewCell {
             menuItemCollectionView.topAnchor.constraint(equalTo: sectionTitleView.bottomAnchor),
             menuItemCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)])
         
-        layer.addBorder(edge: .right, color: .lightGray, thickness: 0.5, inset: 12)
+        layer.addBorder(edge: .right, color: .lightGray, thickness: 0.5, inset: 35)
     }
 }

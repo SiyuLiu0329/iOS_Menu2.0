@@ -25,6 +25,11 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
     
 }
 
+/*
+ Take care of callbacks from the child collection view
+ - edit button pressed
+ - ...
+ */
 extension MenuViewController: MenuCollectionViewCellDelegate {
     // called when the edit button on each menu page is pressed
 
@@ -33,6 +38,4 @@ extension MenuViewController: MenuCollectionViewCellDelegate {
             print(indexPath.row)
         }
     }
-    
-    
 }

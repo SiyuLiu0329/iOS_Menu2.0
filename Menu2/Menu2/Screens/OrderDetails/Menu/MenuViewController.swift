@@ -39,6 +39,28 @@ class MenuViewController: UIViewController {
         return sectionView
     }()
     
+    lazy var menuSettingButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.themeColour
+        button.tintColor = .white
+        let image = UIImage(named: "gear")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(self.onSettingPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func onSettingPressed() {
+        let menuEditorViewController = MenuEditorViewController()
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [menuEditorViewController]
+        navigationController.modalPresentationStyle = .popover
+        let popOver = navigationController.popoverPresentationController
+        popOver?.sourceView = menuSettingButton
+        present(navigationController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTopBar()
@@ -62,7 +84,7 @@ class MenuViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             titleBar.leftAnchor.constraint(equalTo: view.leftAnchor),
-            titleBar.rightAnchor.constraint(equalTo: view.rightAnchor),
+            titleBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -44 ),
             titleBar.heightAnchor.constraint(equalToConstant: titleBar.preferredHeight)
             ])
         
@@ -75,5 +97,11 @@ class MenuViewController: UIViewController {
         
         view.addSubview(statusBarBackgroundView)
 
+        view.addSubview(menuSettingButton)
+        NSLayoutConstraint.activate([
+            menuSettingButton.leftAnchor.constraint(equalTo: titleBar.rightAnchor),
+            menuSettingButton.rightAnchor.constraint(equalTo: view.rightAnchor),
+            menuSettingButton.topAnchor.constraint(equalTo: titleBar.topAnchor),
+            menuSettingButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
 }
