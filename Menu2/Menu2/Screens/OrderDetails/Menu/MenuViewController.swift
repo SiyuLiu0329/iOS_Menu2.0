@@ -18,15 +18,15 @@ class MenuViewController: UIViewController {
         return view
     }()
     
-    lazy var topBar: PageMenuTitles = {
+    lazy var titleBar: PageMenuTitles = {
         let topBarView = PageMenuTitles()
         topBarView.translatesAutoresizingMaskIntoConstraints = false
         return topBarView
     }()
     
-    lazy var sectionCollectionView: OrderSectionCollectionView = {
+    lazy var sectionCollectionView: MenuSectionCollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let sectionView = OrderSectionCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        let sectionView = MenuSectionCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
         sectionView.translatesAutoresizingMaskIntoConstraints = false
         sectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.cellId)
@@ -47,8 +47,8 @@ class MenuViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        topBar.titleDelegate = sectionCollectionView
-        view.backgroundColor = .white
+        titleBar.titleDelegate = sectionCollectionView
+        view.backgroundColor = UIColor.collectionViewBackgroundColour
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,23 +56,24 @@ class MenuViewController: UIViewController {
     }
     
     private func setUpTopBar() {
-        topBar.titles = menuModel.getMenuTitles()
-        view.addSubview(topBar)
-        view.bringSubviewToFront(topBar)
+        titleBar.titles = menuModel.getMenuTitles()
+        view.addSubview(titleBar)
+        view.bringSubviewToFront(titleBar)
         NSLayoutConstraint.activate([
-            topBar.topAnchor.constraint(equalTo: view.topAnchor),
-            topBar.leftAnchor.constraint(equalTo: view.leftAnchor),
-            topBar.rightAnchor.constraint(equalTo: view.rightAnchor),
-            topBar.heightAnchor.constraint(equalToConstant: topBar.preferredHeight)
+            titleBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            titleBar.leftAnchor.constraint(equalTo: view.leftAnchor),
+            titleBar.rightAnchor.constraint(equalTo: view.rightAnchor),
+            titleBar.heightAnchor.constraint(equalToConstant: titleBar.preferredHeight)
             ])
         
         view.addSubview(sectionCollectionView)
         NSLayoutConstraint.activate([
-            sectionCollectionView.topAnchor.constraint(equalTo: topBar.bottomAnchor),
+            sectionCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             sectionCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             sectionCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            sectionCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+            sectionCollectionView.bottomAnchor.constraint(equalTo: titleBar.topAnchor)])
         
         view.addSubview(statusBarBackgroundView)
+
     }
 }

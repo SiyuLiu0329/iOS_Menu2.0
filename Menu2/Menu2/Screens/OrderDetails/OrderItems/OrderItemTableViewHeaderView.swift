@@ -18,7 +18,7 @@ class OrderItemTableViewHeaderView: UITableViewHeaderFooterView {
         dateFormatter.dateFormat = "h:mm a 'on' d-MMM"
         label.text = "Created " + dateFormatter.string(from: Date())
         label.textAlignment = .center
-        label.textColor = .lightGray
+        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()

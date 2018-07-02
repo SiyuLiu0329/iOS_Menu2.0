@@ -20,7 +20,12 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let visiblePageIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
-        topBar.selectedIndex = visiblePageIndex
+        titleBar.selectedIndex = visiblePageIndex
     }
     
+}
+
+extension MenuViewController: MenuCollectionViewCellDelegate {
+    // called when the edit button on each menu page is pressed
+
 }

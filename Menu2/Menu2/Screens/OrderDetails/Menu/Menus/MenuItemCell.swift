@@ -13,14 +13,14 @@ class MenuItemCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 250/255, alpha: 1)
+        backgroundColor = .white
         
         layer.cornerRadius = 5
-        layer.borderWidth = 1.0
-        
+        layer.borderWidth = 0.5
         layer.borderColor = UIColor.themeColour.withAlphaComponent(0.4).cgColor
-        layer.masksToBounds = true
         
+        layer.masksToBounds = true
+
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         layer.shadowRadius = 1

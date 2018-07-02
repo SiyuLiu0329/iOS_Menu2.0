@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension OrderSectionCollectionView: PageMenuTitlesDelegate {
+extension MenuSectionCollectionView: PageMenuTitlesDelegate {
     func didSelectTitle(at index: Int) {
         // scroll to ...
         scrollToItem(at: IndexPath(item: index, section: 0), at: .left, animated: true)

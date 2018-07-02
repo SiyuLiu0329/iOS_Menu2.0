@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderSectionCollectionView: UICollectionView {
+class MenuSectionCollectionView: UICollectionView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -19,7 +19,7 @@ class OrderSectionCollectionView: UICollectionView {
     */
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        backgroundColor = .white
+        backgroundColor = UIColor.collectionViewBackgroundColour
     }
     
     required init?(coder aDecoder: NSCoder) {

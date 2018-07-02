@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol MenuCollectionViewCellDelegate: class {
+    
+}
+
 class MenuCollectionViewCell: UICollectionViewCell {
     static let cellId = "menuCell"
+    weak var delegate: MenuCollectionViewCellDelegate?
     var menu: Menu? {
         didSet {
+            guard let menu = menu else { return }
             menuItemCollectionView.reloadData() // solves the collection view within collection view not loading problem
+            sectionTitleView.setTitle(menu.name ?? "Unamed Menu")
         }
     }
     
@@ -26,19 +33,12 @@ class MenuCollectionViewCell: UICollectionViewCell {
         return collectionView
     }()
     
-    lazy var editButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(UIColor.themeColour, for: .normal)
-        button.setTitleColor(UIColor.themeColour.withAlphaComponent(0.4), for: UIControl.State.highlighted)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(self.onEditPressed), for: .touchUpInside)
-        button.setTitle("Edit Menu", for: .normal)
-        return button
+    lazy var sectionTitleView: MenuCollectionViewCellTitleView = {
+        let view = MenuCollectionViewCellTitleView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        return view
     }()
-    
-    @objc private func onEditPressed() {
-        
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,21 +50,21 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpCell() {
-
+        
+        addSubview(sectionTitleView)
+        NSLayoutConstraint.activate([
+            sectionTitleView.topAnchor.constraint(equalTo: topAnchor, constant: 40),
+            sectionTitleView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            sectionTitleView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            sectionTitleView.heightAnchor.constraint(equalToConstant: 44)])
+        
         addSubview(menuItemCollectionView)
         NSLayoutConstraint.activate([
             menuItemCollectionView.leftAnchor.constraint(equalTo: leftAnchor),
             menuItemCollectionView.rightAnchor.constraint(equalTo: rightAnchor),
-            menuItemCollectionView.topAnchor.constraint(equalTo: topAnchor),
-            menuItemCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant:-44)])
+            menuItemCollectionView.topAnchor.constraint(equalTo: sectionTitleView.bottomAnchor),
+            menuItemCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)])
         
-        addSubview(editButton)
-        NSLayoutConstraint.activate([
-            editButton.topAnchor.constraint(equalTo: menuItemCollectionView.bottomAnchor),
-            editButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
-            editButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            editButton.widthAnchor.constraint(equalToConstant: 100)])
-        
-        layer.addBorder(edge: .right, color: .lightGray, thickness: 0.5, inset: 20)
+        layer.addBorder(edge: .right, color: .lightGray, thickness: 0.5, inset: 12)
     }
 }
