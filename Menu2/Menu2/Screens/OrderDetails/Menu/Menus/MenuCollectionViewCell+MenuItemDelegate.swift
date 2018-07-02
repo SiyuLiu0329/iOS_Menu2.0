@@ -10,6 +10,7 @@ import UIKit
 
 extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // calculate the width based on how many items are in a row
         let gapWidth = CGFloat(menuItemCollectionView.preferredNumberOfItemsPerRow - 1) * (menuItemCollectionView.preferredInterItemSpacing)
         let insets = menuItemCollectionView.preferredInset * 2
         let width = (collectionView.frame.width - insets - gapWidth) / CGFloat(menuItemCollectionView.preferredNumberOfItemsPerRow)
@@ -21,5 +22,4 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewDele
         let inset = menuItemCollectionView.preferredInset
         return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
-    // fix up edge insets
 }

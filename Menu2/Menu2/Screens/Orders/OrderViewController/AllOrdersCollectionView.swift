@@ -10,7 +10,7 @@ import UIKit
 /*
  This is a collection view that holds all the horizontal sections (ie "All", "Completed"...)
  */
-class HorizontalCollectionView: UICollectionView {
+class AllOrdersCollectionView: UICollectionView {
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         backgroundColor = .white

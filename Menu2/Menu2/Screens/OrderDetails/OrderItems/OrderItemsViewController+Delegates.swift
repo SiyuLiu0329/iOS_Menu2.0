@@ -20,7 +20,6 @@ extension OrderItemsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard section == 0 else { return nil }
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: OrderItemTableViewHeaderView.viewId)
-        
         return view
     }
     

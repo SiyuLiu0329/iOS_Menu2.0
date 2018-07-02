@@ -9,10 +9,15 @@
 import UIKit
 
 
-
+/*
+ This cell holds an entire menu is responsible for presenting the items in this menu.
+ - items are placed inside a collection view
+ */
 class MenuCollectionViewCell: UICollectionViewCell {
     static let cellId = "menuCell"
     var menu: Menu? {
+        // update the cell when this value is set
+        // this value is set whenever this cell becomes visible
         didSet {
             guard let menu = menu else { return }
             menuItemCollectionView.reloadData() // solves the collection view within collection view not loading problem
@@ -20,6 +25,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    /*
+     A collection view responsible for displaying items in this menu
+     */
     lazy var menuItemCollectionView: MenuItemCollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = MenuItemCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -30,6 +38,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
         return collectionView
     }()
     
+    /*
+     View at the top of the cell to display the name of the menu
+     */
     lazy var sectionTitleView: MenuCollectionViewCellTitleView = {
         let view = MenuCollectionViewCellTitleView()
         view.translatesAutoresizingMaskIntoConstraints = false

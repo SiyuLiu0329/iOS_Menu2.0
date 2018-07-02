@@ -66,13 +66,13 @@ class OrderModel {
         return n
     }
     
+    // number of horizontal sections, not to be confused with collection view sections
     var numberOfSections: Int {
         return sections.count
-        
     }
     
     init() {
-        createShiftIfEmpty()
+        createShiftIfEmpty() // if a shift has not been passed in, create a new one / load the latest one
         loadOrders()
     }
     
@@ -97,7 +97,6 @@ class OrderModel {
             
             orders.forEach { (obj) in
                 let order = obj as! Order
-                
                 
                 // categorise order based on their attributes (ie paid, served ...)
                 if order.paid && order.served {

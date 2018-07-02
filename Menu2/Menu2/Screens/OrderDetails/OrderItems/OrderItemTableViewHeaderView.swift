@@ -11,6 +11,9 @@ import UIKit
 class OrderItemTableViewHeaderView: UITableViewHeaderFooterView {
     static let viewId = "tableViewHeaderView"
     
+    /*
+     An UILabel indicating when the order is created
+     */
     var dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +25,7 @@ class OrderItemTableViewHeaderView: UITableViewHeaderFooterView {
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
-    
+
     func setDate(_ date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a 'on' d-MMM"

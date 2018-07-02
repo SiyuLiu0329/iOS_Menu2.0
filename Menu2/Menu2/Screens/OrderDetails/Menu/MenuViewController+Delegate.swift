@@ -45,11 +45,11 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        guard scrollView == menuCollectionView else { return }
+        guard scrollView == menuCollectionView else { return } // make sure the right collection view is calling this method
         let cellIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
         let indexPath = IndexPath(row: cellIndex, section: 0)
-        titleCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        titleCollectionView.delegate?.collectionView!(titleCollectionView, didSelectItemAt: indexPath)
+        titleCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true) // scroll to the corresponding title
+        titleCollectionView.delegate?.collectionView!(titleCollectionView, didSelectItemAt: indexPath) // highlight the corresponding title
     }
 }
 

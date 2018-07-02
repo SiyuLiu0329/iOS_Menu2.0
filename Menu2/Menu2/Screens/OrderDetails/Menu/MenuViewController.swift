@@ -8,6 +8,13 @@
 
 import UIKit
 
+/*
+ A view controller responsible for displaying all menu related items. Holds
+ - a horizontal scrolling collection view for menus
+ - a bottom bar as page menu, also a horizontal scrolling collection view
+ - a cog gear icon to invoke menu setting vc
+ Occupying the right side of the split view controller
+ */
 class MenuViewController: UIViewController {
     let menuModel = MenuModel()
     
@@ -18,6 +25,9 @@ class MenuViewController: UIViewController {
         return view
     }()
     
+    /*
+     Page menu at the bottom of the screen
+     */
     lazy var titleCollectionView: MenuTitleCollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = MenuTitleCollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
@@ -28,6 +38,9 @@ class MenuViewController: UIViewController {
         return collectionView
     }()
     
+    /*
+     Collection view responsible for displaying menu items, there is a child collection view in this collection view
+     */
     lazy var menuCollectionView: MenuCollectionView = {
         let layout = UICollectionViewFlowLayout()
         let sectionView = MenuCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -43,6 +56,10 @@ class MenuViewController: UIViewController {
         return sectionView
     }()
     
+    /*
+     A UIButton at the bottom right corner of the screen
+     - invokes menu editor on click
+     */
     lazy var menuSettingButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false

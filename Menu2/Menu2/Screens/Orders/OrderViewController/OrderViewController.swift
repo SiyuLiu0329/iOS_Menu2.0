@@ -17,12 +17,12 @@ class OrderViewController: UIViewController {
     let preferredSectionHeight: CGFloat = 220
     let orderModel = OrderModel() // TODO: make shift settable in the future
     
-    lazy var AllOrdersCollectionView: HorizontalCollectionView = {
-        let collectionView = HorizontalCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    lazy var allOrdersCollectionView: AllOrdersCollectionView = {
+        let collectionView = AllOrdersCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(OrderCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(Section0CollectionViewCell.self, forCellWithReuseIdentifier: section0Id)
+        collectionView.register(OrderCollectionViewCell.self, forCellWithReuseIdentifier: cellId)  // cell to show orders
+        collectionView.register(Section0CollectionViewCell.self, forCellWithReuseIdentifier: section0Id) // cell to show new order buttons
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -45,12 +45,12 @@ class OrderViewController: UIViewController {
     }
     
     private func layoutViews() {
-        view.addSubview(AllOrdersCollectionView)
+        view.addSubview(allOrdersCollectionView)
         NSLayoutConstraint.activate([
-            AllOrdersCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            AllOrdersCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            AllOrdersCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            AllOrdersCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            allOrdersCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            allOrdersCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            allOrdersCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            allOrdersCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
     

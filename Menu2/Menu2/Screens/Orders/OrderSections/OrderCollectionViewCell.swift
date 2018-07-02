@@ -8,9 +8,13 @@
 
 import UIKit
 
+/*
+ This is a collection view cell that is responsible for displaying all Order objects
+ */
 class OrderCollectionViewCell: UICollectionViewCell {
     let cellId = "cellId"
     let cellWidth: CGFloat = 150
+    
     weak var delegate: OrderCellDalegate?
     var loadedSection: OrderSection? {
         didSet {
@@ -18,7 +22,9 @@ class OrderCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    // A horizontal section of the order screen
+    /*
+     This is a collection view with a collection view, orders are displayed in this collection view horizontally
+     */
     lazy private var orderSectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -32,11 +38,17 @@ class OrderCollectionViewCell: UICollectionViewCell {
         return collectionView
     }()
     
+    // called in the delegate method to set up this cell
     func loadOrderSection(fromData data: OrderSection) {
+        // display the title of the section in bold
         sectionTitle.text = data.sectionName
+        // load orders into this section
         loadedSection = data
     }
     
+    /*
+     A horinzontal section divider
+     */
     let divider: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray

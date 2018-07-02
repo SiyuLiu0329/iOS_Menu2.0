@@ -8,6 +8,11 @@
 
 import UIKit
 
+/*
+ Make callbacks to parent vc
+ - when a new order button is pressed
+ - when an existing order is selected
+ */
 protocol OrderCellDalegate: class {
     func didAddNewOrder()
     func didAddNewBooking()

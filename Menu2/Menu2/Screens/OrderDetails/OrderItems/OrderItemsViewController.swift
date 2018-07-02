@@ -7,10 +7,16 @@
 //
 
 import UIKit
-
+/*
+ A view controller responsible for displaying the content in the loaded order.
+ Occupies the area on the left side of split view controller
+ */
 class OrderItemsViewController: UIViewController {
     var itemModel: OrderItemsModel?
     
+    /*
+     A simple UIView giving colour to the status bar
+     */
     let statusBarBackgroundView: UIView = {
         let view = UIView()
         view.frame = UIApplication.shared.statusBarFrame
@@ -38,9 +44,12 @@ class OrderItemsViewController: UIViewController {
     }()
     
     private func setUpNavBar() {
+        // bar colour
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.topItem?.title = "Order #\(itemModel?.order.number ?? 0)"
+        
+        // "X" button
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.onCancelPressed))
         
         // title colour

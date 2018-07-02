@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Cell which holds a menu item
+ */
 class MenuItemCell: UICollectionViewCell {
     static let cellId = "itemCell"
     

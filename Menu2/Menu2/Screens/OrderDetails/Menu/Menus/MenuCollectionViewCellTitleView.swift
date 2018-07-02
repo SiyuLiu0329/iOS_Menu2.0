@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Just a simple view holding a label so far.
+ */
 class MenuCollectionViewCellTitleView: UIView {
     
     override init(frame: CGRect) {

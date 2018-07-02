@@ -30,6 +30,9 @@ extension OrderViewController: OrderCellDalegate {
     }
     
     func didAddNewOrder() {
+        // called when the "new order" button is pressed
+        // - present a new vc
+        // - create a new Order(NSManagedObject)
         let splitViewController = OrderSplitViewController()
         let orderItemViewController = OrderItemsViewController()
         let masterViewController = UINavigationController()
@@ -47,6 +50,9 @@ extension OrderViewController: OrderCellDalegate {
     }
     
     func didSelectOrder(in section: String, at index: Int) {
+        // called when an order is selected
+        // - present a vc
+        // - pass in the order object
         let splitViewController = OrderSplitViewController()
         let orderItemViewController = OrderItemsViewController()
         let masterViewController = UINavigationController()
