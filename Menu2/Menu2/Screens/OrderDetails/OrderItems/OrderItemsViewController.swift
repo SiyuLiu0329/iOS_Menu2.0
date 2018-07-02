@@ -46,6 +46,7 @@ class OrderItemsViewController: UIViewController {
         // title colour
         navigationController?.navigationBar.tintColor = UIColor.themeColour
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.themeColour]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.themeColour]
         
 
         // add drop shadow to the nav bar
@@ -54,6 +55,7 @@ class OrderItemsViewController: UIViewController {
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.6
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 4
+        navigationController?.navigationBar.prefersLargeTitles = true
         
     }
     

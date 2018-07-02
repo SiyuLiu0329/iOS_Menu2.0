@@ -15,10 +15,17 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellId, for: indexPath) as! MenuCollectionViewCell
-        cell.menu = menuModel.menus[indexPath.row]
-        cell.delegate = self
-        return cell
+        if collectionView == sectionCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellId, for: indexPath) as! MenuCollectionViewCell
+            cell.menu = menuModel.menus[indexPath.row]
+            cell.delegate = self
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuTitleCollectionViewCell.cellId, for: indexPath) as! MenuTitleCollectionViewCell
+            cell.label.text = menuModel.menus[indexPath.row].name ?? "Unamed Menu"
+            cell.titleSelected = menuModel.selectedMenu == indexPath.row
+            return cell
+        }
     }
     
     

@@ -15,7 +15,9 @@ class OrderNavigationController: UINavigationController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.backgroundColourMain
         navigationBar.barTintColor = UIColor.themeColour
+        navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBar.prefersLargeTitles = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

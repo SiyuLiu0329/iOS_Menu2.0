@@ -12,13 +12,17 @@ import CoreData
 class MenuModel {
     private let context = CoredataUtils.context
     var menus = [Menu]()
+    var selectedMenu = 0
     var numberOfMenus: Int {
         return menus.count
     }
     
+    
+    
     init() {
         if let loadedMenus = CoredataUtils.loadAllMenus() {
             menus = loadedMenus
+            
         }
     }
     
