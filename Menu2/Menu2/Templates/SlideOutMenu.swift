@@ -54,6 +54,20 @@ class SlideOutMenu: UIView {
         
     }
     
+    func addViewToContainer(_ view: UIView) {
+        slideOutView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: slideOutView.topAnchor),
+            view.leftAnchor.constraint(equalTo: slideOutView.leftAnchor),
+            view.rightAnchor.constraint(equalTo: slideOutView.rightAnchor),
+            view.bottomAnchor.constraint(equalTo: slideOutView.bottomAnchor)
+            ])
+        
+        
+    }
+    
+    
     private var frameHidden: CGRect?
     private var frameShown: CGRect?
     
@@ -62,7 +76,6 @@ class SlideOutMenu: UIView {
             setUpFrames()
             setUpBlackView()
             setUpSlideOutView()
-
         }
     }
     
@@ -81,7 +94,7 @@ class SlideOutMenu: UIView {
     }
     
     private func setUpSlideOutView() {
-        slideOutView.backgroundColor = UIColor.themeColour
+        slideOutView.backgroundColor = UIColor.collectionViewBackgroundColour
         slideOutView.addDropShadow()
         if let frame = frameHidden {
             slideOutView.frame = frame

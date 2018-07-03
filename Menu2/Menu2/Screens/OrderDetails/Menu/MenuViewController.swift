@@ -75,15 +75,17 @@ class MenuViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         slideOutMenuEditor.frame = view.bounds
+
     }
     
     @objc private func onSettingPressed() {
         slideOutMenuEditor.isMenuHidden = !slideOutMenuEditor.isMenuHidden
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTopBar()
+        setUpView()
         print(view.frame.width)
         // Do any additional setup after loading the view.
     }
@@ -98,7 +100,7 @@ class MenuViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUpTopBar() {
+    private func setUpView() {
         view.addSubview(titleCollectionView)
         NSLayoutConstraint.activate([
             titleCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -114,16 +116,26 @@ class MenuViewController: UIViewController {
             menuCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
             menuCollectionView.bottomAnchor.constraint(equalTo: titleCollectionView.topAnchor)])
         
-        view.addSubview(statusBarBackgroundView)
-    
-        view.addSubview(slideOutMenuEditor)
-        
-        
         view.addSubview(menuSettingButton)
         NSLayoutConstraint.activate([
             menuSettingButton.leftAnchor.constraint(equalTo: titleCollectionView.rightAnchor),
             menuSettingButton.rightAnchor.constraint(equalTo: view.rightAnchor),
             menuSettingButton.topAnchor.constraint(equalTo: titleCollectionView.topAnchor),
             menuSettingButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+        
+        view.addSubview(statusBarBackgroundView)
+        view.addSubview(slideOutMenuEditor)
+        addContainerView()
+        
+        
+
+    }
+    
+    private func addContainerView() {
+        let navController = SlideOutContainerNavigationViewController()
+        let initalViewController = UIViewController()
+        navController.viewControllers = [initalViewController]
+        slideOutMenuEditor.addViewToContainer(navController.view)
+        navController.didMove(toParent: self)
     }
 }

@@ -46,6 +46,7 @@
 		DCB6270E20DC68290089F72A /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6270D20DC68290089F72A /* OrderModel.swift */; };
 		DCBDF3DA20EB81290031E44C /* SlideOutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3D920EB81290031E44C /* SlideOutMenu.swift */; };
 		DCBDF3DE20EB947E0031E44C /* MenuEditorMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */; };
+		DCBDF3E020EBB7650031E44C /* SlideOutContainerNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */; };
 		DCC064B420E70B4B0041256C /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064B320E70B4B0041256C /* OrderSplitViewController.swift */; };
 		DCC064B720E711D10041256C /* OrderItemsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064B620E711D10041256C /* OrderItemsTableView.swift */; };
 		DCC3416A20E120250020616F /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC3416920E120250020616F /* OrderItemsViewController.swift */; };
@@ -108,6 +109,7 @@
 		DCB6270D20DC68290089F72A /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		DCBDF3D920EB81290031E44C /* SlideOutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenu.swift; sourceTree = "<group>"; };
 		DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEditorMenu.swift; sourceTree = "<group>"; };
+		DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutContainerNavigationViewController.swift; sourceTree = "<group>"; };
 		DCC064B320E70B4B0041256C /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
 		DCC064B620E711D10041256C /* OrderItemsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsTableView.swift; sourceTree = "<group>"; };
 		DCC3416920E120250020616F /* OrderItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */,
+				DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */,
 			);
 			path = "Slide out menu editor";
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */,
 				DCB0E6A020DC9F850098AD36 /* Section0CollectionViewCell.swift in Sources */,
 				DC9D547C20E66BAD00D50908 /* MenuCollectionViewCell+MenuItemDataSource.swift in Sources */,
+				DCBDF3E020EBB7650031E44C /* SlideOutContainerNavigationViewController.swift in Sources */,
 				DC9D547A20E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift in Sources */,
 				DCA5D68920E6218B002E91BA /* MenuCollectionViewCell.swift in Sources */,
 				DCB6270820DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift in Sources */,
