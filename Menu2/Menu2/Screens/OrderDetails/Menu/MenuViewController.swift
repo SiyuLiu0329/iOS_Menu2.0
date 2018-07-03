@@ -71,27 +71,27 @@ class MenuViewController: UIViewController {
         button.addTarget(self, action: #selector(self.onSettingPressed), for: .touchUpInside)
         return button
     }()
+    let slideOutMenuEditor = MenuEditor()
+
+    override func viewDidLayoutSubviews() {
+        slideOutMenuEditor.frame = view.bounds
+    }
     
     @objc private func onSettingPressed() {
-        let menuEditorViewController = MenuEditorViewController()
-        menuEditorViewController.menuModel = menuModel
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [menuEditorViewController]
-        navigationController.modalPresentationStyle = .popover
-        let popOver = navigationController.popoverPresentationController
-        popOver?.sourceView = menuSettingButton
-        present(navigationController, animated: true, completion: nil)
+        slideOutMenuEditor.isMenuHidden = !slideOutMenuEditor.isMenuHidden
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTopBar()
+        print(view.frame.width)
         // Do any additional setup after loading the view.
     }
     
     init() {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.collectionViewBackgroundColour
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -115,7 +115,10 @@ class MenuViewController: UIViewController {
             menuCollectionView.bottomAnchor.constraint(equalTo: titleCollectionView.topAnchor)])
         
         view.addSubview(statusBarBackgroundView)
-
+    
+        view.addSubview(slideOutMenuEditor)
+        
+        
         view.addSubview(menuSettingButton)
         NSLayoutConstraint.activate([
             menuSettingButton.leftAnchor.constraint(equalTo: titleCollectionView.rightAnchor),

@@ -39,7 +39,9 @@ extension OrderViewController: OrderCellDalegate {
         masterViewController.viewControllers = [orderItemViewController]
         let menuViewController = MenuViewController()
         splitViewController.viewControllers = [masterViewController, menuViewController]
+        
         present(splitViewController, animated: true, completion: nil)
+        
         
         // create a new order and associate with the shift
         if let newOrder = orderModel.createNewOrder() {
@@ -59,6 +61,7 @@ extension OrderViewController: OrderCellDalegate {
         masterViewController.viewControllers = [orderItemViewController]
         let menuViewController = MenuViewController()
         splitViewController.viewControllers = [masterViewController, menuViewController]
+
         present(splitViewController, animated: true, completion: nil)
         
         if let order = orderModel.getOrder(in: section, at: index) {

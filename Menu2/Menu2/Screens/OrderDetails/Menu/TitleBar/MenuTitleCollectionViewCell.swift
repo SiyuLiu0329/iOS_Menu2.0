@@ -35,7 +35,6 @@ class MenuTitleCollectionViewCell: UICollectionViewCell {
             label.bottomAnchor.constraint(equalTo: bottomAnchor),
             label.leftAnchor.constraint(equalTo: leftAnchor),
             label.rightAnchor.constraint(equalTo: rightAnchor)])
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
