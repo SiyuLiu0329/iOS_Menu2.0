@@ -9,14 +9,13 @@
 import UIKit
 
 class SlideOutContainerNavigationViewController: UINavigationController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.barTintColor = UIColor.themeColour
-        navigationBar.topItem?.title = "Menu Editor"
         navigationBar.prefersLargeTitles = true
         let key = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = key
         navigationBar.largeTitleTextAttributes = key
+        
     }
 }

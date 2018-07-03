@@ -86,7 +86,6 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        print(view.frame.width)
         // Do any additional setup after loading the view.
     }
     
@@ -126,16 +125,15 @@ class MenuViewController: UIViewController {
         view.addSubview(statusBarBackgroundView)
         view.addSubview(slideOutMenuEditor)
         addContainerView()
-        
-        
-
     }
     
     private func addContainerView() {
         let navController = SlideOutContainerNavigationViewController()
-        let initalViewController = UIViewController()
-        navController.viewControllers = [initalViewController]
+        let initalViewController = MenuEditorMenuTableViewController()
+        initalViewController.menuModel = menuModel
+        addChild(navController)
         slideOutMenuEditor.addViewToContainer(navController.view)
+        navController.pushViewController(initalViewController, animated: false)
         navController.didMove(toParent: self)
     }
 }

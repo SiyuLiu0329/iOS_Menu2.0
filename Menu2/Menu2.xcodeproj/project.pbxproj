@@ -47,6 +47,10 @@
 		DCBDF3DA20EB81290031E44C /* SlideOutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3D920EB81290031E44C /* SlideOutMenu.swift */; };
 		DCBDF3DE20EB947E0031E44C /* MenuEditorMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */; };
 		DCBDF3E020EBB7650031E44C /* SlideOutContainerNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */; };
+		DCBDF3E220EBC1080031E44C /* MenuEditorMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3E120EBC1080031E44C /* MenuEditorMenuTableViewController.swift */; };
+		DCBDF3E420EC330C0031E44C /* SlideOutMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3E320EC330C0031E44C /* SlideOutMenuTableViewCell.swift */; };
+		DCBDF3E620EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3E520EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift */; };
+		DCBDF3E820EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDF3E720EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift */; };
 		DCC064B420E70B4B0041256C /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064B320E70B4B0041256C /* OrderSplitViewController.swift */; };
 		DCC064B720E711D10041256C /* OrderItemsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC064B620E711D10041256C /* OrderItemsTableView.swift */; };
 		DCC3416A20E120250020616F /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC3416920E120250020616F /* OrderItemsViewController.swift */; };
@@ -110,6 +114,10 @@
 		DCBDF3D920EB81290031E44C /* SlideOutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenu.swift; sourceTree = "<group>"; };
 		DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEditorMenu.swift; sourceTree = "<group>"; };
 		DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutContainerNavigationViewController.swift; sourceTree = "<group>"; };
+		DCBDF3E120EBC1080031E44C /* MenuEditorMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEditorMenuTableViewController.swift; sourceTree = "<group>"; };
+		DCBDF3E320EC330C0031E44C /* SlideOutMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuTableViewCell.swift; sourceTree = "<group>"; };
+		DCBDF3E520EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuEditorMenuTableViewController+Delegate.swift"; sourceTree = "<group>"; };
+		DCBDF3E720EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuEditorMenuTableViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DCC064B320E70B4B0041256C /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
 		DCC064B620E711D10041256C /* OrderItemsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsTableView.swift; sourceTree = "<group>"; };
 		DCC3416920E120250020616F /* OrderItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +297,10 @@
 			children = (
 				DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */,
 				DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */,
+				DCBDF3E120EBC1080031E44C /* MenuEditorMenuTableViewController.swift */,
+				DCBDF3E520EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift */,
+				DCBDF3E720EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift */,
+				DCBDF3E320EC330C0031E44C /* SlideOutMenuTableViewCell.swift */,
 			);
 			path = "Slide out menu editor";
 			sourceTree = "<group>";
@@ -464,6 +476,7 @@
 				DCB0E6A020DC9F850098AD36 /* Section0CollectionViewCell.swift in Sources */,
 				DC9D547C20E66BAD00D50908 /* MenuCollectionViewCell+MenuItemDataSource.swift in Sources */,
 				DCBDF3E020EBB7650031E44C /* SlideOutContainerNavigationViewController.swift in Sources */,
+				DCBDF3E820EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift in Sources */,
 				DC9D547A20E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift in Sources */,
 				DCA5D68920E6218B002E91BA /* MenuCollectionViewCell.swift in Sources */,
 				DCB6270820DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift in Sources */,
@@ -482,9 +495,12 @@
 				DC9EE76620E34838002C8BE0 /* MenuModel.swift in Sources */,
 				DC1F30E020E7A26100EB1232 /* OrderItemsViewController+DataSource.swift in Sources */,
 				DCD1AEE820E908F80097FB14 /* OrderItemTableViewHeaderView.swift in Sources */,
+				DCBDF3E220EBC1080031E44C /* MenuEditorMenuTableViewController.swift in Sources */,
 				DCB24D6E20E63B3F002E1B1D /* CoreDataUtils+Order.swift in Sources */,
 				DC97842520E853CE00AAAF94 /* OrderItemTableViewCell.swift in Sources */,
+				DCBDF3E620EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift in Sources */,
 				DCC419A920EA357000B98685 /* MenuTitleCollectionView.swift in Sources */,
+				DCBDF3E420EC330C0031E44C /* SlideOutMenuTableViewCell.swift in Sources */,
 				DC8103A220D934F9008EB752 /* OrderViewController.swift in Sources */,
 				DCB6270A20DBF6B50089F72A /* OrderCollectionViewCell+UICollectionViewDelegate.swift in Sources */,
 				DCC3416A20E120250020616F /* OrderItemsViewController.swift in Sources */,

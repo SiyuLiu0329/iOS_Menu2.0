@@ -16,29 +16,8 @@ class MenuEditor: SlideOutMenu {
             view.topAnchor.constraint(equalTo: slideOutView.topAnchor),
             view.leftAnchor.constraint(equalTo: slideOutView.leftAnchor),
             view.rightAnchor.constraint(equalTo: slideOutView.rightAnchor),
-            view.bottomAnchor.constraint(equalTo: slideOutView.bottomAnchor, constant: -30)
+            view.bottomAnchor.constraint(equalTo: slideOutView.bottomAnchor)
             ])
-        
-        let  settingsButton = UIButton()
-        settingsButton.setTitle("Hide", for: .normal)
-        settingsButton.setTitleColor(UIColor.themeColour, for: .normal)
-        slideOutView.addSubview(settingsButton)
-        settingsButton.translatesAutoresizingMaskIntoConstraints = false
-        settingsButton.imageView?.contentMode = .scaleAspectFit
-        settingsButton.tintColor = UIColor.themeColour
-        NSLayoutConstraint.activate([
-            settingsButton.rightAnchor.constraint(equalTo: slideOutView.rightAnchor),
-            settingsButton.widthAnchor.constraint(equalToConstant: 60),
-            settingsButton.topAnchor.constraint(equalTo: view.bottomAnchor),
-            settingsButton.bottomAnchor.constraint(equalTo: slideOutView.bottomAnchor)
-            ])
-        
-        settingsButton.addTarget(self, action: #selector(self.onSettingsPressed), for: .touchUpInside)
-    }
-    
-    @objc private func onSettingsPressed() {
-        isMenuHidden = true
-    }
-    
 
+    }
 }
