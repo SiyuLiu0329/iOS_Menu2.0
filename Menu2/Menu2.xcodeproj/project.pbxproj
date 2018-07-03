@@ -297,10 +297,7 @@
 			children = (
 				DCBDF3DD20EB947E0031E44C /* MenuEditorMenu.swift */,
 				DCBDF3DF20EBB7650031E44C /* SlideOutContainerNavigationViewController.swift */,
-				DCBDF3E120EBC1080031E44C /* MenuEditorMenuTableViewController.swift */,
-				DCBDF3E520EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift */,
-				DCBDF3E720EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift */,
-				DCBDF3E320EC330C0031E44C /* SlideOutMenuTableViewCell.swift */,
+				DCBDF3E920EC34770031E44C /* RootViewController */,
 			);
 			path = "Slide out menu editor";
 			sourceTree = "<group>";
@@ -311,6 +308,17 @@
 				DCBDF3D920EB81290031E44C /* SlideOutMenu.swift */,
 			);
 			path = Templates;
+			sourceTree = "<group>";
+		};
+		DCBDF3E920EC34770031E44C /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DCBDF3E120EBC1080031E44C /* MenuEditorMenuTableViewController.swift */,
+				DCBDF3E520EC33E90031E44C /* MenuEditorMenuTableViewController+Delegate.swift */,
+				DCBDF3E720EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift */,
+				DCBDF3E320EC330C0031E44C /* SlideOutMenuTableViewCell.swift */,
+			);
+			path = RootViewController;
 			sourceTree = "<group>";
 		};
 		DCC064B520E711A30041256C /* OrderItems */ = {
