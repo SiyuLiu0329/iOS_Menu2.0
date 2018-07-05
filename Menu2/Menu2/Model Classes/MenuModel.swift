@@ -27,7 +27,7 @@ class MenuModel {
     init() {
         if let loadedMenus = CoredataUtils.loadAllMenus() {
             menus = loadedMenus
-            
+
         }
     }
     

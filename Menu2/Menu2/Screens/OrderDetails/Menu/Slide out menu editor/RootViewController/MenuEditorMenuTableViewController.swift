@@ -14,6 +14,7 @@ class MenuEditorMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = "Menu Editor"
         tableView.register(SlideOutMenuTableViewCell.self, forCellReuseIdentifier: SlideOutMenuTableViewCell.cellId)
+        tableView.backgroundColor = UIColor.collectionViewBackgroundColour
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

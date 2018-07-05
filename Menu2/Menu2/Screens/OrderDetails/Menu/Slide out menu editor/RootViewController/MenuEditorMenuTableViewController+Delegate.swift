@@ -24,4 +24,11 @@ extension MenuEditorMenuTableViewController {
         }
         return [delete]
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let menuModel = menuModel else { return }
+        let menuDetailsVC = MenuDetailsViewController()
+        menuDetailsVC.model = MenuEditorModel(menu: menuModel.menus[indexPath.row])
+        navigationController?.pushViewController(menuDetailsVC, animated: true)
+    }
 }

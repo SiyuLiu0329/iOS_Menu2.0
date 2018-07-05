@@ -93,7 +93,7 @@ class SlideOutMenu: UIView {
     
     private func setUpSlideOutView() {
         slideOutView.backgroundColor = UIColor.collectionViewBackgroundColour
-        slideOutView.addDropShadow()
+        slideOutView.addDropShadow(offset: CGSize(width: -1.5, height: 1), radius: 2, opacity: 0.6)
         if let frame = frameHidden {
             slideOutView.frame = frame
         }
