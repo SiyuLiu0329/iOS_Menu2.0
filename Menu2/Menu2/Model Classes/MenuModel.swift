@@ -17,7 +17,12 @@ class MenuModel {
         return menus.count
     }
     
-    
+    func deleteMenu(at index: Int) {
+        print(testGetNumberOfItemsInMenus())
+        let menu = menus.remove(at: index)
+        CoredataUtils.delete(menu: menu) // remember to update UI
+        print(testGetNumberOfItemsInMenus())
+    }
     
     init() {
         if let loadedMenus = CoredataUtils.loadAllMenus() {
@@ -31,8 +36,19 @@ class MenuModel {
         menus.forEach({titles.append($0.name ?? "Unamed")})
         return titles
     }
-    
-    
+}
+
+extension MenuModel {
+    // these functions are used for debug only
+    func testGetNumberOfItemsInMenus() -> Int {
+        let request: NSFetchRequest = Item.fetchRequest()
+        do {
+            return try CoredataUtils.context.fetch(request).count
+        } catch let error {
+            print(error)
+        }
+        return 0
+    }
 }
 
 

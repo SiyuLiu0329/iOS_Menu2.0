@@ -20,6 +20,10 @@ extension CoredataUtils {
         return nil
     }
     
+    static func delete(menu: Menu) {
+        context.delete(menu)
+    }
+    
     static func insertMenu(name: String) -> Menu {
         let menu = Menu(context: context)
         menu.name = name
