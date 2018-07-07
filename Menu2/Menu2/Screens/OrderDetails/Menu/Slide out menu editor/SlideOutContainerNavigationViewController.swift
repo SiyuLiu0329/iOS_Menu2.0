@@ -16,6 +16,5 @@ class SlideOutContainerNavigationViewController: UINavigationController {
         let key = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = key
         navigationBar.largeTitleTextAttributes = key
-        
     }
 }

@@ -8,21 +8,30 @@
 
 import UIKit
 
+protocol MenuEditorDelegate: class {
+    func didExitMenuEditor()
+}
+
 class MenuEditorMenuTableViewController: UITableViewController {
     var menuModel: MenuModel?
+    weak var menuEditorDelegate: MenuEditorDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.topItem?.title = "Menu Editor"
+        
         tableView.register(SlideOutMenuTableViewCell.self, forCellReuseIdentifier: SlideOutMenuTableViewCell.cellId)
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour
+        setUpNavBar()
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+
+    private func setUpNavBar() {
+        navigationController?.navigationBar.topItem?.title = "Menu Editor"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.onClosePressed))
     }
 
+    @objc private func onClosePressed() {
+        if let delegate = menuEditorDelegate {
+            delegate.didExitMenuEditor()
+        }
+    }
 }

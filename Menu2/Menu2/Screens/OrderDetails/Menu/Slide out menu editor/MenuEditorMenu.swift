@@ -18,6 +18,5 @@ class MenuEditor: SlideOutMenu {
             view.rightAnchor.constraint(equalTo: slideOutView.rightAnchor),
             view.bottomAnchor.constraint(equalTo: slideOutView.bottomAnchor)
             ])
-
     }
 }

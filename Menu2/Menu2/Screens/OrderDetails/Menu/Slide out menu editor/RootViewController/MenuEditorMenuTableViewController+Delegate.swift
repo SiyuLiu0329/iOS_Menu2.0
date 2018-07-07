@@ -31,4 +31,12 @@ extension MenuEditorMenuTableViewController {
         menuDetailsVC.model = MenuEditorModel(menu: menuModel.menus[indexPath.row])
         navigationController?.pushViewController(menuDetailsVC, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
 }

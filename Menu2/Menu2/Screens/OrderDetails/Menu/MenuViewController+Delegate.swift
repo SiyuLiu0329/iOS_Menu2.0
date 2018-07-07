@@ -56,3 +56,10 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
         titleCollectionView.reloadItems(at: [indexPath, indexPathOld])
     }
 }
+
+
+extension MenuViewController: MenuEditorDelegate {
+    func didExitMenuEditor() {
+        slideOutMenuEditor.isMenuHidden = true
+    }
+}

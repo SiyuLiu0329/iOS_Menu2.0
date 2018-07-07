@@ -131,6 +131,7 @@ class MenuViewController: UIViewController {
         let navController = SlideOutContainerNavigationViewController()
         let initalViewController = MenuEditorMenuTableViewController()
         initalViewController.menuModel = menuModel
+        initalViewController.menuEditorDelegate = self
         addChild(navController)
         slideOutMenuEditor.addViewToContainer(navController.view)
         navController.pushViewController(initalViewController, animated: false)
