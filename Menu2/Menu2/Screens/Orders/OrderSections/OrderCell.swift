@@ -21,7 +21,7 @@ class OrderCell: UICollectionViewCell {
 //        label.layer.borderColor = UIColor.themeColour.cgColor
 //        label.layer.borderWidth = 1
         label.backgroundColor = UIColor.themeColour.withAlphaComponent(0.1)
-        label.layer.cornerRadius = 16
+        label.layer.cornerRadius = 5
         label.clipsToBounds = true
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 44, weight: .thin)

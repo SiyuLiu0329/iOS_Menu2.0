@@ -18,8 +18,9 @@ extension MenuDetailsViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MenuDetailsTableViewCell.cellId, for: indexPath) as! MenuDetailsTableViewCell
-        cell.textLabel?.text =  model?.items[indexPath.row].name ?? "Unamed Item"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.cellId, for: indexPath) as! MenuItemTableViewCell
+        cell.itemImageView.image = UIImage(named: "food_placeholder")
         return cell
     }
 }

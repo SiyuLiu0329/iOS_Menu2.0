@@ -11,7 +11,7 @@
 		DC1F30E020E7A26100EB1232 /* OrderItemsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F30DF20E7A26100EB1232 /* OrderItemsViewController+DataSource.swift */; };
 		DC35ACC820F05DF9009685A3 /* MenuDetailsViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACC720F05DF9009685A3 /* MenuDetailsViewController+Delegates.swift */; };
 		DC35ACCA20F05E29009685A3 /* MenuDetailsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */; };
-		DC35ACCC20F05EBA009685A3 /* MenuDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCB20F05EBA009685A3 /* MenuDetailsTableViewCell.swift */; };
+		DC35ACCC20F05EBA009685A3 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCB20F05EBA009685A3 /* MenuItemTableViewCell.swift */; };
 		DC35ACD020F0612A009685A3 /* MenuEditorMenuTableViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCF20F06129009685A3 /* MenuEditorMenuTableViewController+Delegate.swift */; };
 		DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F120D4F9F30074DC6D /* AppDelegate.swift */; };
 		DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F320D4F9F30074DC6D /* RootViewController.swift */; };
@@ -81,7 +81,7 @@
 		DC34F11820D65F6900176FB0 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC35ACC720F05DF9009685A3 /* MenuDetailsViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDetailsViewController+Delegates.swift"; sourceTree = "<group>"; };
 		DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDetailsViewController+DataSource.swift"; sourceTree = "<group>"; };
-		DC35ACCB20F05EBA009685A3 /* MenuDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		DC35ACCB20F05EBA009685A3 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		DC35ACCF20F06129009685A3 /* MenuEditorMenuTableViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuEditorMenuTableViewController+Delegate.swift"; sourceTree = "<group>"; };
 		DC7367EE20D4F9F30074DC6D /* Menu2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7367F120D4F9F30074DC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				DC8294BA20EE649A00DCA9D9 /* MenuDetailsViewController.swift */,
 				DC35ACC720F05DF9009685A3 /* MenuDetailsViewController+Delegates.swift */,
 				DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */,
-				DC35ACCB20F05EBA009685A3 /* MenuDetailsTableViewCell.swift */,
+				DC35ACCB20F05EBA009685A3 /* MenuItemTableViewCell.swift */,
 			);
 			path = MenuDetailViewController;
 			sourceTree = "<group>";
@@ -523,7 +523,7 @@
 				DC35ACCA20F05E29009685A3 /* MenuDetailsViewController+DataSource.swift in Sources */,
 				DCBDF3DE20EB947E0031E44C /* MenuEditorMenu.swift in Sources */,
 				DCB626FE20DBED4D0089F72A /* AllOrdersCollectionView.swift in Sources */,
-				DC35ACCC20F05EBA009685A3 /* MenuDetailsTableViewCell.swift in Sources */,
+				DC35ACCC20F05EBA009685A3 /* MenuItemTableViewCell.swift in Sources */,
 				DCB6270220DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift in Sources */,
 				DC9EE76420E3469A002C8BE0 /* MenuCollectionView.swift in Sources */,
 				DCA5D68B20E622A1002E91BA /* MenuViewController+Delegate.swift in Sources */,

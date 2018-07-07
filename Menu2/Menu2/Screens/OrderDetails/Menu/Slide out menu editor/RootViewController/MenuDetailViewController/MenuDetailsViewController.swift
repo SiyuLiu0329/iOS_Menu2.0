@@ -19,12 +19,10 @@ class MenuDetailsViewController: UITableViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.collectionViewBackgroundColour
-        tableView.register(MenuDetailsTableViewCell.self, forCellReuseIdentifier: MenuDetailsTableViewCell.cellId)
+        tableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: MenuItemTableViewCell.cellId)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
 }
