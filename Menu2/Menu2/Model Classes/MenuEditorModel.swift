@@ -11,7 +11,10 @@ import CoreData
 
 class MenuEditorModel {
     var menu: Menu
+    var items: [Item]
     init(menu: Menu) {
         self.menu = menu
+        self.items = menu.items?.allObjects as? [Item] ?? []
     }
+    
 }
