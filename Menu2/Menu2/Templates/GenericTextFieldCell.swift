@@ -109,5 +109,7 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
                 self.isTextfieldEditable = false
             }
         }
+        
+        // delegate
     }
 }

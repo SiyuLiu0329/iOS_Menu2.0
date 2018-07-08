@@ -10,7 +10,6 @@ import Foundation
 
 class ItemEditorModel {
     var item: Item
-    var selectedField: Int?
     
     init(item: Item) {
         self.item = item
