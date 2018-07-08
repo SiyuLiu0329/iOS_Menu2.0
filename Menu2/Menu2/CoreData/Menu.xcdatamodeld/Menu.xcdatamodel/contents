@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.9" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="transferrable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="items" inverseEntity="Menu" syncable="YES"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="items" inverseEntity="Order" syncable="YES"/>
     </entity>
@@ -26,7 +29,7 @@
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="shift" inverseEntity="Order" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-1086.27734375" positionY="39.1640625" width="128" height="90"/>
+        <element name="Item" positionX="-1086.27734375" positionY="39.1640625" width="128" height="135"/>
         <element name="Menu" positionX="-1396.4140625" positionY="-25.65234375" width="128" height="75"/>
         <element name="Order" positionX="-844.671875" positionY="16.6484375" width="128" height="195"/>
         <element name="Shift" positionX="-1087.29296875" positionY="182.8984375" width="128" height="75"/>

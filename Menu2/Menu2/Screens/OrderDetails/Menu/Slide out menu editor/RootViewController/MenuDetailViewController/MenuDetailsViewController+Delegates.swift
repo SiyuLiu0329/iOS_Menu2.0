@@ -36,7 +36,7 @@ extension MenuDetailsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let item = model?.items[indexPath.row] {
             let itemDetailsVC = ItemDetailsViewController()
-            itemDetailsVC.item = item
+            itemDetailsVC.itemModel = ItemEditorModel(item: item)
             navigationController?.pushViewController(itemDetailsVC, animated: true)
         }
     }

@@ -9,11 +9,14 @@
 import UIKit
 
 class ItemDetailsViewController: UITableViewController {
-    var item: Item?
+    var itemModel: ItemEditorModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let item = item else { return }
-        navigationItem.title = item.name ?? "Unamed Item"
+        guard let itemModel = itemModel else { return }
+        tableView.register(GenericTextFieldCell.self, forCellReuseIdentifier: GenericTextFieldCell.cellId)
+        tableView.backgroundColor = UIColor.collectionViewBackgroundColour
+        tableView.separatorColor = .clear
+        navigationItem.title = itemModel.textFieldViewModels[0].value ?? "Unamed Item"
     }
 }
