@@ -18,10 +18,10 @@ class MenuModel {
     }
     
     func deleteMenu(at index: Int) {
-        print(testGetNumberOfItemsInMenus())
+        print("Number of items before deletion:", testGetNumberOfItemsInMenus())
         let menu = menus.remove(at: index)
         CoredataUtils.delete(menu: menu) // remember to update UI
-        print(testGetNumberOfItemsInMenus())
+        print("Number of items after deletion:", testGetNumberOfItemsInMenus())
     }
     
     init() {

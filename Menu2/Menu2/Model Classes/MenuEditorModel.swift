@@ -17,4 +17,8 @@ class MenuEditorModel {
         self.items = menu.items?.allObjects as? [Item] ?? []
     }
     
+    func deleteItem(at index: Int) {
+        let item = items.remove(at: index)
+        CoredataUtils.delete(item: item)
+    }
 }
