@@ -32,4 +32,12 @@ extension MenuDetailsViewController {
         }
         return [delete]
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = model?.items[indexPath.row] {
+            let itemDetailsVC = ItemDetailsViewController()
+            itemDetailsVC.item = item
+            navigationController?.pushViewController(itemDetailsVC, animated: true)
+        }
+    }
 }
