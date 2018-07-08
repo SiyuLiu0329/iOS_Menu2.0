@@ -8,16 +8,18 @@
 
 import UIKit
 
-class MenuItemTableViewCell: UITableViewCell {
+class GenericItemTableViewCell: UITableViewCell {
     static let preferredCellHeight: CGFloat = 120
     static let cellId = "menuDetailsCell"
     
     // TODO place this in a view model later so this can be reused
-    var item: Item? {
+    var viewModel: GenericItemTableViewCellViewModel? {
         didSet {
-            guard let item = item else { return }
-            title.text = item.name ?? "Unamed Item"
-            itemImageView.image = UIImage(named: "food_placeholder")
+            guard let viewModel = viewModel else { return }
+            title.text = viewModel.title
+            subtitle.text = viewModel.subTitle
+            itemImageView.image = viewModel.image
+            accessoryType = viewModel.acessoryType
         }
     }
     
@@ -60,7 +62,7 @@ class MenuItemTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        separatorInset =  UIEdgeInsets(top: 0, left: MenuItemTableViewCell.preferredCellHeight + imageTextSpacing, bottom: 0, right: 0)
+        separatorInset =  UIEdgeInsets(top: 0, left: GenericItemTableViewCell.preferredCellHeight + imageTextSpacing, bottom: 0, right: 0)
         accessoryType = .disclosureIndicator
         setUpViews()
         setUpTitleView()
@@ -77,7 +79,7 @@ class MenuItemTableViewCell: UITableViewCell {
             itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentInset.top
             ),
             itemImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -contentInset.bottom),
-            itemImageView.widthAnchor.constraint(equalToConstant: MenuItemTableViewCell.preferredCellHeight -  contentInset.top - contentInset.bottom)])
+            itemImageView.widthAnchor.constraint(equalToConstant: GenericItemTableViewCell.preferredCellHeight -  contentInset.top - contentInset.bottom)])
         
     }
     

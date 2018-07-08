@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class MenuEditorModel {
     var menu: Menu
@@ -21,4 +22,11 @@ class MenuEditorModel {
         let item = items.remove(at: index)
         CoredataUtils.delete(item: item)
     }
+    
+    func getViewModel(forItemAt index: Int) -> GenericItemTableViewCellViewModel {
+        let item = items[index]
+        let viewModel = GenericItemTableViewCellViewModel(image: UIImage(named: "food_placeholder")!, title: item.name ?? "Unamed Item", subTitle: "$10.95", acessoryType: .disclosureIndicator)
+        return viewModel
+    }
 }
+

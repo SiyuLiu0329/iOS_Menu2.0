@@ -19,8 +19,8 @@ extension MenuDetailsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.cellId, for: indexPath) as! MenuItemTableViewCell
-        cell.item = model?.items[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: GenericItemTableViewCell.cellId, for: indexPath) as! GenericItemTableViewCell
+        cell.viewModel = model?.getViewModel(forItemAt: indexPath.row)
         return cell
     }
 }

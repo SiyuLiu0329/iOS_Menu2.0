@@ -14,7 +14,7 @@ extension MenuDetailsViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return MenuItemTableViewCell.preferredCellHeight
+        return GenericItemTableViewCell.preferredCellHeight
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

@@ -19,7 +19,7 @@ class MenuDetailsViewController: UITableViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.collectionViewBackgroundColour
-        tableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: MenuItemTableViewCell.cellId)
+        tableView.register(GenericItemTableViewCell.self, forCellReuseIdentifier: GenericItemTableViewCell.cellId)
     }
     
     required init?(coder aDecoder: NSCoder) {
