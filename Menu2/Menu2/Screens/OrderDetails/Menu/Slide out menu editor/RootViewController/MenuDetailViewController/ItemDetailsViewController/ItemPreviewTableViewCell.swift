@@ -13,21 +13,26 @@ class ItemPreviewTableViewCell: UITableViewCell {
     var viewModel: GenericItemViewModel? {
         // use an item view model
         didSet {
-            guard let viewModel = viewModel else { return }
-            let w = GenericItemView.requiredHeightAndWidth
-            let x = contentView.center.x - w / 2
-            let y = contentView.center.y - w / 2
-            itemView.frame = CGRect(x: x, y: y + 20, width: w, height: w)
-            itemView.addDropShadow(offset: CGSize(width: 1, height: 1), radius: 2, opacity: 0.6)
-            print(viewModel.name, viewModel.price)
+            let w = GenericItemView.requiredHeightAndWidth / 2
+            itemView.frame = CGRect(x: contentView.center.x - w, y: 50, width: GenericItemView.requiredHeightAndWidth, height: GenericItemView.requiredHeightAndWidth)
+            itemView.viewModel = viewModel
         }
     }
+    
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Preview"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        return label
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
         selectionStyle = .none
         contentView.addSubview(itemView)
+        setUpViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,4 +44,15 @@ class ItemPreviewTableViewCell: UITableViewCell {
         itemView.translatesAutoresizingMaskIntoConstraints = false
         return itemView
     }()
+    
+    private func setUpViews() {
+        contentView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant:16),
+            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 16),
+            titleLabel.heightAnchor.constraint(equalToConstant: 24)])
+        
+        contentView.addSubview(itemView)
+    }
 }

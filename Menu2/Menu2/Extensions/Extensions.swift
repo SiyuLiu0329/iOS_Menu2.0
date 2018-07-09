@@ -42,16 +42,12 @@ extension CALayer {
 extension UIView {
     func addDropShadow(offset: CGSize, radius: CGFloat, opacity: Float) {
         
-        self.layer.masksToBounds = false
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = opacity
-        self.layer.shadowOffset = offset
-        self.layer.shadowRadius = radius
-        
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shouldRasterize = true
-        
-        self.layer.rasterizationScale = UIScreen.main.scale
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
         
     }
 }

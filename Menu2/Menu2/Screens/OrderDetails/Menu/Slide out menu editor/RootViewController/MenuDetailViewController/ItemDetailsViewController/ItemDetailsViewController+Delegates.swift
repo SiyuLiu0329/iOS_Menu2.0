@@ -21,7 +21,7 @@ extension ItemDetailsViewController {
         
         if indexPath.row == 0 || indexPath.row == 4 {
             // section 1 padding
-            return 20
+            return 10
         
         }
         

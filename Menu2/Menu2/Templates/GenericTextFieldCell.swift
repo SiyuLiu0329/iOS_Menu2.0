@@ -25,16 +25,15 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
     }
     
     private func disableEditing() {
-        titleLabel.font = UIFont.systemFont(ofSize: 17)
         titleLabel.frame = normalFrame
         titleLabel.textColor = UIColor.lightGray
-        
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
     }
     
     private func enableEditing() {
-        titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.frame = shrinkedFrame
-        titleLabel.textColor = UIColor.themeColour
+        titleLabel.textColor = UIColor.themeColour.withAlphaComponent(0.7)
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
     
     var viewModel: GenericTextFieldCellViewModel? {

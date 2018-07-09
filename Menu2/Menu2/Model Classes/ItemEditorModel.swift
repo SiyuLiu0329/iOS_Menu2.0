@@ -21,7 +21,7 @@ class ItemEditorModel {
             GenericTextFieldCellViewModel(title: "Description", value: item.itemDescription)
         ]
         
-        itemPreviewModel = GenericItemViewModel(name: name, price: priceText)
+        itemPreviewModel = GenericItemViewModel(item: item)
     }
     
     var itemPreviewModel: GenericItemViewModel
