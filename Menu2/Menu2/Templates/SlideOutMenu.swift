@@ -13,7 +13,7 @@ import UIKit
  */
 class SlideOutMenu: UIView {
     var animationDuration = 0.3
-    var menuWitdh: CGFloat = 400
+    var menuWitdh: CGFloat = 350
     var blackIntensity: CGFloat = 1
     var isMenuHidden: Bool = true {
         

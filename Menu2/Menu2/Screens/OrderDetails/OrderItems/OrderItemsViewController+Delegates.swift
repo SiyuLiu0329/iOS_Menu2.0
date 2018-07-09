@@ -17,6 +17,7 @@ extension OrderItemsViewController: UITableViewDelegate {
         return UIView()
     }
     
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard section == 0 else { return nil }
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: OrderItemTableViewHeaderView.viewId)
@@ -26,5 +27,6 @@ extension OrderItemsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+
     
 }

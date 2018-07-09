@@ -43,6 +43,9 @@
 		DCB24D7020E63B7E002E1B1D /* CoreDataUtils+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB24D6F20E63B7E002E1B1D /* CoreDataUtils+Menu.swift */; };
 		DCB24D7220E63BE9002E1B1D /* CoreDataUtils+Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB24D7120E63BE9002E1B1D /* CoreDataUtils+Item.swift */; };
 		DCB24D7520E63FDE002E1B1D /* MenuItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB24D7420E63FDE002E1B1D /* MenuItemCollectionView.swift */; };
+		DCB4837F20F31F4C0065F888 /* ItemPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4837E20F31F4C0065F888 /* ItemPreviewTableViewCell.swift */; };
+		DCB4838120F320B70065F888 /* GenericItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4838020F320B70065F888 /* GenericItemView.swift */; };
+		DCB4838320F326D70065F888 /* GenericItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4838220F326D70065F888 /* GenericItemViewModel.swift */; };
 		DCB626FE20DBED4D0089F72A /* AllOrdersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB626FD20DBED4D0089F72A /* AllOrdersCollectionView.swift */; };
 		DCB6270220DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6270120DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift */; };
 		DCB6270420DBF0270089F72A /* OrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6270320DBF0270089F72A /* OrderCollectionViewCell.swift */; };
@@ -122,6 +125,9 @@
 		DCB24D6F20E63B7E002E1B1D /* CoreDataUtils+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataUtils+Menu.swift"; sourceTree = "<group>"; };
 		DCB24D7120E63BE9002E1B1D /* CoreDataUtils+Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataUtils+Item.swift"; sourceTree = "<group>"; };
 		DCB24D7420E63FDE002E1B1D /* MenuItemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionView.swift; sourceTree = "<group>"; };
+		DCB4837E20F31F4C0065F888 /* ItemPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		DCB4838020F320B70065F888 /* GenericItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItemView.swift; sourceTree = "<group>"; };
+		DCB4838220F326D70065F888 /* GenericItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItemViewModel.swift; sourceTree = "<group>"; };
 		DCB626FD20DBED4D0089F72A /* AllOrdersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrdersCollectionView.swift; sourceTree = "<group>"; };
 		DCB6270120DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		DCB6270320DBF0270089F72A /* OrderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -382,6 +388,9 @@
 				DCC5FEDA20F19DB500F19BE5 /* ItemDetailsViewController.swift */,
 				DCC5FEDE20F1A18000F19BE5 /* ItemDetailsViewController+Delegates.swift */,
 				DCC5FEE020F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift */,
+				DCB4837E20F31F4C0065F888 /* ItemPreviewTableViewCell.swift */,
+				DCB4838020F320B70065F888 /* GenericItemView.swift */,
+				DCB4838220F326D70065F888 /* GenericItemViewModel.swift */,
 			);
 			path = ItemDetailsViewController;
 			sourceTree = "<group>";
@@ -528,13 +537,16 @@
 				DCB24D7220E63BE9002E1B1D /* CoreDataUtils+Item.swift in Sources */,
 				DC8103A520D93B44008EB752 /* Extensions.swift in Sources */,
 				DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */,
+				DCB4838120F320B70065F888 /* GenericItemView.swift in Sources */,
 				DCC419A320EA0D7A00B98685 /* MenuCollectionViewCellTitleView.swift in Sources */,
 				DCB6270C20DBF72F0089F72A /* OrderCell.swift in Sources */,
 				DCC064B420E70B4B0041256C /* OrderSplitViewController.swift in Sources */,
 				DCC5FEE120F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift in Sources */,
+				DCB4838320F326D70065F888 /* GenericItemViewModel.swift in Sources */,
 				DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */,
 				DC73680C20D4FED20074DC6D /* Menu.xcdatamodeld in Sources */,
 				DC35ACD020F0612A009685A3 /* MenuEditorMenuTableViewController+Delegate.swift in Sources */,
+				DCB4837F20F31F4C0065F888 /* ItemPreviewTableViewCell.swift in Sources */,
 				DCB24D7520E63FDE002E1B1D /* MenuItemCollectionView.swift in Sources */,
 				DC73680920D4FEA00074DC6D /* CoredataUtils.swift in Sources */,
 				DCB0E6A020DC9F850098AD36 /* Section0CollectionViewCell.swift in Sources */,

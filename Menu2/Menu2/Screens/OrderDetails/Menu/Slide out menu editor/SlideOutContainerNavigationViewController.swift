@@ -9,6 +9,8 @@
 import UIKit
 
 class SlideOutContainerNavigationViewController: UINavigationController {
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.barTintColor = UIColor.themeColour

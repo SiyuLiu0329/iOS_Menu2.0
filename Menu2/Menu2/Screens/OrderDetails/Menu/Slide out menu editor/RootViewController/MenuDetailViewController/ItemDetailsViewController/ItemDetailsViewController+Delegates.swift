@@ -13,8 +13,20 @@ extension ItemDetailsViewController {
         return UIView()
     }
     
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            // preview
+            return 180
+        }
+        
+        if indexPath.row == 0 || indexPath.row == 4 {
+            // section 1 padding
+            return 20
+        
+        }
+        
+        // textfields
         return GenericTextFieldCell.preferredCellHeight
     }
+    
 }
