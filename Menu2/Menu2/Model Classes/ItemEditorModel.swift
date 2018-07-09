@@ -24,8 +24,6 @@ class ItemEditorModel {
         itemPreviewModel = GenericItemViewModel(name: name, price: priceText)
     }
     
-    // view models are stored so undo change can be achieved
-    // changed properties are stored seprately
-    let itemPreviewModel: GenericItemViewModel
-    let textFieldViewModels: [GenericTextFieldCellViewModel]
+    var itemPreviewModel: GenericItemViewModel
+    var textFieldViewModels: [GenericTextFieldCellViewModel]
 }
