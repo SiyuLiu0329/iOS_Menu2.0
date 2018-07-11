@@ -14,7 +14,7 @@ extension ItemDetailsViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 1 {
             // preview
             return 1
         }
@@ -25,7 +25,7 @@ extension ItemDetailsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // display a preview of the item in section 0
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: headerCellId, for: indexPath) as! ItemPreviewTableViewCell
             cell.viewModel = itemModel?.itemPreviewModel
             return cell

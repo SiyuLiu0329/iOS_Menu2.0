@@ -14,7 +14,7 @@ extension ItemDetailsViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             // preview
             return 180
         }
@@ -34,11 +34,12 @@ extension ItemDetailsViewController {
         return GenericTextFieldCell.preferredCellHeight
     }
     
+    
 }
 
 extension ItemDetailsViewController: ImagePickerDelegate {
     func didChangeImage() {
-        tableView.reloadSections([0], with: .none) // image changed, reload the preview
+        tableView.reloadSections([1], with: .none) // image changed, reload the preview
     }
 }
 
@@ -47,6 +48,6 @@ extension ItemDetailsViewController: GenericTextFieldCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         // updates could have been done in the cell but that would sacrifice the resuability
         itemModel?.updateTextField(indexed: indexPath.row - 1, with: newText)
-        tableView.reloadSections([0], with: .none) 
+        tableView.reloadSections([1], with: .none)
     }
 }

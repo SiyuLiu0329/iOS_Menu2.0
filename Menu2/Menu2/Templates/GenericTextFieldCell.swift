@@ -37,8 +37,9 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
     
     private func enableEditing() {
         titleLabel.frame = shrinkedFrame
-        titleLabel.textColor = UIColor.themeColour.withAlphaComponent(0.7)
+        titleLabel.textColor = UIColor.themeColour
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        
     }
     
     var viewModel: GenericTextFieldCellViewModel? {
@@ -114,11 +115,12 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
                 self.isTextfieldEditable = false
             }
         }
-        // delegate
     }
     
     @objc private func textFieldDidChange() {
         guard let delegate = delegate else { return }
         delegate.textDidChange(to: textField.text ?? "", in: self)
     }
+
+
 }

@@ -14,7 +14,7 @@ class ItemPreviewTableViewCell: UITableViewCell {
         // use an item view model
         didSet {
             let w = GenericItemView.requiredHeightAndWidth / 2
-            itemView.frame = CGRect(x: contentView.center.x - w, y: 50, width: GenericItemView.requiredHeightAndWidth, height: GenericItemView.requiredHeightAndWidth)
+            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: GenericItemView.requiredHeightAndWidth, height: GenericItemView.requiredHeightAndWidth)
             itemView.viewModel = viewModel
         }
     }
@@ -24,15 +24,16 @@ class ItemPreviewTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Preview"
         label.textColor = UIColor.themeColour
-        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .clear
+        backgroundColor = .white
         selectionStyle = .none
         contentView.addSubview(itemView)
+    
         setUpViews()
     }
     
