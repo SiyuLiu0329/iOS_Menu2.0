@@ -17,8 +17,7 @@ class ItemEditorModel {
         let name = item.name ?? "Unamed Item"
         textFieldViewModels = [
             GenericTextFieldCellViewModel(title: "Item Name", value: name),
-            GenericTextFieldCellViewModel(title: "Item Price", value: priceText),
-            GenericTextFieldCellViewModel(title: "Description", value: item.itemDescription)
+            GenericTextFieldCellViewModel(title: "Item Price", value: priceText)
         ]
         
         itemPreviewModel = GenericItemViewModel(item: item)
@@ -37,4 +36,16 @@ class ItemEditorModel {
         itemPreviewModel.image = imagesForItem[index] // change the image in view model then reload UI
     }
     
+    func updateTextField(indexed index: Int, with newVale: String) {
+        textFieldViewModels[index].value = newVale
+        if index == 0 {
+            itemPreviewModel.name = newVale
+        }
+    }
+    
+    func commitChanges() {
+        item.name = itemPreviewModel.name
+        // item.price
+        
+    }
 }

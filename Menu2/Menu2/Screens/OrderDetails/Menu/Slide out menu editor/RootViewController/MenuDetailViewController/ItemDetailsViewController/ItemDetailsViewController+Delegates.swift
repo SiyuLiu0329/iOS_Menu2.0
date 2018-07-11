@@ -19,12 +19,12 @@ extension ItemDetailsViewController {
             return 180
         }
         
-        if indexPath.row == 5 {
+        if indexPath.row == 4 {
             // image picker
             return 90
         }
         
-        if indexPath.row == 0 || indexPath.row == 4 {
+        if indexPath.row == 0 || indexPath.row == 3 {
             // section 1 padding
             return 10
         
@@ -39,5 +39,14 @@ extension ItemDetailsViewController {
 extension ItemDetailsViewController: ImagePickerDelegate {
     func didChangeImage() {
         tableView.reloadSections([0], with: .none) // image changed, reload the preview
+    }
+}
+
+extension ItemDetailsViewController: GenericTextFieldCellDelegate {
+    func textDidChange(to newText: String, in cell: GenericTextFieldCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        // updates could have been done in the cell but that would sacrifice the resuability
+        itemModel?.updateTextField(indexed: indexPath.row - 1, with: newText)
+        tableView.reloadSections([0], with: .none) 
     }
 }

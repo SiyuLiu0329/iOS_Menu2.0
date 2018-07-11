@@ -9,8 +9,8 @@
 import UIKit
 
 struct GenericTextFieldCellViewModel {
-    let title: String
-    let value: String?
+    var title: String
+    var value: String?
     var isEditable: Bool {
         return value != nil
     }

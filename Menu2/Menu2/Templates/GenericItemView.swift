@@ -44,6 +44,7 @@ class GenericItemView: UIView {
     var itemImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -57,9 +58,9 @@ class GenericItemView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(colourBar)
         addSubview(itemImageView)
         addSubview(nameLabel)
+        addSubview(colourBar)
         backgroundColor = .white
         layer.cornerRadius = 5
         layer.borderWidth = 0.5

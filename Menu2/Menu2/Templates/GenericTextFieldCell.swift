@@ -13,7 +13,12 @@ struct LateralEdgeInsets {
     var right: CGFloat
 }
 
+protocol GenericTextFieldCellDelegate: class {
+    func textDidChange(to newText: String, in cell: GenericTextFieldCell)
+}
+
 class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
+    weak var delegate: GenericTextFieldCellDelegate?
     var isTextfieldEditable = false {
         didSet {
             if isTextfieldEditable {
@@ -66,6 +71,7 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.delegate = self
+        textField.addTarget(self, action: #selector(self.textFieldDidChange), for: .editingChanged)
         return textField
     }()
     
@@ -108,7 +114,11 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
                 self.isTextfieldEditable = false
             }
         }
-        
         // delegate
+    }
+    
+    @objc private func textFieldDidChange() {
+        guard let delegate = delegate else { return }
+        delegate.textDidChange(to: textField.text ?? "", in: self)
     }
 }
