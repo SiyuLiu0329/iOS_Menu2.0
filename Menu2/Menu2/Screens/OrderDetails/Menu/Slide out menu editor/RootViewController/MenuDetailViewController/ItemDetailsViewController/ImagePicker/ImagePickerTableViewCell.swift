@@ -10,6 +10,7 @@ import UIKit
 
 protocol ImagePickerDelegate: class {
     func didChangeImage() // notify the parent view of change
+    func didReqestCameraRollImage(sourceView: UIView)
 }
 
 class ImagePickerTableViewCell: UITableViewCell {
@@ -40,7 +41,8 @@ class ImagePickerTableViewCell: UITableViewCell {
     }()
     
     @objc private func onCameraRollPressed() {
-        
+        guard let delegate = imagePickerDelegate else { return }
+        delegate.didReqestCameraRollImage(sourceView: chooseImageButton)
     }
     
     var titleLabel: UILabel = {

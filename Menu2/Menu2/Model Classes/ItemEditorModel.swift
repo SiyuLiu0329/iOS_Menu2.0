@@ -36,6 +36,10 @@ class ItemEditorModel {
         itemPreviewModel.image = imagesForItem[index] // change the image in view model then reload UI
     }
     
+    func select(image: UIImage) {
+        itemPreviewModel.image = image
+    }
+    
     func updateTextField(indexed index: Int, with newVale: String) {
         textFieldViewModels[index].value = newVale
         if index == 0 {

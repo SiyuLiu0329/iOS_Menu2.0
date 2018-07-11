@@ -78,6 +78,7 @@
 		DCC5FEE320F1A35F00F19BE5 /* GenericTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5FEE220F1A35F00F19BE5 /* GenericTextFieldCell.swift */; };
 		DCD1AEE820E908F80097FB14 /* OrderItemTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */; };
 		DCD5947320F1F5BF000853DB /* GenericTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5947220F1F5BF000853DB /* GenericTextFieldCellViewModel.swift */; };
+		DCFCACD520F64BEA001A4434 /* GenericPopOverImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		DCC5FEE220F1A35F00F19BE5 /* GenericTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextFieldCell.swift; sourceTree = "<group>"; };
 		DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemTableViewHeaderView.swift; sourceTree = "<group>"; };
 		DCD5947220F1F5BF000853DB /* GenericTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPopOverImagePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +415,7 @@
 				DCC5FEDE20F1A18000F19BE5 /* ItemDetailsViewController+Delegates.swift */,
 				DCC5FEE020F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift */,
 				DCB4837E20F31F4C0065F888 /* ItemPreviewTableViewCell.swift */,
+				DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */,
 				DCB1618A20F5AA480061516F /* ImagePicker */,
 			);
 			path = ItemDetailsViewController;
@@ -563,6 +566,7 @@
 				DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */,
 				DCB4838120F320B70065F888 /* GenericItemView.swift in Sources */,
 				DCC419A320EA0D7A00B98685 /* MenuCollectionViewCellTitleView.swift in Sources */,
+				DCFCACD520F64BEA001A4434 /* GenericPopOverImagePickerController.swift in Sources */,
 				DCB6270C20DBF72F0089F72A /* OrderCell.swift in Sources */,
 				DCC064B420E70B4B0041256C /* OrderSplitViewController.swift in Sources */,
 				DCC5FEE120F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift in Sources */,

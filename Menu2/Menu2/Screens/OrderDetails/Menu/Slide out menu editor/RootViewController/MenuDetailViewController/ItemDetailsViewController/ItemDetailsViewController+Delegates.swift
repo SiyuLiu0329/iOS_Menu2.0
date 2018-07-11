@@ -37,9 +37,25 @@ extension ItemDetailsViewController {
     
 }
 
-extension ItemDetailsViewController: ImagePickerDelegate {
+extension ItemDetailsViewController: ImagePickerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     func didChangeImage() {
         tableView.reloadSections([1], with: .none) // image changed, reload the preview
+    }
+    
+    func didReqestCameraRollImage(sourceView: UIView) {
+        let imagePicker =  GenericPopOverImagePickerController()
+        imagePicker.modalPresentationStyle = .popover
+        imagePicker.allowsEditing = true
+        imagePicker.popoverPresentationController?.sourceView = sourceView
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        itemModel?.select(image: image)
+        tableView.reloadSections([1], with: .none)
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
