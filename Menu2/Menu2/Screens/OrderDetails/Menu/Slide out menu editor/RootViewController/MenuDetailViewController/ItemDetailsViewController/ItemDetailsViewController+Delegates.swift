@@ -21,7 +21,7 @@ extension ItemDetailsViewController {
         
         if indexPath.row == 4 {
             // image picker
-            return 120
+            return 90
         }
         
         if indexPath.row == 0 {

@@ -39,6 +39,9 @@
 		DCB0E6A020DC9F850098AD36 /* Section0CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0E69F20DC9F850098AD36 /* Section0CollectionViewCell.swift */; };
 		DCB1618920F5A5270061516F /* ImagePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1618820F5A5260061516F /* ImagePickerTableViewCell.swift */; };
 		DCB1618C20F5AA7F0061516F /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1618B20F5AA7F0061516F /* ImageCollectionView.swift */; };
+		DCB1618E20F5BEFB0061516F /* imagePickerTableViewCell+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1618D20F5BEFB0061516F /* imagePickerTableViewCell+DataSource.swift */; };
+		DCB1619020F5BF400061516F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1618F20F5BF400061516F /* ImageCollectionViewCell.swift */; };
+		DCB1619220F5C0B80061516F /* ImagePickerTableViewCell+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB1619120F5C0B80061516F /* ImagePickerTableViewCell+Delegate.swift */; };
 		DCB24D6A20E63A63002E1B1D /* MenuViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB24D6920E63A62002E1B1D /* MenuViewController+DataSource.swift */; };
 		DCB24D6C20E63B09002E1B1D /* CoredataUtils+Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB24D6B20E63B09002E1B1D /* CoredataUtils+Shift.swift */; };
 		DCB24D6E20E63B3F002E1B1D /* CoreDataUtils+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB24D6D20E63B3F002E1B1D /* CoreDataUtils+Order.swift */; };
@@ -123,6 +126,9 @@
 		DCB0E69F20DC9F850098AD36 /* Section0CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section0CollectionViewCell.swift; sourceTree = "<group>"; };
 		DCB1618820F5A5260061516F /* ImagePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerTableViewCell.swift; sourceTree = "<group>"; };
 		DCB1618B20F5AA7F0061516F /* ImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionView.swift; sourceTree = "<group>"; };
+		DCB1618D20F5BEFB0061516F /* imagePickerTableViewCell+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "imagePickerTableViewCell+DataSource.swift"; sourceTree = "<group>"; };
+		DCB1618F20F5BF400061516F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DCB1619120F5C0B80061516F /* ImagePickerTableViewCell+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePickerTableViewCell+Delegate.swift"; sourceTree = "<group>"; };
 		DCB24D6920E63A62002E1B1D /* MenuViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DCB24D6B20E63B09002E1B1D /* CoredataUtils+Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoredataUtils+Shift.swift"; sourceTree = "<group>"; };
 		DCB24D6D20E63B3F002E1B1D /* CoreDataUtils+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataUtils+Order.swift"; sourceTree = "<group>"; };
@@ -331,6 +337,9 @@
 			isa = PBXGroup;
 			children = (
 				DCB1618820F5A5260061516F /* ImagePickerTableViewCell.swift */,
+				DCB1618D20F5BEFB0061516F /* imagePickerTableViewCell+DataSource.swift */,
+				DCB1619120F5C0B80061516F /* ImagePickerTableViewCell+Delegate.swift */,
+				DCB1618F20F5BF400061516F /* ImageCollectionViewCell.swift */,
 				DCB1618B20F5AA7F0061516F /* ImageCollectionView.swift */,
 			);
 			path = ImagePicker;
@@ -573,6 +582,7 @@
 				DCA5D68920E6218B002E91BA /* MenuCollectionViewCell.swift in Sources */,
 				DCB6270820DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift in Sources */,
 				DCC5FEDB20F19DB500F19BE5 /* ItemDetailsViewController.swift in Sources */,
+				DCB1619020F5BF400061516F /* ImageCollectionViewCell.swift in Sources */,
 				DCC064B720E711D10041256C /* OrderItemsTableView.swift in Sources */,
 				DCB6270E20DC68290089F72A /* OrderModel.swift in Sources */,
 				DC97842720E8547900AAAF94 /* OrderItemsModel.swift in Sources */,
@@ -584,10 +594,12 @@
 				DCBDF3DE20EB947E0031E44C /* MenuEditorMenu.swift in Sources */,
 				DCC5FEDF20F1A18000F19BE5 /* ItemDetailsViewController+Delegates.swift in Sources */,
 				DCB626FE20DBED4D0089F72A /* AllOrdersCollectionView.swift in Sources */,
+				DCB1619220F5C0B80061516F /* ImagePickerTableViewCell+Delegate.swift in Sources */,
 				DC35ACCC20F05EBA009685A3 /* GenericItemTableViewCell.swift in Sources */,
 				DCB6270220DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift in Sources */,
 				DC9EE76420E3469A002C8BE0 /* MenuCollectionView.swift in Sources */,
 				DCA5D68B20E622A1002E91BA /* MenuViewController+Delegate.swift in Sources */,
+				DCB1618E20F5BEFB0061516F /* imagePickerTableViewCell+DataSource.swift in Sources */,
 				DC1F30DE20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift in Sources */,
 				DC9EE76620E34838002C8BE0 /* MenuModel.swift in Sources */,
 				DC1F30E020E7A26100EB1232 /* OrderItemsViewController+DataSource.swift in Sources */,
