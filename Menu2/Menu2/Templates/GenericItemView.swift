@@ -43,6 +43,7 @@ class GenericItemView: UIView {
     
     var itemImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     

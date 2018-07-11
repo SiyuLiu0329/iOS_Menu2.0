@@ -19,8 +19,8 @@ extension ItemDetailsViewController {
             return 1
         }
         
-        // 3 text fields + 1 image picker + 1 padding
-        return (itemModel?.textFieldViewModels.count ?? 0) + 2
+        // 3 text fields + 1 image picker + 2 padding
+        return (itemModel?.textFieldViewModels.count ?? 0) + 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,12 +31,14 @@ extension ItemDetailsViewController {
             return cell
         }
         
-        if indexPath.row == 4 {
+        if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ImagePickerTableViewCell.cellId, for: indexPath) as! ImagePickerTableViewCell
+            cell.itemEditorModel = itemModel
+            cell.imagePickerDelegate = self
             return cell
         }
         
-        if indexPath.row == 0 {
+        if indexPath.row == 0 || indexPath.row == 4 {
             // add padding to the top and bottom of this section
             // use a table view cell instead of header view becuase headers will not scroll together with the cells
             let cell = tableView.dequeueReusableCell(withIdentifier: paddingCellId, for: indexPath)

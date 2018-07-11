@@ -6,11 +6,11 @@
 //  Copyright © 2018 Siyu Liu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ItemEditorModel {
     var item: Item
-    
+
     init(item: Item) {
         self.item = item
         let priceText = (item.price == nil) ? "0" : "\(item.price!)"
@@ -26,4 +26,15 @@ class ItemEditorModel {
     
     var itemPreviewModel: GenericItemViewModel
     var textFieldViewModels: [GenericTextFieldCellViewModel]
+    
+    var imagesForItem = [
+        UIImage(named: "food"),
+        UIImage(named: "coffee"),
+        UIImage(named: "cup")
+    ]
+    
+    func selectImage(at index: Int) {
+        itemPreviewModel.image = imagesForItem[index] // change the image in view model then reload UI
+    }
+    
 }

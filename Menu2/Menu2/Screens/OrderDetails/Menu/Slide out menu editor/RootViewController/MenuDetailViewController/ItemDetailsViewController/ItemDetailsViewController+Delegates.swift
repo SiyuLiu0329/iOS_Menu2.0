@@ -19,12 +19,12 @@ extension ItemDetailsViewController {
             return 180
         }
         
-        if indexPath.row == 4 {
+        if indexPath.row == 5 {
             // image picker
             return 90
         }
         
-        if indexPath.row == 0 {
+        if indexPath.row == 0 || indexPath.row == 4 {
             // section 1 padding
             return 10
         
@@ -34,4 +34,10 @@ extension ItemDetailsViewController {
         return GenericTextFieldCell.preferredCellHeight
     }
     
+}
+
+extension ItemDetailsViewController: ImagePickerDelegate {
+    func didChangeImage() {
+        tableView.reloadSections([0], with: .none) // image changed, reload the preview
+    }
 }

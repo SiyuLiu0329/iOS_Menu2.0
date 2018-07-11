@@ -10,12 +10,12 @@ import UIKit
 
 extension ImagePickerTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return itemEditorModel?.imagesForItem.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellId, for: indexPath) as! ImageCollectionViewCell
-        cell.backgroundColor = .red
+        cell.image = itemEditorModel?.imagesForItem[indexPath.row]
         return cell
     }
     

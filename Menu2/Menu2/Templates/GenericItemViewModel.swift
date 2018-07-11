@@ -9,9 +9,9 @@
 import UIKit
 
 struct GenericItemViewModel {
-    let name: String
-    let price: String
-    let image: UIImage?
+    var name: String
+    var price: String
+    var image: UIImage?
     
     init(item: Item) {
         name = item.name ?? "Unamed Item"
