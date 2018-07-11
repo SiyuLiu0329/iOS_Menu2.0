@@ -23,6 +23,7 @@ class ItemPreviewTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Preview"
+        label.textColor = UIColor.themeColour
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return label
     }()

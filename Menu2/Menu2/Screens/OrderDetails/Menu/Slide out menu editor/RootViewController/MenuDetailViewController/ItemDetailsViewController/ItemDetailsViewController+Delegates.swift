@@ -19,7 +19,12 @@ extension ItemDetailsViewController {
             return 180
         }
         
-        if indexPath.row == 0 || indexPath.row == 4 {
+        if indexPath.row == 4 {
+            // image picker
+            return 120
+        }
+        
+        if indexPath.row == 0 {
             // section 1 padding
             return 10
         

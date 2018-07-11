@@ -19,6 +19,7 @@ class ItemDetailsViewController: UITableViewController {
         setUpNavBar()
         tableView.register(GenericTextFieldCell.self, forCellReuseIdentifier: GenericTextFieldCell.cellId)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: paddingCellId)
+        tableView.register(ImagePickerTableViewCell.self, forCellReuseIdentifier: ImagePickerTableViewCell.cellId)
         tableView.register(ItemPreviewTableViewCell.self, forCellReuseIdentifier: headerCellId)
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour
         tableView.separatorColor = .clear

@@ -16,10 +16,12 @@ class GenericItemView: UIView {
         didSet {
             guard let viewModel = viewModel else { return }
             if let image = viewModel.image {
+                // split the view
                 itemImageView.image = image
                 itemImageView.frame = CGRect(x: 0, y: colourBarHeight, width: frame.width, height: imageViewHeight)
                 nameLabel.frame = CGRect(x: 0, y: 80 + colourBarHeight, width: frame.width, height: frame.height - imageViewHeight - colourBarHeight)
             } else {
+                // make the label take up the whole space
                 nameLabel.frame = CGRect(x: 0, y: colourBarHeight, width: frame.width, height: frame.height - colourBarHeight)
                 itemImageView.frame = CGRect.zero
             }
