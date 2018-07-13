@@ -30,7 +30,8 @@ class GenericItemViewWithInfo: UIView {
             let height = itemView.preferredHeight
             itemView.frame = CGRect(x: 0, y: 0, width: itemView.preferredWidth, height: height)
             itemIdLabel.frame = CGRect(x: 0, y: height, width: frame.width, height: frame.height - height)
-            itemIdLabel.text = "randomId"
+            itemIdLabel.text = viewModel.id
+
             itemView.viewModel = viewModel
         }
     }

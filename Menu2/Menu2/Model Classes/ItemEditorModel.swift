@@ -18,7 +18,7 @@ class ItemEditorModel {
         textFieldViewModels = [
             GenericTextFieldCellViewModel(title: "Item Name", value: name, keyboardType: .default),
             GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad),
-            GenericTextFieldCellViewModel(title: "Identifier", value: priceText, keyboardType: .default)
+            GenericTextFieldCellViewModel(title: "Identifier", value: item.identifier, keyboardType: .default)
         ]
         
         itemPreviewModel = GenericItemViewModel(item: item)
@@ -49,7 +49,7 @@ class ItemEditorModel {
         }
         
         if index == 2 {
-            // update the identifier (not implemented)
+            itemPreviewModel.id = newVale
         }
     }
     
