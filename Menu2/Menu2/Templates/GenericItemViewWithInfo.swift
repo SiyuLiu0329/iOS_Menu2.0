@@ -27,10 +27,19 @@ class GenericItemViewWithInfo: UIView {
     var viewModel: GenericItemViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            itemView.frame = CGRect(x: 0, y: 0, width: itemView.preferredWidth, height: itemView.preferredHeight)
+            let height = itemView.preferredHeight
+            itemView.frame = CGRect(x: 0, y: 0, width: itemView.preferredWidth, height: height)
+            itemIdLabel.frame = CGRect(x: 0, y: height, width: frame.width, height: frame.height - height)
+            itemIdLabel.text = "randomId"
             itemView.viewModel = viewModel
         }
     }
+    
+    var itemIdLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        return label
+    }()
     
     var itemView: GenericItemView = {
         let itemView = GenericItemView()
@@ -40,6 +49,7 @@ class GenericItemViewWithInfo: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(itemView)
+        addSubview(itemIdLabel)
 //        backgroundColor = .red
     }
     

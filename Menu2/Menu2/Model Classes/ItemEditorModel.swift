@@ -17,7 +17,8 @@ class ItemEditorModel {
         let name = item.name ?? "Unamed Item"
         textFieldViewModels = [
             GenericTextFieldCellViewModel(title: "Item Name", value: name, keyboardType: .default),
-            GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad)
+            GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad),
+            GenericTextFieldCellViewModel(title: "Identifier", value: priceText, keyboardType: .default)
         ]
         
         itemPreviewModel = GenericItemViewModel(item: item)
@@ -44,6 +45,11 @@ class ItemEditorModel {
         textFieldViewModels[index].value = newVale
         if index == 0 {
             itemPreviewModel.name = newVale
+            return
+        }
+        
+        if index == 2 {
+            // update the identifier (not implemented)
         }
     }
     

@@ -31,14 +31,14 @@ extension ItemDetailsViewController {
             return cell
         }
         
-        if indexPath.row == 4 {
+        if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ImagePickerTableViewCell.cellId, for: indexPath) as! ImagePickerTableViewCell
             cell.itemEditorModel = itemModel
             cell.imagePickerDelegate = self
             return cell
         }
         
-        if indexPath.row == 0 || indexPath.row == 3 {
+        if indexPath.row == 0 || indexPath.row == 4 {
             // add padding to the top and bottom of this section
             // use a table view cell instead of header view becuase headers will not scroll together with the cells
             let cell = tableView.dequeueReusableCell(withIdentifier: paddingCellId, for: indexPath)
