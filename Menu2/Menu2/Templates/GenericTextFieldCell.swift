@@ -47,6 +47,7 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
             guard let viewModel = viewModel else { return }
             titleLabel.text = viewModel.title
             textField.text = viewModel.value
+            textField.keyboardType = viewModel.keyboardType
             layoutViews()
             
             isTextfieldEditable = viewModel.isEditable
@@ -93,7 +94,6 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
         selectionStyle = .none
         contentView.addSubview(textField)
         contentView.addSubview(titleLabel)
-        
         contentView.addSubview(line)
     }
     
@@ -101,8 +101,24 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let formatter = NumberFormatter()
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.keyboardType == .default {
+            return true
+        }
+        
+        if string.count == 0 || (string=="-" && range.location==0) {
+            return true // allow backspace and negative sign at the start
+        }
+        
+        return formatter.number(from: "\(textField.text!)\(string)") != nil
+
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.3) {
+            // animate if the textfield is empty
             self.isTextfieldEditable = true
             self.line.backgroundColor = UIColor.themeColour
         }
@@ -110,6 +126,7 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.3) {
+            // animate if textfield is empty
             self.line.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
             if self.textField.text!.isEmpty {
                 self.isTextfieldEditable = false
@@ -118,6 +135,8 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @objc private func textFieldDidChange() {
+        // notify parent view (or model) of text change
+        // - in this case the preview is updated
         guard let delegate = delegate else { return }
         delegate.textDidChange(to: textField.text ?? "", in: self)
     }

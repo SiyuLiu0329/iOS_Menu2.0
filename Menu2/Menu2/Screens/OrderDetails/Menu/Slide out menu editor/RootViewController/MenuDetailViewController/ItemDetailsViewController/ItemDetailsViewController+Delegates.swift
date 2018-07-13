@@ -54,7 +54,7 @@ extension ItemDetailsViewController: ImagePickerDelegate, UIImagePickerControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         itemModel?.select(image: image)
-        tableView.reloadSections([1], with: .none)
+        tableView.reloadSections([1], with: .none) // section 1 is the preview
         picker.dismiss(animated: true, completion: nil)
     }
 }

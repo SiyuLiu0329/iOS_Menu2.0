@@ -22,7 +22,7 @@ class GenericItemViewWithInfo: UIView {
         return itemView.preferredWidth
     }
     
-    var infoHeight: CGFloat = 20
+    var infoHeight: CGFloat = 24
     
     var viewModel: GenericItemViewModel? {
         didSet {
@@ -40,6 +40,7 @@ class GenericItemViewWithInfo: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(itemView)
+//        backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {

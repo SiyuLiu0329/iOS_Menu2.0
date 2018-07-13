@@ -16,8 +16,8 @@ class ItemEditorModel {
         let priceText = (item.price == nil) ? "0" : "\(item.price!)"
         let name = item.name ?? "Unamed Item"
         textFieldViewModels = [
-            GenericTextFieldCellViewModel(title: "Item Name", value: name),
-            GenericTextFieldCellViewModel(title: "Item Price", value: priceText)
+            GenericTextFieldCellViewModel(title: "Item Name", value: name, keyboardType: .default),
+            GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad)
         ]
         
         itemPreviewModel = GenericItemViewModel(item: item)
