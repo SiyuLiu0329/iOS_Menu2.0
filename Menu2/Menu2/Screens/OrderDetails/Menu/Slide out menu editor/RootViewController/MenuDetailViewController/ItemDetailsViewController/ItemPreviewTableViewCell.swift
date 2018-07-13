@@ -13,8 +13,8 @@ class ItemPreviewTableViewCell: UITableViewCell {
     var viewModel: GenericItemViewModel? {
         // use an item view model
         didSet {
-            let w = GenericItemView.requiredHeightAndWidth / 2
-            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: GenericItemView.requiredHeightAndWidth, height: GenericItemView.requiredHeightAndWidth)
+            let w = GenericItemView.preferredWidth / 2
+            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: GenericItemView.preferredWidth, height: GenericItemView.preferredWidth * GenericItemView.prefferedAspectRatio)
             itemView.viewModel = viewModel
         }
     }

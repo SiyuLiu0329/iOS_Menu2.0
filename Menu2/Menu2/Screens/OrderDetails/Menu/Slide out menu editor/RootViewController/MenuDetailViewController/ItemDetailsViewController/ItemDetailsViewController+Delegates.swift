@@ -16,7 +16,7 @@ extension ItemDetailsViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
             // preview
-            return 180
+            return 280
         }
         
         if indexPath.row == 4 {

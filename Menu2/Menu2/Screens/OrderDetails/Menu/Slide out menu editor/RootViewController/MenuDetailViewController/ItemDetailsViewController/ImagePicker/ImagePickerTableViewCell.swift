@@ -32,7 +32,7 @@ class ImagePickerTableViewCell: UITableViewCell {
     
     lazy var chooseImageButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.themeColour.withAlphaComponent(0.6), for: .normal)
+        button.setTitleColor(UIColor.themeColour, for: .normal)
         button.setTitleColor(UIColor.themeColour.withAlphaComponent(0.2), for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Camera Roll", for: .normal)
