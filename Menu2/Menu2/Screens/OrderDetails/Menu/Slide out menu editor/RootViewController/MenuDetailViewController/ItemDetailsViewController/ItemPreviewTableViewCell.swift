@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
+/*
+ A simple item preview at the bottom of the table view, the content changes in real time
+ */
 class ItemPreviewTableViewCell: UITableViewCell {
     
     var viewModel: GenericItemViewModel? {
         // use an item view model
         didSet {
-            let w = GenericItemView.preferredWidth / 2
-            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: GenericItemView.preferredWidth, height: GenericItemView.preferredWidth * GenericItemView.prefferedAspectRatio)
+            let w = itemView.preferredWidth / 2
+            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: itemView.preferredWidth, height: itemView.preferredHeight)
             itemView.viewModel = viewModel
         }
     }
@@ -41,8 +43,8 @@ class ItemPreviewTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var itemView: GenericItemView = {
-        let itemView = GenericItemView()
+    var itemView: GenericItemViewWithInfo = {
+        let itemView = GenericItemViewWithInfo()
         itemView.translatesAutoresizingMaskIntoConstraints = false
         return itemView
     }()

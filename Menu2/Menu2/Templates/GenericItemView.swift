@@ -9,13 +9,22 @@
 import UIKit
 
 class GenericItemView: UIView {
-    static let preferredWidth: CGFloat = 160
-    static let prefferedAspectRatio: CGFloat = 1.2
-    let imageViewHeight: CGFloat = 120
+    var preferredWidth: CGFloat = 160
+    
+    var preferredHeight: CGFloat {
+        return preferredWidth * 1.2
+    }
+    
+    var imageViewHeight: CGFloat {
+        return preferredHeight * 3/5
+    }
+    
     var nameLabelInset: CGFloat = 5
+    
     var viewModel: GenericItemViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
+            // check if the item has an image and layout the view basied on the result
             if let image = viewModel.image {
                 // split the view
                 itemImageView.image = image
@@ -42,7 +51,7 @@ class GenericItemView: UIView {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.numberOfLines = 0
         return label
     }()

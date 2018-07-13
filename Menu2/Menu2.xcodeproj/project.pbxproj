@@ -31,6 +31,7 @@
 		DC9D547A20E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D547920E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift */; };
 		DC9D547C20E66BAD00D50908 /* MenuCollectionViewCell+MenuItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D547B20E66BAD00D50908 /* MenuCollectionViewCell+MenuItemDataSource.swift */; };
 		DC9D547E20E66C3A00D50908 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D547D20E66C3A00D50908 /* MenuItemCell.swift */; };
+		DC9EC05920F8B796005DAAF9 /* GenericItemViewWithInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EC05820F8B796005DAAF9 /* GenericItemViewWithInfo.swift */; };
 		DC9EE76420E3469A002C8BE0 /* MenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EE76320E3469A002C8BE0 /* MenuCollectionView.swift */; };
 		DC9EE76620E34838002C8BE0 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EE76520E34838002C8BE0 /* MenuModel.swift */; };
 		DCA5D68920E6218B002E91BA /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5D68820E6218B002E91BA /* MenuCollectionViewCell.swift */; };
@@ -119,6 +120,7 @@
 		DC9D547920E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuCollectionViewCell+MenuItemDelegate.swift"; sourceTree = "<group>"; };
 		DC9D547B20E66BAD00D50908 /* MenuCollectionViewCell+MenuItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuCollectionViewCell+MenuItemDataSource.swift"; sourceTree = "<group>"; };
 		DC9D547D20E66C3A00D50908 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		DC9EC05820F8B796005DAAF9 /* GenericItemViewWithInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItemViewWithInfo.swift; sourceTree = "<group>"; };
 		DC9EE76320E3469A002C8BE0 /* MenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionView.swift; sourceTree = "<group>"; };
 		DC9EE76520E34838002C8BE0 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		DCA5D68820E6218B002E91BA /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		DCBDF3DC20EB94290031E44C /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				DC9EC05820F8B796005DAAF9 /* GenericItemViewWithInfo.swift */,
 				DCB4838020F320B70065F888 /* GenericItemView.swift */,
 				DCB4838220F326D70065F888 /* GenericItemViewModel.swift */,
 				DCBDF3D920EB81290031E44C /* SlideOutMenu.swift */,
@@ -582,6 +585,7 @@
 				DCBDF3E020EBB7650031E44C /* SlideOutContainerNavigationViewController.swift in Sources */,
 				DCBDF3E820EC340B0031E44C /* MenuEditorMenuTableViewController+DataSource.swift in Sources */,
 				DC930A2A20F1E7EA00BF51E8 /* ItemEditorModel.swift in Sources */,
+				DC9EC05920F8B796005DAAF9 /* GenericItemViewWithInfo.swift in Sources */,
 				DC9D547A20E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift in Sources */,
 				DCA5D68920E6218B002E91BA /* MenuCollectionViewCell.swift in Sources */,
 				DCB6270820DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift in Sources */,
