@@ -31,6 +31,7 @@ class ItemDetailsViewController: UITableViewController {
     }
     
     @objc private func onSavePressed() {
-        // get inputs from textfields...
+        itemModel?.commitChanges()
+        navigationController?.popViewController(animated: true)
     }
 }

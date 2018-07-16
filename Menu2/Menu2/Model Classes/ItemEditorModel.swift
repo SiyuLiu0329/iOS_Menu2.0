@@ -55,7 +55,9 @@ class ItemEditorModel {
     
     func commitChanges() {
         item.name = itemPreviewModel.name
-        // item.price
-        
+        item.price = NSDecimalNumber(string: textFieldViewModels[1].value)
+        item.identifier = textFieldViewModels[2].value
+        CoredataUtils.saveContext()
+        // sort and calulcate reload index
     }
 }

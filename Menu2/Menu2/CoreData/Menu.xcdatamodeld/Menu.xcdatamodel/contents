@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326h" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imgData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="transferrable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -29,7 +30,7 @@
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="shift" inverseEntity="Order" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-1086.27734375" positionY="39.1640625" width="128" height="135"/>
+        <element name="Item" positionX="-1086.27734375" positionY="39.1640625" width="128" height="150"/>
         <element name="Menu" positionX="-1396.4140625" positionY="-25.65234375" width="128" height="75"/>
         <element name="Order" positionX="-844.671875" positionY="16.6484375" width="128" height="195"/>
         <element name="Shift" positionX="-1087.29296875" positionY="182.8984375" width="128" height="75"/>
