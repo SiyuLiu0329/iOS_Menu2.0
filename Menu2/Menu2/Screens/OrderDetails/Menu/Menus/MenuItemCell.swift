@@ -13,17 +13,22 @@ import UIKit
  */
 class MenuItemCell: UICollectionViewCell {
     static let cellId = "itemCell"
-    
+    static let cellHeight = GenericItemViewWithInfo.preferredHeight
+    static let cellWidth = GenericItemViewWithInfo.preferredWidth
+    var item: Item? {
+        didSet {
+            itemView.frame = contentView.frame
+            guard let item = item else { return }
+            itemView.viewModel = GenericItemViewModel(item: item)
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
-        
-        layer.cornerRadius = 5
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.themeColour.withAlphaComponent(0.4).cgColor
-        
-        addDropShadow(offset: CGSize(width: 1.0, height: 1.0), radius: 1, opacity: 0.6)
+        backgroundColor = .clear
+        contentView.addSubview(itemView)
     }
+    
+    var itemView = GenericItemViewWithInfo()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

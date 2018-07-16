@@ -10,11 +10,12 @@ import UIKit
 
 extension MenuCollectionViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menu?.items?.count ?? 0
+        return itemsModel?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemCell.cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemCell.cellId, for: indexPath) as! MenuItemCell
+        cell.item = itemsModel?.items[indexPath.row]
         return cell
     }
     

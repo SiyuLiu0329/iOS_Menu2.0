@@ -15,13 +15,11 @@ import UIKit
  */
 class MenuCollectionViewCell: UICollectionViewCell {
     static let cellId = "menuCell"
-    var menu: Menu? {
-        // update the cell when this value is set
-        // this value is set whenever this cell becomes visible
+    var itemsModel: ItemModel? {
         didSet {
-            guard let menu = menu else { return }
-            menuItemCollectionView.reloadData() // solves the collection view within collection view not loading problem
-            sectionTitleView.setTitle(menu.name ?? "Unamed Menu")
+            guard let menuModel = itemsModel else { return }
+            menuItemCollectionView.reloadData()
+            sectionTitleView.setTitle(menuModel.menu.name ?? "Unnamed Menu")
         }
     }
     

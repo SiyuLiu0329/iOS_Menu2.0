@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class MenuEditorModel {
+class ItemModel {
     var menu: Menu
     var items: [Item]
     init(menu: Menu) {

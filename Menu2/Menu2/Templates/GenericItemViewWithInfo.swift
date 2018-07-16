@@ -13,22 +13,22 @@ import UIKit
  - Recommend using the preferred dimensions when setting up the frame
  */
 class GenericItemViewWithInfo: UIView {
-    var preferredHeight: CGFloat {
+    static var preferredHeight: CGFloat {
         // make space for item price label and item number label
-        return itemView.preferredHeight + infoHeight
+        return GenericItemView.preferredHeight + infoHeight
     }
     
-    var preferredWidth: CGFloat {
-        return itemView.preferredWidth
+    static var preferredWidth: CGFloat {
+        return GenericItemView.preferredWidth
     }
     
-    var infoHeight: CGFloat = 24
+    static var infoHeight: CGFloat = 24
     
     var viewModel: GenericItemViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            let height = itemView.preferredHeight
-            itemView.frame = CGRect(x: 0, y: 0, width: itemView.preferredWidth, height: height)
+            let height = GenericItemView.preferredHeight
+            itemView.frame = CGRect(x: 0, y: 0, width: GenericItemView.preferredWidth, height: height)
             itemIdLabel.frame = CGRect(x: 0, y: height, width: frame.width, height: frame.height - height)
             itemIdLabel.text = viewModel.id
 

@@ -9,17 +9,17 @@
 import UIKit
 
 class GenericItemView: UIView {
-    var preferredWidth: CGFloat = 160
+    static var preferredWidth: CGFloat = 155
     
-    var preferredHeight: CGFloat {
+    static var preferredHeight: CGFloat {
         return preferredWidth * 1.2
     }
     
-    var imageViewHeight: CGFloat {
+    static var imageViewHeight: CGFloat {
         return preferredHeight * 3/5
     }
     
-    var nameLabelInset: CGFloat = 5
+    static var nameLabelInset: CGFloat = 5
     
     var viewModel: GenericItemViewModel? {
         didSet {
@@ -28,11 +28,11 @@ class GenericItemView: UIView {
             if let image = viewModel.image {
                 // split the view
                 itemImageView.image = image
-                itemImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: imageViewHeight)
-                nameLabel.frame = CGRect(x: nameLabelInset, y: imageViewHeight + nameLabelInset, width: frame.width - 2 * nameLabelInset, height: frame.height - imageViewHeight - 2 * nameLabelInset)
+                itemImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: GenericItemView.imageViewHeight)
+                nameLabel.frame = CGRect(x: GenericItemView.nameLabelInset, y: GenericItemView.imageViewHeight + GenericItemView.nameLabelInset, width: frame.width - 2 * GenericItemView.nameLabelInset, height: frame.height - GenericItemView.imageViewHeight - 2 * GenericItemView.nameLabelInset)
             } else {
                 // make the label take up the whole space
-                nameLabel.frame = CGRect(x: nameLabelInset, y: nameLabelInset, width: frame.width -  2 * nameLabelInset, height: frame.height - 2 * nameLabelInset)
+                nameLabel.frame = CGRect(x: GenericItemView.nameLabelInset, y: GenericItemView.nameLabelInset, width: frame.width -  2 * GenericItemView.nameLabelInset, height: frame.height - 2 * GenericItemView.nameLabelInset)
                 itemImageView.frame = CGRect.zero
             }
             nameLabel.text = viewModel.name

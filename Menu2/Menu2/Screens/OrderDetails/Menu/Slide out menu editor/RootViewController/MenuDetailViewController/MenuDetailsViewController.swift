@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuDetailsViewController: UITableViewController {
-    var model: MenuEditorModel? {
+    var model: ItemModel? {
         didSet {
             guard let model = model else { return }
             navigationItem.title = model.menu.name ?? "Unamed Menu"

@@ -18,7 +18,7 @@ extension MenuViewController: UICollectionViewDataSource {
         // check which collection view it is ( there are 2 collection views, one used to show menu items the other used to show titles at the bottom of the screen)
         if collectionView == menuCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellId, for: indexPath) as! MenuCollectionViewCell
-            cell.menu = menuModel.menus[indexPath.row]
+            cell.itemsModel = ItemModel(menu: menuModel.menus[indexPath.row])
             return cell
             
         } else {
