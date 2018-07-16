@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol SlideOutMenuDelegate: class {
+    func SlideOutMenuStateDidChange(hidden: Bool)
+}
 /*
  A simple self contained slidout menu designed to be resued by subclassing
  */
 class SlideOutMenu: UIView {
+    weak var delegate: SlideOutMenuDelegate?
     var animationDuration = 0.3
     var menuWitdh: CGFloat = 350
     var blackIntensity: CGFloat = 1
@@ -27,6 +31,8 @@ class SlideOutMenu: UIView {
             // make user-interactable when the slide out menu is shown
             // make non-user-interactable when the slide out menu is hidden (so this view will not intercept touch events)
             isUserInteractionEnabled = !newValue
+            
+            delegate?.SlideOutMenuStateDidChange(hidden: newValue)
         }
     }
     

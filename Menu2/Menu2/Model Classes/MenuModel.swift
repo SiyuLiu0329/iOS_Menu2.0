@@ -25,6 +25,10 @@ class MenuModel {
     }
     
     init() {
+        loadMenus()
+    }
+    
+    func loadMenus() {
         if let loadedMenus = CoredataUtils.loadAllMenus() {
             menus = loadedMenus
         }

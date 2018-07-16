@@ -63,3 +63,15 @@ extension MenuViewController: MenuEditorDelegate {
         slideOutMenuEditor.isMenuHidden = true
     }
 }
+
+
+extension MenuViewController: SlideOutMenuDelegate {
+    func SlideOutMenuStateDidChange(hidden: Bool) {
+        // reload data here
+        // TODO: make it more efficient (possibly by setting a flag)
+        // TODO: show the correct page if the current page was deleted
+        menuModel.loadMenus()
+        titleCollectionView.reloadData()
+        menuCollectionView.reloadData()
+    }
+}

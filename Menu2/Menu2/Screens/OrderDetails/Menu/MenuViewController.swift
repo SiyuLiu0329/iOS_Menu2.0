@@ -71,7 +71,12 @@ class MenuViewController: UIViewController {
         button.addTarget(self, action: #selector(self.onSettingPressed), for: .touchUpInside)
         return button
     }()
-    let slideOutMenuEditor = MenuEditor()
+    
+    lazy var slideOutMenuEditor: MenuEditor = {
+        let editor = MenuEditor()
+        editor.delegate = self
+        return editor
+    }()
 
     override func viewDidLayoutSubviews() {
         slideOutMenuEditor.frame = view.bounds
@@ -80,7 +85,6 @@ class MenuViewController: UIViewController {
     
     @objc private func onSettingPressed() {
         slideOutMenuEditor.isMenuHidden = !slideOutMenuEditor.isMenuHidden
-        
     }
     
     override func viewDidLoad() {
