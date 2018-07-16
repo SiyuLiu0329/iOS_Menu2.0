@@ -15,11 +15,11 @@ class MenuItemCell: UICollectionViewCell {
     static let cellId = "itemCell"
     static let cellHeight = GenericItemViewWithInfo.preferredHeight
     static let cellWidth = GenericItemViewWithInfo.preferredWidth
-    var item: Item? {
+    var viewModel: GenericItemViewModel? {
         didSet {
             itemView.frame = contentView.frame
-            guard let item = item else { return }
-            itemView.viewModel = GenericItemViewModel(item: item)
+            guard let viewModel = viewModel else { return }
+            itemView.viewModel = viewModel
         }
     }
     override init(frame: CGRect) {

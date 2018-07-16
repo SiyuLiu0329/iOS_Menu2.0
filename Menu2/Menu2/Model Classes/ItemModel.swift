@@ -23,9 +23,15 @@ class ItemModel {
         CoredataUtils.delete(item: item)
     }
     
-    func getViewModel(forItemAt index: Int) -> GenericItemTableViewCellViewModel {
+    func getTableViewCellViewModel(forItemAt index: Int) -> GenericItemTableViewCellViewModel {
         let item = items[index]
         let viewModel = GenericItemTableViewCellViewModel(image: UIImage(named: "food_placeholder")!, title: item.name ?? "Unamed Item", subTitle: "$10.95", acessoryType: .disclosureIndicator)
+        return viewModel
+    }
+    
+    func getItemViewModel(forItemAt index: Int) -> GenericItemViewModel {
+        let item = items[index]
+        let viewModel = GenericItemViewModel(item: item)
         return viewModel
     }
 }
