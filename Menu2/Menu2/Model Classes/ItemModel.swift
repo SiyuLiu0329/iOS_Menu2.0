@@ -16,6 +16,12 @@ class ItemModel {
     init(menu: Menu) {
         self.menu = menu
         self.items = menu.items?.allObjects as? [Item] ?? []
+        self.items.sort(by: {$0.name! < $1.name!})
+    }
+    
+    func loadItems() {
+        self.items = menu.items?.allObjects as? [Item] ?? []
+        self.items.sort(by: {$0.name! < $1.name!})
     }
     
     func deleteItem(at index: Int) {
@@ -33,6 +39,10 @@ class ItemModel {
         let item = items[index]
         let viewModel = GenericItemViewModel(item: item)
         return viewModel
+    }
+    
+    func getIndex(of item: Item) -> Int? {
+        return items.lastIndex(where: {item == $0})
     }
 }
 

@@ -8,9 +8,14 @@
 
 import UIKit
 
+
+protocol ItemDetailsViewControllerDelegate: class {
+    func didChangeItem(item: Item, isItemNew: Bool)
+}
+
 class ItemDetailsViewController: UITableViewController {
     var itemModel: ItemEditorModel?
-    
+    weak var delegate: ItemDetailsViewControllerDelegate?
     let paddingCellId = "pad"
     let headerCellId = "header"
     override func viewDidLoad() {
@@ -31,7 +36,15 @@ class ItemDetailsViewController: UITableViewController {
     }
     
     @objc private func onSavePressed() {
-        itemModel?.commitChanges()
+        guard let delegate = delegate else { return }
+        guard let itemChanged = itemModel?.commitChanges() else { return }
+        guard let model = itemModel else { return }
+        
+        // index...
+        // delegate.didModifyItem(modificationType: ??)
+        
         navigationController?.popViewController(animated: true)
+        
+        delegate.didChangeItem(item: itemChanged, isItemNew: model.isItemNew)
     }
 }

@@ -42,15 +42,25 @@ extension MenuDetailsViewController {
     
     func presentItemVC(for indexPath: IndexPath?) {
         let itemDetailsVC = ItemDetailsViewController()
+        itemDetailsVC.delegate = self
         guard let menu = model?.menu else { return }
         if let indexPath = indexPath {
             guard let item = model?.items[indexPath.row] else { return }
+            // the item's info will be loaded
             itemDetailsVC.itemModel = ItemEditorModel(item: item, menu: menu)
             
         } else {
+            // initialise the model without an item -> a new item is created
             itemDetailsVC.itemModel = ItemEditorModel(menu: menu)
         }
         
         navigationController?.pushViewController(itemDetailsVC, animated: true)
+    }
+}
+
+extension MenuDetailsViewController: ItemDetailsViewControllerDelegate {
+    func didChangeItem(item: Item, isItemNew: Bool) {
+        model?.loadItems()
+        tableView.reloadData()
     }
 }

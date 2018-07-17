@@ -10,7 +10,7 @@ import UIKit
 
 class ItemEditorModel {
     var item: Item
-    private var isItemNew: Bool
+    var isItemNew: Bool
     private var menu: Menu
     
     private func unpackItem(item: Item) {
@@ -75,7 +75,7 @@ class ItemEditorModel {
         }
     }
     
-    func commitChanges() {
+    func commitChanges() -> Item {
         item.name = itemPreviewModel.name
         item.price = NSDecimalNumber(string: textFieldViewModels[1].value)
         item.identifier = textFieldViewModels[2].value
@@ -84,5 +84,6 @@ class ItemEditorModel {
         }
         CoredataUtils.saveContext()
         // sort and calulcate reload index
+        return item
     }
 }
