@@ -10,13 +10,16 @@ import UIKit
 
 class ItemEditorModel {
     var item: Item
+    private var isItemNew: Bool
+    private var menu: Menu
     
     private func unpackItem(item: Item) {
         
     }
 
-    init(item: Item) {
+    init(item: Item, menu: Menu) {
         self.item = item
+        isItemNew = false
         let priceText = (item.price == nil) ? "0" : "\(item.price!)"
         let name = item.name ?? "Unamed Item"
         textFieldViewModels = [
@@ -24,14 +27,16 @@ class ItemEditorModel {
             GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad),
             GenericTextFieldCellViewModel(title: "Identifier", value: item.identifier, keyboardType: .default)
         ]
-        
+        self.menu = menu
         itemPreviewModel = GenericItemViewModel(item: item)
     }
     
-    init() {
+    init(menu: Menu) {
+        self.menu = menu
         self.item = Item(context: CoredataUtils.context)
         let priceText = (item.price == nil) ? "0" : "\(item.price!)"
         let name = item.name ?? "Unamed Item"
+        isItemNew = true
         textFieldViewModels = [
             GenericTextFieldCellViewModel(title: "Item Name", value: name, keyboardType: .default),
             GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad),
@@ -74,6 +79,9 @@ class ItemEditorModel {
         item.name = itemPreviewModel.name
         item.price = NSDecimalNumber(string: textFieldViewModels[1].value)
         item.identifier = textFieldViewModels[2].value
+        if isItemNew {
+            item.menu = menu
+        }
         CoredataUtils.saveContext()
         // sort and calulcate reload index
     }

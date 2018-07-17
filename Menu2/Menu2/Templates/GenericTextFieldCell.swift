@@ -121,6 +121,7 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
             // animate if the textfield is empty
             self.isTextfieldEditable = true
             self.line.backgroundColor = UIColor.themeColour
+            textField.selectAll(nil)
         }
     }
     

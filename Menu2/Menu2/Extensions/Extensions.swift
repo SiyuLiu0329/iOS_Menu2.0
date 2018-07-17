@@ -13,6 +13,7 @@ extension UIColor {
     static let backgroundColourMain = UIColor.white
     static let themeColour = UIColor.init(red: 37/255, green: 64/255, blue: 110/255, alpha: 1)
     static let collectionViewBackgroundColour = UIColor(red: 247/255, green: 247/255, blue: 250/255, alpha: 1)
+    static let tableViewHeaderBackgroundColour = UIColor(red: 241/255, green: 241/255, blue: 242/255, alpha: 1)
 }
 
 extension CALayer {
