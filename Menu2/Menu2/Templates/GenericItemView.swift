@@ -9,7 +9,7 @@
 import UIKit
 
 class GenericItemView: UIView {
-    static var preferredWidth: CGFloat = 155
+    static var preferredWidth: CGFloat = 160
     
     static var preferredHeight: CGFloat {
         return preferredWidth * 1.2

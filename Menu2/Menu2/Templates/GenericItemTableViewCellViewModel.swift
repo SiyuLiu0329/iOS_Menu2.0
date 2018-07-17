@@ -13,4 +13,6 @@ struct GenericItemTableViewCellViewModel {
     var title: String
     var subTitle: String
     var acessoryType: UITableViewCell.AccessoryType
+    var backgroundColor: UIColor
+    var textColor: UIColor
 }

@@ -10,9 +10,26 @@ import UIKit
 
 class ItemEditorModel {
     var item: Item
+    
+    private func unpackItem(item: Item) {
+        
+    }
 
     init(item: Item) {
         self.item = item
+        let priceText = (item.price == nil) ? "0" : "\(item.price!)"
+        let name = item.name ?? "Unamed Item"
+        textFieldViewModels = [
+            GenericTextFieldCellViewModel(title: "Item Name", value: name, keyboardType: .default),
+            GenericTextFieldCellViewModel(title: "Item Price", value: priceText, keyboardType: .decimalPad),
+            GenericTextFieldCellViewModel(title: "Identifier", value: item.identifier, keyboardType: .default)
+        ]
+        
+        itemPreviewModel = GenericItemViewModel(item: item)
+    }
+    
+    init() {
+        self.item = Item(context: CoredataUtils.context)
         let priceText = (item.price == nil) ? "0" : "\(item.price!)"
         let name = item.name ?? "Unamed Item"
         textFieldViewModels = [

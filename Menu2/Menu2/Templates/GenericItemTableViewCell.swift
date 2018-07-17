@@ -20,6 +20,9 @@ class GenericItemTableViewCell: UITableViewCell {
             subtitle.text = viewModel.subTitle
             itemImageView.image = viewModel.image
             accessoryType = viewModel.acessoryType
+            contentView.backgroundColor = viewModel.backgroundColor
+            title.textColor = viewModel.textColor
+            subtitle.textColor = viewModel.textColor
         }
     }
     

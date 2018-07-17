@@ -39,6 +39,8 @@ class GenericItemViewWithInfo: UIView {
     var itemIdLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.textColor = UIColor.themeColour
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     

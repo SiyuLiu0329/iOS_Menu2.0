@@ -13,8 +13,8 @@ import UIKit
  */
 class MenuItemCell: UICollectionViewCell {
     static let cellId = "itemCell"
-    static let cellHeight = GenericItemViewWithInfo.preferredHeight
-    static let cellWidth = GenericItemViewWithInfo.preferredWidth
+    static let cellHeight = GenericItemView.preferredHeight
+    static let cellWidth = GenericItemView.preferredWidth
     var viewModel: GenericItemViewModel? {
         didSet {
             itemView.frame = contentView.frame
@@ -22,13 +22,15 @@ class MenuItemCell: UICollectionViewCell {
             itemView.viewModel = viewModel
         }
     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
         contentView.addSubview(itemView)
+        addDropShadow(offset: CGSize(width: 1, height: 1), radius: 2, opacity: 0.6)
     }
     
-    var itemView = GenericItemViewWithInfo()
+    var itemView = GenericItemView()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

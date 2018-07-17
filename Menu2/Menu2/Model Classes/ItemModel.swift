@@ -25,7 +25,7 @@ class ItemModel {
     
     func getTableViewCellViewModel(forItemAt index: Int) -> GenericItemTableViewCellViewModel {
         let item = items[index]
-        let viewModel = GenericItemTableViewCellViewModel(image: UIImage(named: "food_placeholder")!, title: item.name ?? "Unamed Item", subTitle: "$10.95", acessoryType: .disclosureIndicator)
+        let viewModel = GenericItemTableViewCellViewModel(image: UIImage(named: "food_placeholder")!, title: item.name ?? "Unamed Item", subTitle: "$10.95", acessoryType: .disclosureIndicator, backgroundColor: UIColor.white, textColor: UIColor.black)
         return viewModel
     }
     

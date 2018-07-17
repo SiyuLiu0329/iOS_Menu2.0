@@ -17,7 +17,7 @@ protocol SlideOutMenuDelegate: class {
 class SlideOutMenu: UIView {
     weak var delegate: SlideOutMenuDelegate?
     var animationDuration = 0.3
-    var menuWitdh: CGFloat = 350
+    var menuWitdh: CGFloat = 380
     var blackIntensity: CGFloat = 1
     var isMenuHidden: Bool = true {
         
