@@ -19,10 +19,6 @@ class ItemModel {
         self.items.sort(by: {$0.name! < $1.name!})
     }
     
-    func loadItems() {
-        self.items = menu.items?.allObjects as? [Item] ?? []
-        self.items.sort(by: {$0.name! < $1.name!})
-    }
     
     func deleteItem(at index: Int) {
         let item = items.remove(at: index)
@@ -31,8 +27,7 @@ class ItemModel {
     
     func getTableViewCellViewModel(forItemAt index: Int) -> GenericItemTableViewCellViewModel {
         let item = items[index]
-        let viewModel = GenericItemTableViewCellViewModel(image: UIImage(named: "food_placeholder")!, title: item.name ?? "Unamed Item", subTitle: "$10.95", acessoryType: .disclosureIndicator, backgroundColor: UIColor.white, textColor: UIColor.black)
-        return viewModel
+        return GenericItemTableViewCellViewModel(item: item)
     }
     
     func getItemViewModel(forItemAt index: Int) -> GenericItemViewModel {
@@ -41,8 +36,13 @@ class ItemModel {
         return viewModel
     }
     
-    func getIndex(of item: Item) -> Int? {
-        return items.lastIndex(where: {item == $0})
+    func updateItems(changedItem: Item) {
+        if !items.contains(changedItem) {
+            // if item is already in the array -> item was updated
+            items.insert(changedItem, at: 0)
+        }
+        // item was created
+        self.items.sort(by: {$0.name! < $1.name!})
     }
 }
 

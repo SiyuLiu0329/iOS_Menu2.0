@@ -17,6 +17,14 @@ extension MenuDetailsViewController {
         return GenericItemTableViewCell.preferredCellHeight
     }
     
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         if indexPath.section == 0 {
             return []
@@ -60,7 +68,7 @@ extension MenuDetailsViewController {
 
 extension MenuDetailsViewController: ItemDetailsViewControllerDelegate {
     func didChangeItem(item: Item, isItemNew: Bool) {
-        model?.loadItems()
+        model?.updateItems(changedItem: item)
         tableView.reloadData()
     }
 }

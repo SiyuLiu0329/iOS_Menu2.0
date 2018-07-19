@@ -12,7 +12,7 @@ class ItemEditorModel {
     var item: Item
     var isItemNew: Bool
     private var menu: Menu
-    
+    //  maybe use a child context
     private func unpackItem(item: Item) {
         
     }
@@ -73,12 +73,23 @@ class ItemEditorModel {
         if index == 2 {
             itemPreviewModel.id = newVale
         }
+        
     }
     
     func commitChanges() -> Item {
         item.name = itemPreviewModel.name
-        item.price = NSDecimalNumber(string: textFieldViewModels[1].value)
+        if textFieldViewModels[1].value == "" {
+            item.price = 0
+        } else {
+            item.price = NSDecimalNumber(string: textFieldViewModels[1].value)
+        }
+        
         item.identifier = textFieldViewModels[2].value
+        // save image data here
+        if let data = itemPreviewModel.image?.jpegData(compressionQuality: 1) {
+            item.imgData = data
+        }
+        
         if isItemNew {
             item.menu = menu
         }

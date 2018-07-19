@@ -15,4 +15,18 @@ struct GenericItemTableViewCellViewModel {
     var acessoryType: UITableViewCell.AccessoryType
     var backgroundColor: UIColor
     var textColor: UIColor
+    
+    init(item: Item) {
+        title = item.name ?? "Unamed Item"
+        subTitle = (item.price == nil) ? "$0" : "$\(item.price!)"
+        acessoryType = .disclosureIndicator
+        textColor = .black
+        backgroundColor = .white
+        
+        if let data = item.imgData {
+            image = UIImage(data: data)!
+        } else {
+            image = UIImage(named: "food_placeholder")!
+        }
+    }
 }
