@@ -9,8 +9,7 @@
 import UIKit
 
 class MenuItemCollectionView: UICollectionView {
-    let preferredNumberOfItemsPerRow = 5
-    let preferredInterItemSpacing: CGFloat = 10
+    let numberOfItemsPerRow: CGFloat = 3
     let preferredInset: CGFloat = 14
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {

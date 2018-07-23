@@ -11,7 +11,9 @@ import UIKit
 extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // calculate the width based on how many items are in a row
-        return CGSize(width: MenuItemCell.cellWidth, height: MenuItemCell.cellHeight)
+        let width = collectionView.frame.width / menuItemCollectionView.numberOfItemsPerRow - 2 * 10
+        
+        return CGSize(width: width, height: width / GenericItemView.hwRatio)
     }
     
     

@@ -15,31 +15,30 @@ class GenericItemView: UIView {
         return preferredWidth * 1.2
     }
     
+    static let hwRatio: CGFloat = 1
+    
     static var imageViewHeight: CGFloat {
         return preferredHeight * 3/5
     }
+    
+    var margin: CGFloat = 10
+    var labelHeight: CGFloat = 80
     
     static var nameLabelInset: CGFloat = 5
     
     var viewModel: GenericItemViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            // check if the item has an image and layout the view basied on the result
-            if let image = viewModel.image {
-                // split the view
-                itemImageView.image = image
-                itemImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: GenericItemView.imageViewHeight)
-                nameLabel.frame = CGRect(x: GenericItemView.nameLabelInset, y: GenericItemView.imageViewHeight + GenericItemView.nameLabelInset, width: frame.width - 2 * GenericItemView.nameLabelInset, height: frame.height - GenericItemView.imageViewHeight - 2 * GenericItemView.nameLabelInset)
-            } else {
-                // make the label take up the whole space
-                nameLabel.frame = CGRect(x: GenericItemView.nameLabelInset, y: GenericItemView.nameLabelInset, width: frame.width -  2 * GenericItemView.nameLabelInset, height: frame.height - 2 * GenericItemView.nameLabelInset)
-                itemImageView.frame = CGRect.zero
-            }
+            itemImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height - labelHeight)
+            itemImageView.image = viewModel.image // default image
+            nameLabel.frame = CGRect(x: margin, y: frame.height - labelHeight + margin, width: frame.width - 2 * margin, height: labelHeight - 2 * margin)
             nameLabel.text = viewModel.name
+            nameLabel.sizeToFit()
         }
     }
 
     private var nameLabelFrameSplit: CGRect?
+    
     
     var itemImageView: UIImageView = {
         let imageView = UIImageView()
@@ -50,9 +49,10 @@ class GenericItemView: UIView {
     
     var nameLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        label.numberOfLines = 0
+        label.textAlignment = NSTextAlignment.natural
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.textColor = .black
+        label.numberOfLines = 2
         return label
     }()
     

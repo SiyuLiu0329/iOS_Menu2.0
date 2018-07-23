@@ -19,6 +19,7 @@ class MenuEditorMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(SlideOutMenuTableViewCell.self, forCellReuseIdentifier: SlideOutMenuTableViewCell.cellId)
+        tableView.register(CreateNewMenuTableViewCell.self, forCellReuseIdentifier: CreateNewMenuTableViewCell.cellId)
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour
         setUpNavBar()
     }

@@ -10,6 +10,9 @@ import UIKit
 
 extension MenuEditorMenuTableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if indexPath.row == 0 {
+            return []
+        }
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let alert = UIAlertController(title: "Delete Menu", message: "Deleting this menu will also remove all the items on this menu.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
@@ -26,17 +29,24 @@ extension MenuEditorMenuTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            return
+        }
         guard let menuModel = menuModel else { return }
         let menuDetailsVC = MenuDetailsViewController()
-        menuDetailsVC.model = ItemModel(menu: menuModel.menus[indexPath.row])
+        menuDetailsVC.model = ItemModel(menu: menuModel.menus[indexPath.row - 1])
         navigationController?.pushViewController(menuDetailsVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return CreateNewMenuTableViewCell.height
+        }
         return 60
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
+    
 }
