@@ -13,6 +13,7 @@
 		DC35ACCA20F05E29009685A3 /* MenuDetailsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */; };
 		DC35ACCC20F05EBA009685A3 /* GenericItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCB20F05EBA009685A3 /* GenericItemTableViewCell.swift */; };
 		DC35ACD020F0612A009685A3 /* MenuEditorMenuTableViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCF20F06129009685A3 /* MenuEditorMenuTableViewController+Delegate.swift */; };
+		DC50EDD72105810F00B6104B /* Myriad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC50EDD62105800F00B6104B /* Myriad.ttf */; };
 		DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F120D4F9F30074DC6D /* AppDelegate.swift */; };
 		DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F320D4F9F30074DC6D /* RootViewController.swift */; };
 		DC7367F920D4F9F30074DC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7367F820D4F9F30074DC6D /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 		DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDetailsViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DC35ACCB20F05EBA009685A3 /* GenericItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItemTableViewCell.swift; sourceTree = "<group>"; };
 		DC35ACCF20F06129009685A3 /* MenuEditorMenuTableViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuEditorMenuTableViewController+Delegate.swift"; sourceTree = "<group>"; };
+		DC50EDD62105800F00B6104B /* Myriad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Myriad.ttf; sourceTree = "<group>"; };
 		DC7367EE20D4F9F30074DC6D /* Menu2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7367F120D4F9F30074DC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC7367F320D4F9F30074DC6D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 			path = MenuDetailViewController;
 			sourceTree = "<group>";
 		};
+		DC50EDD521057FF200B6104B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DC50EDD62105800F00B6104B /* Myriad.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		DC7367E520D4F9F30074DC6D = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +276,7 @@
 				DCBDF3DC20EB94290031E44C /* Templates */,
 				DC73680520D4FDCE0074DC6D /* Model Classes */,
 				DC73680620D4FDED0074DC6D /* CoreData */,
+				DC50EDD521057FF200B6104B /* Fonts */,
 			);
 			path = Menu2;
 			sourceTree = "<group>";
@@ -541,6 +552,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC50EDD72105810F00B6104B /* Myriad.ttf in Resources */,
 				DC7367FC20D4F9F30074DC6D /* LaunchScreen.storyboard in Resources */,
 				DC7367F920D4F9F30074DC6D /* Assets.xcassets in Resources */,
 			);

@@ -24,6 +24,8 @@ class GenericItemView: UIView {
     var margin: CGFloat = 10
     var labelHeight: CGFloat = 80
     
+    private let dividerThickness: CGFloat = 0.5
+    
     static var nameLabelInset: CGFloat = 5
     
     var viewModel: GenericItemViewModel? {
@@ -34,11 +36,19 @@ class GenericItemView: UIView {
             nameLabel.frame = CGRect(x: margin, y: frame.height - labelHeight + margin, width: frame.width - 2 * margin, height: labelHeight - 2 * margin)
             nameLabel.text = viewModel.name
             nameLabel.sizeToFit()
+            
+            divider.frame = CGRect(x: 0, y: frame.height - labelHeight, width: frame.width, height: dividerThickness)
         }
     }
 
     private var nameLabelFrameSplit: CGRect?
     
+    
+    var divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        return view
+    }()
     
     var itemImageView: UIImageView = {
         let imageView = UIImageView()
@@ -50,7 +60,10 @@ class GenericItemView: UIView {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.natural
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = UIFont(name: "Myriad Web Pro", size: 19)
+        for font in UIFont.familyNames {
+            print(font)
+        }
         label.textColor = .black
         label.numberOfLines = 2
         return label
@@ -60,6 +73,7 @@ class GenericItemView: UIView {
         super.init(frame: frame)
         addSubview(itemImageView)
         addSubview(nameLabel)
+        addSubview(divider)
         backgroundColor = .white
         layer.cornerRadius = 5
         layer.borderWidth = 0.5
