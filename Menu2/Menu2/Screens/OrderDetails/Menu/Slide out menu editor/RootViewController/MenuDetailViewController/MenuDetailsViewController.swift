@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol MenuDetailsViewControllerDelegate: class {
+    func menuInfoDidChange()
+}
+
 class MenuDetailsViewController: UITableViewController {
     var model: ItemModel
+    
+    weak var menuDetailsDelegate: MenuInfoEditorViewControllerDelegate?
+    
     init(menu: Menu) {
         model = ItemModel(menu: menu)
         super.init(nibName: nil, bundle: nil)
@@ -25,6 +32,5 @@ class MenuDetailsViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
 }

@@ -45,6 +45,7 @@ class OrderModel {
     // called when create new order button is hit, object is not saved to context by default
     func createNewOrder() -> Order? {
         if let shift = shift {
+            //TODO: create order in a child context!!
             let order = CoredataUtils.insertOrder(into: shift, number: numberOfOrders + 1, paid: false, served: false, refunded: false, isBooking: false, bookingArrived: false, save: false)
             return order
         }

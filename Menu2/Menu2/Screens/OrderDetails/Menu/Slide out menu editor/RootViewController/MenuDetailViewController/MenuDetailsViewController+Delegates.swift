@@ -56,7 +56,9 @@ extension MenuDetailsViewController {
     }
     
     private func showMenuEditor() {
-        navigationController?.pushViewController(MenuInfoEditorViewController(menu: model.menu), animated: true)
+        let vc = MenuInfoEditorViewController(menu: model.menu)
+        vc.menuEditorDelegate = self // update table view when the menu name has changed
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func presentItemVC(for indexPath: IndexPath?) {
@@ -79,5 +81,16 @@ extension MenuDetailsViewController: ItemDetailsViewControllerDelegate {
     func didChangeItem(item: Item, isItemNew: Bool) {
         model.updateItems(changedItem: item)
         tableView.reloadData()
+    }
+}
+
+
+extension MenuDetailsViewController: MenuInfoEditorViewControllerDelegate {
+    // callback from menu editor (when save is pressed) need to update the navbar title now
+    func menuInfoDidChange() {
+        navigationItem.title = model.menu.name ?? "Unamed Item"
+        if let delegate = menuDetailsDelegate {
+            delegate.menuInfoDidChange() // let the parent vc know the menu name has changed
+        }
     }
 }

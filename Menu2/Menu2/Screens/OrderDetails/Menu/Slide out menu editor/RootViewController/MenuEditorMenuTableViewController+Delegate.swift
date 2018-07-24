@@ -37,6 +37,7 @@ extension MenuEditorMenuTableViewController {
         
         guard let menuModel = menuModel else { return }
         let menuDetailsVC = MenuDetailsViewController(menu: menuModel.menus[indexPath.row - 1])
+        menuDetailsVC.menuDetailsDelegate = self
         navigationController?.pushViewController(menuDetailsVC, animated: true)
     }
     
@@ -53,4 +54,11 @@ extension MenuEditorMenuTableViewController {
     
     
     
+}
+
+
+extension MenuEditorMenuTableViewController: MenuInfoEditorViewControllerDelegate {
+    func menuInfoDidChange() {
+        tableView.reloadData()
+    }
 }

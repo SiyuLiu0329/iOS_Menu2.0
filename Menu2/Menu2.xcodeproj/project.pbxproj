@@ -83,6 +83,8 @@
 		DCD1AEE820E908F80097FB14 /* OrderItemTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */; };
 		DCD3C0FE2106F51500478EE8 /* MenuInfoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C0FD2106F51500478EE8 /* MenuInfoEditorViewController.swift */; };
 		DCD3C1002106F68E00478EE8 /* MenuInfoEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C0FF2106F68E00478EE8 /* MenuInfoEditorModel.swift */; };
+		DCD3C1022106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C1012106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift */; };
+		DCD3C1042107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C1032107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift */; };
 		DCD5947320F1F5BF000853DB /* GenericTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5947220F1F5BF000853DB /* GenericTextFieldCellViewModel.swift */; };
 		DCFCACD520F64BEA001A4434 /* GenericPopOverImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */; };
 /* End PBXBuildFile section */
@@ -177,6 +179,8 @@
 		DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemTableViewHeaderView.swift; sourceTree = "<group>"; };
 		DCD3C0FD2106F51500478EE8 /* MenuInfoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoEditorViewController.swift; sourceTree = "<group>"; };
 		DCD3C0FF2106F68E00478EE8 /* MenuInfoEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoEditorModel.swift; sourceTree = "<group>"; };
+		DCD3C1012106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuInfoEditorViewController+DataSource.swift"; sourceTree = "<group>"; };
+		DCD3C1032107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuInfoEditorViewController+Delegates.swift"; sourceTree = "<group>"; };
 		DCD5947220F1F5BF000853DB /* GenericTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPopOverImagePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -310,11 +314,11 @@
 			isa = PBXGroup;
 			children = (
 				DCB6270D20DC68290089F72A /* OrderModel.swift */,
+				DC97842620E8547900AAAF94 /* OrderItemsModel.swift */,
 				DC9EE76520E34838002C8BE0 /* MenuModel.swift */,
 				DCD3C0FF2106F68E00478EE8 /* MenuInfoEditorModel.swift */,
 				DC8294BC20EE657500DCA9D9 /* ItemModel.swift */,
 				DC930A2920F1E7EA00BF51E8 /* ItemEditorModel.swift */,
-				DC97842620E8547900AAAF94 /* OrderItemsModel.swift */,
 				DCB24D7320E63C3F002E1B1D /* CoreData */,
 			);
 			path = "Model Classes";
@@ -451,6 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				DCD3C0FD2106F51500478EE8 /* MenuInfoEditorViewController.swift */,
+				DCD3C1012106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift */,
+				DCD3C1032107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift */,
 			);
 			path = MenuInfoEditor;
 			sourceTree = "<group>";
@@ -586,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD3C1042107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift in Sources */,
 				DCB6270420DBF0270089F72A /* OrderCollectionViewCell.swift in Sources */,
 				DCBDF3DA20EB81290031E44C /* SlideOutMenu.swift in Sources */,
 				DCB1618C20F5AA7F0061516F /* ImageCollectionView.swift in Sources */,
@@ -603,6 +610,7 @@
 				DCC419A320EA0D7A00B98685 /* MenuCollectionViewCellTitleView.swift in Sources */,
 				DCFCACD520F64BEA001A4434 /* GenericPopOverImagePickerController.swift in Sources */,
 				DCB6270C20DBF72F0089F72A /* OrderCell.swift in Sources */,
+				DCD3C1022106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift in Sources */,
 				DCC064B420E70B4B0041256C /* OrderSplitViewController.swift in Sources */,
 				DCD3C1002106F68E00478EE8 /* MenuInfoEditorModel.swift in Sources */,
 				DCC5FEE120F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift in Sources */,

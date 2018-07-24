@@ -61,8 +61,8 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
         let verticalOffSet: CGFloat = 10
         textField.frame = CGRect(x: 16, y: verticalOffSet, width: contentView.frame.width - 32, height: contentView.frame.height - verticalOffSet)
         line.frame = CGRect(x: 16, y: verticalOffSet + textField.frame.height - 12, width: textField.frame.width, height: 1)
-        normalFrame = CGRect(x: 16, y: verticalOffSet, width: 100, height: contentView.frame.height - verticalOffSet)
-        shrinkedFrame = CGRect(x: 16, y: 5, width: 100, height: 15)
+        normalFrame = CGRect(x: 16, y: verticalOffSet, width: 150, height: contentView.frame.height - verticalOffSet)
+        shrinkedFrame = CGRect(x: 16, y: 5, width: 150, height: 15)
         // calculate frames for animation
     }
     

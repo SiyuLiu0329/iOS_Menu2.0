@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol MenuInfoEditorViewControllerDelegate: class {
+    func menuInfoDidChange()
+}
+
 class MenuInfoEditorViewController: UITableViewController {
     
-    private var model: MenuInfoEditorModel
+    var model: MenuInfoEditorModel
+    
+    weak var menuEditorDelegate: MenuInfoEditorViewControllerDelegate?
+    
+    let paddingCellId = "pad"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +28,20 @@ class MenuInfoEditorViewController: UITableViewController {
         model = MenuInfoEditorModel(menu: menu)
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor =  UIColor.tableViewHeaderBackgroundColour
+        navigationItem.title = "Edit Menu Info"
+        tableView.register(GenericTextFieldCell.self, forCellReuseIdentifier: GenericTextFieldCell.cellId)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: paddingCellId)
+        tableView.separatorColor = .clear
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(onSavePressed))
+    }
+    
+    @objc private func onSavePressed() {
+        model.saveMenuInfo()
+        if let delegate = menuEditorDelegate {
+            delegate.menuInfoDidChange()
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     required init?(coder aDecoder: NSCoder) {
