@@ -13,8 +13,10 @@ class CreateNewMenuTableViewCell: UITableViewCell {
     static let height: CGFloat = 44
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        textLabel?.text = "New Menu ..."
-        accessoryType = .disclosureIndicator
+        textLabel?.text = "✚ Add Menu"
+        textLabel?.textColor = UIColor.themeColour
+        textLabel?.textAlignment = .center
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

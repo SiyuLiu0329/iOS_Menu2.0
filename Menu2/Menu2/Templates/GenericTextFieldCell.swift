@@ -73,7 +73,7 @@ class GenericTextFieldCell: UITableViewCell, UITextFieldDelegate {
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.delegate = self
-        textField.font = UIFont.Myriad(size: 19)
+        textField.font = UIFont.myriad(size: 19)
         textField.addTarget(self, action: #selector(self.textFieldDidChange), for: .editingChanged)
         return textField
     }()

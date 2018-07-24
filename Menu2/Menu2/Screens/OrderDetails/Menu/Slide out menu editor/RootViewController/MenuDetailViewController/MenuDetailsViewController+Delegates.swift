@@ -21,15 +21,19 @@ extension MenuDetailsViewController {
         return UIView()
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? nil : "Manage Items"
+    }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 || indexPath.section == 0 {
             return []
         }
+        
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let alert = UIAlertController(title: "Delete Item", message: "Are you sure?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-                self.model?.deleteItem(at: indexPath.row - 1)
+                self.model.deleteItem(at: indexPath.row - 1)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 // also need to update the collection view
             }   ))
@@ -42,21 +46,29 @@ extension MenuDetailsViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentItemVC(for: indexPath.row == 0 ? nil : indexPath)
+        if indexPath.section == 0 {
+            // edit menu info
+            showMenuEditor()
+            return
+        }
+        
+        presentItemVC(for: indexPath.row == 0 ? nil : indexPath) // create new item OR load existing item
+    }
+    
+    private func showMenuEditor() {
+        navigationController?.pushViewController(MenuInfoEditorViewController(menu: model.menu), animated: true)
     }
     
     func presentItemVC(for indexPath: IndexPath?) {
         let itemDetailsVC = ItemDetailsViewController()
         itemDetailsVC.delegate = self
-        guard let menu = model?.menu else { return }
         if let indexPath = indexPath {
-            guard let item = model?.items[indexPath.row - 1] else { return }
             // the item's info will be loaded
-            itemDetailsVC.itemModel = ItemEditorModel(item: item, menu: menu)
+            itemDetailsVC.itemModel = ItemEditorModel(item: model.items[indexPath.row - 1], menu: model.menu)
             
         } else {
             // initialise the model without an item -> a new item is created
-            itemDetailsVC.itemModel = ItemEditorModel(menu: menu)
+            itemDetailsVC.itemModel = ItemEditorModel(menu: model.menu)
         }
         
         navigationController?.pushViewController(itemDetailsVC, animated: true)
@@ -65,7 +77,7 @@ extension MenuDetailsViewController {
 
 extension MenuDetailsViewController: ItemDetailsViewControllerDelegate {
     func didChangeItem(item: Item, isItemNew: Bool) {
-        model?.updateItems(changedItem: item)
+        model.updateItems(changedItem: item)
         tableView.reloadData()
     }
 }

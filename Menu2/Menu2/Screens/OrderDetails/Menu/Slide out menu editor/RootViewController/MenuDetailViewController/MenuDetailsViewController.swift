@@ -9,18 +9,17 @@
 import UIKit
 
 class MenuDetailsViewController: UITableViewController {
-    var model: ItemModel? {
-        didSet {
-            guard let model = model else { return }
-            navigationItem.title = model.menu.name ?? "Unamed Menu"
-        }
-    }
-    
-    init() {
+    var model: ItemModel
+    init(menu: Menu) {
+        model = ItemModel(menu: menu)
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.collectionViewBackgroundColour
         tableView.register(GenericItemTableViewCell.self, forCellReuseIdentifier: GenericItemTableViewCell.cellId)
         tableView.register(AddNewItemTableViewCell.self, forCellReuseIdentifier: AddNewItemTableViewCell.cellId)
+    }
+    
+    override func viewDidLoad() {
+        navigationItem.title = model.menu.name ?? "Unamed Menu"
     }
     
     required init?(coder aDecoder: NSCoder) {

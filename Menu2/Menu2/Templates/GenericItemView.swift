@@ -48,7 +48,7 @@ class GenericItemView: UIView {
     
     var subTitle: UILabel = {
         let label = UILabel()
-        label.font = UIFont.Myriad(size: 15)
+        label.font = UIFont.myriad(size: 15)
         label.textColor = UIColor.gray
         return label
     }()
@@ -70,7 +70,7 @@ class GenericItemView: UIView {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.natural
-        label.font = UIFont.Myriad(size: 19)
+        label.font = UIFont.myriad(size: 19)
         label.textColor = .black
         label.numberOfLines = 2
         return label

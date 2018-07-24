@@ -42,7 +42,7 @@ class GenericItemTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Lorem Ispum"
 //        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
-        label.font = UIFont.Myriad(size: 19)
+        label.font = UIFont.myriad(size: 19)
         return label
     }()
     
@@ -51,7 +51,7 @@ class GenericItemTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
 //        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         label.text = "$99.99"
-        label.font = UIFont.Myriad(size: 15)
+        label.font = UIFont.myriad(size: 15)
         label.textColor = UIColor.gray
         return label
     }()

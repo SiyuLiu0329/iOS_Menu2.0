@@ -13,6 +13,7 @@ extension MenuEditorMenuTableViewController {
         if indexPath.row == 0 {
             return []
         }
+        
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let alert = UIAlertController(title: "Delete Menu", message: "Deleting this menu will also remove all the items on this menu.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
@@ -30,11 +31,12 @@ extension MenuEditorMenuTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            // new menu
             return
         }
+        
         guard let menuModel = menuModel else { return }
-        let menuDetailsVC = MenuDetailsViewController()
-        menuDetailsVC.model = ItemModel(menu: menuModel.menus[indexPath.row - 1])
+        let menuDetailsVC = MenuDetailsViewController(menu: menuModel.menus[indexPath.row - 1])
         navigationController?.pushViewController(menuDetailsVC, animated: true)
     }
     
@@ -48,5 +50,7 @@ extension MenuEditorMenuTableViewController {
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
+    
+    
     
 }

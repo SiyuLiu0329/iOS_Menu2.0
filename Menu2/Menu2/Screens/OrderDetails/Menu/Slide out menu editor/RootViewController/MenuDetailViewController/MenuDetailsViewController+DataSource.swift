@@ -10,20 +10,26 @@ import UIKit
 
 extension MenuDetailsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (model?.items.count ?? 0) + 1
+        if section == 0 {
+            return 1 // basic info section
+        }
+        return (model.items.count) + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row == 0 {
+            // use the same type of cell for both 
             let cell = tableView.dequeueReusableCell(withIdentifier: AddNewItemTableViewCell.cellId, for: indexPath) as! AddNewItemTableViewCell
+            cell.textLabel?.text = indexPath.section == 0 ? "Edit Menu Info" : "New Item"
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericItemTableViewCell.cellId, for: indexPath) as! GenericItemTableViewCell
-        cell.viewModel = model?.getTableViewCellViewModel(forItemAt: indexPath.row - 1)
+        cell.viewModel = model.getTableViewCellViewModel(forItemAt: indexPath.row - 1)
         return cell
     }
 }

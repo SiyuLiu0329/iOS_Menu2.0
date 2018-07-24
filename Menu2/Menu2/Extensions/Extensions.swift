@@ -73,7 +73,7 @@ extension Double {
 }
 
 extension UIFont {
-    static func Myriad(size: CGFloat) -> UIFont {
+    static func myriad(size: CGFloat) -> UIFont {
         return UIFont(name: "Myriad Web Pro", size: size)!
     }
 }

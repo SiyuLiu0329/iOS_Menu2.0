@@ -15,6 +15,7 @@ class AddNewItemTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         accessoryType = .disclosureIndicator
         textLabel?.text = "New Item"
+        textLabel?.textColor = UIColor.themeColour
     }
     
     required init?(coder aDecoder: NSCoder) {
