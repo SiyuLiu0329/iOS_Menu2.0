@@ -16,10 +16,11 @@ class ItemPreviewTableViewCell: UITableViewCell {
         // use an item view model
         didSet {
             let w = GenericItemView.preferredWidth / 2
-            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: GenericItemView.preferredWidth, height: GenericItemView.preferredHeight)
+            itemView.frame = CGRect(x: contentView.center.x - w, y: 40, width: GenericItemView.preferredHeight, height: GenericItemView.preferredWidth)
             itemView.viewModel = viewModel
         }
     }
+    
     
     var titleLabel: UILabel = {
         let label = UILabel()

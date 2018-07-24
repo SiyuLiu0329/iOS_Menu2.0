@@ -16,7 +16,8 @@ struct GenericItemViewModel {
     
     init(item: Item) {
         name = item.name ?? "Unamed Item"
-        price = (item.price == nil) ? "0" : "\(item.price!)"
+        
+        price = String(format: "%.2f", Double(truncating: item.price ?? 0))
         id = item.identifier ?? ""
         if let data = item.imgData {
             image = UIImage(data: data)

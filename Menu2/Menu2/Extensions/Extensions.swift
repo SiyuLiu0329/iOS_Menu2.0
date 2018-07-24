@@ -53,3 +53,21 @@ extension UIView {
     }
 }
 
+extension UILabel {
+    
+    func calculateMaxLines() -> Int {
+        let maxSize = CGSize(width: frame.size.width, height: CGFloat(Float.infinity))
+        let charSize = font.lineHeight
+        let text = (self.text ?? "") as NSString
+        let textSize = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        let lines = Int(textSize.height/charSize)
+        return lines
+    }
+    
+}
+
+extension Double {
+    func toPrice() -> String {
+        return String(format: "$%.2f", self)
+    }
+}

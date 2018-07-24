@@ -9,10 +9,10 @@
 import UIKit
 
 class GenericItemView: UIView {
-    static var preferredWidth: CGFloat = 160
+    static var preferredWidth: CGFloat = 220
     
     static var preferredHeight: CGFloat {
-        return preferredWidth * 1.2
+        return preferredWidth / GenericItemView.hwRatio
     }
     
     static let hwRatio: CGFloat = 1
@@ -33,15 +33,25 @@ class GenericItemView: UIView {
             guard let viewModel = viewModel else { return }
             itemImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height - labelHeight)
             itemImageView.image = viewModel.image // default image
-            nameLabel.frame = CGRect(x: margin, y: frame.height - labelHeight + margin, width: frame.width - 2 * margin, height: labelHeight - 2 * margin)
+            let label_start = frame.height - labelHeight + margin
+            nameLabel.frame = CGRect(x: margin, y: label_start, width: frame.width - 2 * margin, height: labelHeight - 2 * margin)
             nameLabel.text = viewModel.name
             nameLabel.sizeToFit()
             
             divider.frame = CGRect(x: 0, y: frame.height - labelHeight, width: frame.width, height: dividerThickness)
+            subTitle.text = viewModel.price
+            subTitle.frame =  CGRect(x: margin, y: label_start + nameLabel.frame.height, width: frame.width - 2 * margin, height: 22)
         }
     }
 
     private var nameLabelFrameSplit: CGRect?
+    
+    var subTitle: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Myriad Web Pro", size: 15)
+        label.textColor = UIColor.gray
+        return label
+    }()
     
     
     var divider: UIView = {
@@ -61,9 +71,6 @@ class GenericItemView: UIView {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.natural
         label.font = UIFont(name: "Myriad Web Pro", size: 19)
-        for font in UIFont.familyNames {
-            print(font)
-        }
         label.textColor = .black
         label.numberOfLines = 2
         return label
@@ -74,6 +81,7 @@ class GenericItemView: UIView {
         addSubview(itemImageView)
         addSubview(nameLabel)
         addSubview(divider)
+        addSubview(subTitle)
         backgroundColor = .white
         layer.cornerRadius = 5
         layer.borderWidth = 0.5
