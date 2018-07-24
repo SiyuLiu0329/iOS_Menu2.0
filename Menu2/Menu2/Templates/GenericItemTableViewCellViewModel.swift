@@ -15,12 +15,14 @@ struct GenericItemTableViewCellViewModel {
     var acessoryType: UITableViewCell.AccessoryType
     var backgroundColor: UIColor
     var textColor: UIColor
+    var subTitleTextColor: UIColor
     
     init(item: Item) {
         title = item.name ?? "Unamed Item"
-        subTitle = (item.price == nil) ? "$0" : "$\(item.price!)"
+        subTitle = String(format: "$%.2f", Double(truncating: item.price ?? 0))
         acessoryType = .disclosureIndicator
         textColor = .black
+        subTitleTextColor = .gray
         backgroundColor = .white
         
         if let data = item.imgData {

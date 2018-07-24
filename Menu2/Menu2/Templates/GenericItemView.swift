@@ -24,7 +24,7 @@ class GenericItemView: UIView {
     var margin: CGFloat = 10
     var labelHeight: CGFloat = 80
     
-    private let dividerThickness: CGFloat = 0.5
+    private let dividerThickness: CGFloat = 0.25
     
     static var nameLabelInset: CGFloat = 5
     
@@ -48,7 +48,7 @@ class GenericItemView: UIView {
     
     var subTitle: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Myriad Web Pro", size: 15)
+        label.font = UIFont.Myriad(size: 15)
         label.textColor = UIColor.gray
         return label
     }()
@@ -70,7 +70,7 @@ class GenericItemView: UIView {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.natural
-        label.font = UIFont(name: "Myriad Web Pro", size: 19)
+        label.font = UIFont.Myriad(size: 19)
         label.textColor = .black
         label.numberOfLines = 2
         return label
