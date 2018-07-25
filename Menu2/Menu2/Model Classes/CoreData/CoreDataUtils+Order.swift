@@ -20,8 +20,12 @@ extension CoredataUtils {
         return nil
     }
     
+    
     static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool, save: Bool) -> Order {
-        let order = Order(context: context)
+        let childMoc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType) // store a reference of this context !
+        childMoc.parent = context
+        childContext = childMoc
+        let order = Order(context: childMoc)
         order.paid = paid
         order.number = Int32(number)
         order.served = served
@@ -29,12 +33,10 @@ extension CoredataUtils {
         order.isBooking = isBooking
         order.refunded = refunded
         order.timeCreated = Date()
-        order.shift = shift
-        if save {
-            saveContext()
-        }
         return order
     }
+    
+    
     
     static func add(item: Item, to order: Order) {
         item.order = order

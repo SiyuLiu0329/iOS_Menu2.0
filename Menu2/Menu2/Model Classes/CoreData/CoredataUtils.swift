@@ -11,7 +11,7 @@ import CoreData
 
 class CoredataUtils {
     static let context = ContextManager.shared.persistentContainer.viewContext
-
+    static var childContext: NSManagedObjectContext?
     
     static func createNewShift() -> Shift {
         let shift = Shift(context: context)

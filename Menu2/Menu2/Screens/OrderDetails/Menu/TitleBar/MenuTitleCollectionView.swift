@@ -9,7 +9,7 @@
 import UIKit
 
 /*
- A page menu at the bottom of the screen, holds all menu names and contains mechnism for switching
+ A page menu at the bottom of the screen, holds all menu names and contains mechanism for switching
  */
 class MenuTitleCollectionView: UICollectionView {
 

@@ -17,7 +17,7 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
         } else {
             // dynamically allocate width based on the number of characters in the title
             guard let name = menuModel.menus[indexPath.row].name else { return CGSize.zero}
-            return CGSize(width: CGFloat(name.count) * 15 + 20, height: collectionView.frame.height)
+            return CGSize(width: CGFloat(name.count) * 8 + 25, height: collectionView.frame.height)
         }
     }
     
