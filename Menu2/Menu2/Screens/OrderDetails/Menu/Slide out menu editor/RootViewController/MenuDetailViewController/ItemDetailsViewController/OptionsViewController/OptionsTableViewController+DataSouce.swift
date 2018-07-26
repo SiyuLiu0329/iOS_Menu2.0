@@ -22,7 +22,7 @@ extension OptionsTableViewController {
 
         cell.textLabel?.text = model.options[indexPath.row].name ?? "Unnamed"
         
-        // debug
+        // debug -> use a view model later
         if let itemOptions = model.item.options {
             if itemOptions.contains(model.options[indexPath.row]) {
                 cell.contentView.backgroundColor = .gray

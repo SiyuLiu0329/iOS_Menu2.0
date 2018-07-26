@@ -13,6 +13,7 @@ class OptionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
+        navigationItem.title = "All Options And Sides"
     }
     
     init(for item: Item) {
@@ -23,6 +24,4 @@ class OptionsTableViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

@@ -24,11 +24,14 @@ class OptionsModel {
     }
     
     func didSelectOption(at index: Int) {
+        // called when an option cell is tapped
         guard let itemOption = item.options else { return }
         let option = options[index]
         if itemOption.contains(option) {
+            // if option is already in item, remove it
             item.removeFromOptions(option)
         } else {
+            // if option is not in item, add it to the set
             item.addToOptions(option)
         }
     }

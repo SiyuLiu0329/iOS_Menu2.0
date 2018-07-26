@@ -47,4 +47,12 @@ class ItemDetailsViewController: UITableViewController {
         
         delegate.didChangeItem(item: itemChanged, isItemNew: model.isItemNew)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if itemModel!.item.hasChanges {
+            CoredataUtils.context.refresh(itemModel!.item, mergeChanges: false)
+        }
+        
+    }
 }
