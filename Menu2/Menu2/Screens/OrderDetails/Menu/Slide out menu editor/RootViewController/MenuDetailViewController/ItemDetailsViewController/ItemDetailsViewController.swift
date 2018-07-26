@@ -16,14 +16,14 @@ protocol ItemDetailsViewControllerDelegate: class {
 class ItemDetailsViewController: UITableViewController {
     var itemModel: ItemEditorModel?
     weak var delegate: ItemDetailsViewControllerDelegate?
-    let paddingCellId = "pad"
+    let regularaCellId = "pad"
     let headerCellId = "header"
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let itemModel = itemModel else { return }
         setUpNavBar()
         tableView.register(GenericTextFieldCell.self, forCellReuseIdentifier: GenericTextFieldCell.cellId)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: paddingCellId)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: regularaCellId)
         tableView.register(ImagePickerTableViewCell.self, forCellReuseIdentifier: ImagePickerTableViewCell.cellId)
         tableView.register(ItemPreviewTableViewCell.self, forCellReuseIdentifier: headerCellId)
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour

@@ -19,8 +19,8 @@ extension ItemDetailsViewController {
             return 1
         }
         
-        // 2 text fields + 1 image picker + 2 padding
-        return (itemModel?.textFieldViewModels.count ?? 0) + 3
+        // 2 text fields + 1 image picker + 2 padding + options
+        return (itemModel?.textFieldViewModels.count ?? 0) + 3 + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,11 +41,23 @@ extension ItemDetailsViewController {
         if indexPath.row == 0 || indexPath.row == 4 {
             // add padding to the top and bottom of this section
             // use a table view cell instead of header view becuase headers will not scroll together with the cells
-            let cell = tableView.dequeueReusableCell(withIdentifier: paddingCellId, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: regularaCellId, for: indexPath)
             cell.contentView.backgroundColor = .white
             cell.selectionStyle = .none
+            cell.textLabel?.text = ""
+            cell.accessoryType = .none
             return cell
         }
+        
+        if indexPath.row == 6 {
+            // reveil more options
+            let cell = tableView.dequeueReusableCell(withIdentifier: regularaCellId, for: indexPath)
+            cell.selectionStyle = .gray
+            cell.textLabel?.text = "Options or sides"
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        }
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericTextFieldCell.cellId, for: indexPath) as! GenericTextFieldCell
         cell.delegate = self

@@ -17,7 +17,7 @@ extension MenuEditorMenuTableViewController {
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             let alert = UIAlertController(title: "Delete Menu", message: "Deleting this menu will also remove all the items on this menu.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-                self.menuModel?.deleteMenu(at: indexPath.row)
+                self.menuModel?.deleteMenu(at: indexPath.row - 1)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 // also need to update the collection view
             }   ))
@@ -31,12 +31,33 @@ extension MenuEditorMenuTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            // new menu
+            createNewMenu()
             return
         }
         
         guard let menuModel = menuModel else { return }
-        let menuDetailsVC = MenuDetailsViewController(menu: menuModel.menus[indexPath.row - 1])
+        showMenuDetailsFor(menu: menuModel.menus[indexPath.row - 1])
+    }
+    
+    private func createNewMenu(){
+        let alert = UIAlertController(title: "Create Menu", message: "Enter a name for the menu.", preferredStyle: .alert)
+        let submit = UIAlertAction(title: "Submit", style: .default) { (action) in
+            if let textfield = alert.textFields?[0] {
+                if let menu = self.menuModel?.createNewMenu(with: textfield.text ?? "Unnamed Menu") {
+                    self.showMenuDetailsFor(menu: menu)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        alert.addAction(submit)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Menu name..."
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showMenuDetailsFor(menu: Menu) {
+        let menuDetailsVC = MenuDetailsViewController(menu: menu)
         menuDetailsVC.menuDetailsDelegate = self
         navigationController?.pushViewController(menuDetailsVC, animated: true)
     }

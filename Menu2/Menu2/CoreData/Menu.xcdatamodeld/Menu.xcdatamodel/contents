@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326h" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A336e" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imgData" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -7,11 +7,18 @@
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="transferrable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="items" inverseEntity="Menu" syncable="YES"/>
+        <relationship name="options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Option" inverseName="items" inverseEntity="Option" syncable="YES"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="items" inverseEntity="Order" syncable="YES"/>
     </entity>
     <entity name="Menu" representedClassName="Menu" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="menu" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Option" representedClassName="Option" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="options" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class">
         <attribute name="bookingArrived" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -30,9 +37,10 @@
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="shift" inverseEntity="Order" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-1086.27734375" positionY="39.1640625" width="128" height="150"/>
+        <element name="Item" positionX="-1086.5390625" positionY="-31.546875" width="128" height="165"/>
         <element name="Menu" positionX="-1396.4140625" positionY="-25.65234375" width="128" height="75"/>
-        <element name="Order" positionX="-844.671875" positionY="16.6484375" width="128" height="195"/>
+        <element name="Order" positionX="-853.32421875" positionY="52.08203125" width="128" height="195"/>
         <element name="Shift" positionX="-1087.29296875" positionY="182.8984375" width="128" height="75"/>
+        <element name="Option" positionX="-852.6640625" positionY="-164.03515625" width="128" height="105"/>
     </elements>
 </model>

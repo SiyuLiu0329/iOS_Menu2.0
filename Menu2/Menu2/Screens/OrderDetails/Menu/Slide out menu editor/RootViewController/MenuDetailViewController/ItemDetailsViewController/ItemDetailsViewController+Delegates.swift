@@ -30,10 +30,24 @@ extension ItemDetailsViewController {
         
         }
         
+        if indexPath.row == 6 {
+            return 44
+        }
+        
         // textfields
         return GenericTextFieldCell.preferredCellHeight
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row == 6 else { return }
+        showOptions()
+    }
+    
+    private func showOptions() {
+        let vc = OptionsTableViewController()
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

@@ -22,7 +22,7 @@ extension CoredataUtils {
     
     static func delete(menu: Menu) {
         context.delete(menu)
-//        saveContext()
+        saveContext()
     }
     
     static func insertMenu(name: String) -> Menu {

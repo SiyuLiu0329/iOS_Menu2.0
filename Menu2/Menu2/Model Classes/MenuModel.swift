@@ -18,14 +18,18 @@ class MenuModel {
     }
     
     func deleteMenu(at index: Int) {
-        print("Number of items before deletion:", testGetNumberOfItemsInMenus())
         let menu = menus.remove(at: index)
         CoredataUtils.delete(menu: menu) // remember to update UI
-        print("Number of items after deletion:", testGetNumberOfItemsInMenus())
     }
     
     init() {
         loadMenus()
+    }
+    
+    func createNewMenu(with name: String) -> Menu {
+        let menu =  CoredataUtils.insertMenu(name: name)
+        menus.append(menu)
+        return menu
     }
     
     func loadMenus() {
