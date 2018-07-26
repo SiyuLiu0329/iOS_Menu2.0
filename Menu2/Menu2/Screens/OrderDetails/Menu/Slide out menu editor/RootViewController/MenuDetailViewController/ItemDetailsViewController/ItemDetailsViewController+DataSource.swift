@@ -58,10 +58,10 @@ extension ItemDetailsViewController {
             return cell
         }
         
-        
+        // textfields
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericTextFieldCell.cellId, for: indexPath) as! GenericTextFieldCell
         cell.delegate = self
-        cell.viewModel = itemModel?.textFieldViewModels[indexPath.row - 1]
+        cell.viewModel = itemModel?.textFieldViewModels[indexPath.row - 1] // account for padding
         return cell
     }
 }

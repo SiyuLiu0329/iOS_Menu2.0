@@ -23,6 +23,7 @@ extension CoredataUtils {
     
     static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool, save: Bool) -> Order {
         let childMoc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType) // store a reference of this context !
+        // need to figure out how to commit changes in this context
         childMoc.parent = context
         childContext = childMoc
         let order = Order(context: childMoc)

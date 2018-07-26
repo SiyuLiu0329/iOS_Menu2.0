@@ -81,6 +81,10 @@
 		DCC5FEE120F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5FEE020F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift */; };
 		DCC5FEE320F1A35F00F19BE5 /* GenericTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5FEE220F1A35F00F19BE5 /* GenericTextFieldCell.swift */; };
 		DCD1A34C2109E15C005D4A2A /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1A34B2109E15C005D4A2A /* OptionsTableViewController.swift */; };
+		DCD1A34E2109E29B005D4A2A /* OptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1A34D2109E29B005D4A2A /* OptionsModel.swift */; };
+		DCD1A3502109E2F1005D4A2A /* CoreDataUtils+Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1A34F2109E2F1005D4A2A /* CoreDataUtils+Option.swift */; };
+		DCD1A3522109E922005D4A2A /* OptionsTableViewController+DataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1A3512109E922005D4A2A /* OptionsTableViewController+DataSouce.swift */; };
+		DCD1A3542109E954005D4A2A /* OptionsTableViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1A3532109E954005D4A2A /* OptionsTableViewController+Delegates.swift */; };
 		DCD1AEE820E908F80097FB14 /* OrderItemTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */; };
 		DCD3C0FE2106F51500478EE8 /* MenuInfoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C0FD2106F51500478EE8 /* MenuInfoEditorViewController.swift */; };
 		DCD3C1002106F68E00478EE8 /* MenuInfoEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C0FF2106F68E00478EE8 /* MenuInfoEditorModel.swift */; };
@@ -178,6 +182,10 @@
 		DCC5FEE020F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemDetailsViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DCC5FEE220F1A35F00F19BE5 /* GenericTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextFieldCell.swift; sourceTree = "<group>"; };
 		DCD1A34B2109E15C005D4A2A /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		DCD1A34D2109E29B005D4A2A /* OptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsModel.swift; sourceTree = "<group>"; };
+		DCD1A34F2109E2F1005D4A2A /* CoreDataUtils+Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataUtils+Option.swift"; sourceTree = "<group>"; };
+		DCD1A3512109E922005D4A2A /* OptionsTableViewController+DataSouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionsTableViewController+DataSouce.swift"; sourceTree = "<group>"; };
+		DCD1A3532109E954005D4A2A /* OptionsTableViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionsTableViewController+Delegates.swift"; sourceTree = "<group>"; };
 		DCD1AEE720E908F80097FB14 /* OrderItemTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemTableViewHeaderView.swift; sourceTree = "<group>"; };
 		DCD3C0FD2106F51500478EE8 /* MenuInfoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoEditorViewController.swift; sourceTree = "<group>"; };
 		DCD3C0FF2106F68E00478EE8 /* MenuInfoEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoEditorModel.swift; sourceTree = "<group>"; };
@@ -319,6 +327,7 @@
 				DC97842620E8547900AAAF94 /* OrderItemsModel.swift */,
 				DC9EE76520E34838002C8BE0 /* MenuModel.swift */,
 				DCD3C0FF2106F68E00478EE8 /* MenuInfoEditorModel.swift */,
+				DCD1A34D2109E29B005D4A2A /* OptionsModel.swift */,
 				DC8294BC20EE657500DCA9D9 /* ItemModel.swift */,
 				DC930A2920F1E7EA00BF51E8 /* ItemEditorModel.swift */,
 				DCB24D7320E63C3F002E1B1D /* CoreData */,
@@ -385,6 +394,7 @@
 				DCB24D6D20E63B3F002E1B1D /* CoreDataUtils+Order.swift */,
 				DCB24D6F20E63B7E002E1B1D /* CoreDataUtils+Menu.swift */,
 				DCB24D7120E63BE9002E1B1D /* CoreDataUtils+Item.swift */,
+				DCD1A34F2109E2F1005D4A2A /* CoreDataUtils+Option.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -458,6 +468,8 @@
 			isa = PBXGroup;
 			children = (
 				DCD1A34B2109E15C005D4A2A /* OptionsTableViewController.swift */,
+				DCD1A3512109E922005D4A2A /* OptionsTableViewController+DataSouce.swift */,
+				DCD1A3532109E954005D4A2A /* OptionsTableViewController+Delegates.swift */,
 			);
 			path = OptionsViewController;
 			sourceTree = "<group>";
@@ -617,6 +629,7 @@
 				DCB24D7220E63BE9002E1B1D /* CoreDataUtils+Item.swift in Sources */,
 				DC8103A520D93B44008EB752 /* Extensions.swift in Sources */,
 				DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */,
+				DCD1A3522109E922005D4A2A /* OptionsTableViewController+DataSouce.swift in Sources */,
 				DCB4838120F320B70065F888 /* GenericItemView.swift in Sources */,
 				DCC419A320EA0D7A00B98685 /* MenuCollectionViewCellTitleView.swift in Sources */,
 				DCFCACD520F64BEA001A4434 /* GenericPopOverImagePickerController.swift in Sources */,
@@ -625,6 +638,7 @@
 				DCC064B420E70B4B0041256C /* OrderSplitViewController.swift in Sources */,
 				DCD1A34C2109E15C005D4A2A /* OptionsTableViewController.swift in Sources */,
 				DCD3C1002106F68E00478EE8 /* MenuInfoEditorModel.swift in Sources */,
+				DCD1A34E2109E29B005D4A2A /* OptionsModel.swift in Sources */,
 				DCC5FEE120F1A19E00F19BE5 /* ItemDetailsViewController+DataSource.swift in Sources */,
 				DCB4838320F326D70065F888 /* GenericItemViewModel.swift in Sources */,
 				DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */,
@@ -678,7 +692,9 @@
 				DCB6270A20DBF6B50089F72A /* OrderCollectionViewCell+UICollectionViewDelegate.swift in Sources */,
 				DCC3416A20E120250020616F /* OrderItemsViewController.swift in Sources */,
 				DCC5FEDD20F19F0F00F19BE5 /* GenericItemTableViewCellViewModel.swift in Sources */,
+				DCD1A3542109E954005D4A2A /* OptionsTableViewController+Delegates.swift in Sources */,
 				DCB1618920F5A5270061516F /* ImagePickerTableViewCell.swift in Sources */,
+				DCD1A3502109E2F1005D4A2A /* CoreDataUtils+Option.swift in Sources */,
 				DCB24D7020E63B7E002E1B1D /* CoreDataUtils+Menu.swift in Sources */,
 				DC35ACC820F05DF9009685A3 /* MenuDetailsViewController+Delegates.swift in Sources */,
 			);
