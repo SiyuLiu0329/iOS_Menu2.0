@@ -19,6 +19,7 @@ extension MenuViewController: UICollectionViewDataSource {
         if collectionView == menuCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellId, for: indexPath) as! MenuCollectionViewCell
             cell.itemsModel = ItemModel(menu: menuModel.menus[indexPath.row])
+            cell.delegate = self // callbacks when item selected
             return cell
             
         } else {

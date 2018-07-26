@@ -80,6 +80,7 @@ extension MenuDetailsViewController {
 extension MenuDetailsViewController: ItemDetailsViewControllerDelegate {
     func didChangeItem(item: Item, isItemNew: Bool) {
         model.updateItems(changedItem: item)
+        // CRASH HERE FIXXXX
         tableView.reloadData()
     }
 }

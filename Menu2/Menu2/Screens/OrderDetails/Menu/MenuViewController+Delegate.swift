@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     // check which collection view it is ( there are 2 collection views, one used to show menu items the other used to show titles at the bottom of the screen)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -57,6 +56,16 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
     }
 }
 
+extension MenuViewController: MenuCollectionViewCellDelegate {
+    func didSelectitem(_ item: Item) {
+        
+        showOptionsFor(item: item)
+    }
+    
+    private func showOptionsFor(item: Item) {
+        // present a vc that allows user to select items
+    }
+}
 
 extension MenuViewController: MenuEditorDelegate {
     func didExitMenuEditor() {

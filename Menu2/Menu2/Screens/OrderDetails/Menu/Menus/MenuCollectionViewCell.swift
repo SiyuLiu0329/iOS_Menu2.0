@@ -8,12 +8,16 @@
 
 import UIKit
 
+protocol MenuCollectionViewCellDelegate: class {
+    func didSelectitem(_ item: Item)
+}
 
 /*
  This cell holds an entire menu is responsible for presenting the items in this menu.
  - items are placed inside a collection view
  */
 class MenuCollectionViewCell: UICollectionViewCell {
+    weak var delegate: MenuCollectionViewCellDelegate?
     static let cellId = "menuCell"
     var itemsModel: ItemModel? {
         didSet {

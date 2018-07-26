@@ -29,11 +29,28 @@ class ItemDetailsViewController: UITableViewController {
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour
         tableView.separatorColor = .clear
         navigationItem.title = itemModel.textFieldViewModels[0].value
+        
     }
     
     private func setUpNavBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.onSavePressed))
+        let customBackButton = UIBarButtonItem(image: UIImage(named: "backArrow") , style: .plain, target: self, action: #selector(self.onBackPressed))
+
+        customBackButton.imageInsets = UIEdgeInsets(top: 2, left: -8, bottom: 0, right: 0)
+        navigationItem.leftBarButtonItem = customBackButton
     }
+    
+    
+    
+    @objc func onBackPressed() {
+        // discard changes
+        guard let item = itemModel?.item else { return }
+        if item.hasChanges {
+            CoredataUtils.context.refresh(item, mergeChanges: false)
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     @objc private func onSavePressed() {
         guard let delegate = delegate else { return }
@@ -46,13 +63,5 @@ class ItemDetailsViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
         
         delegate.didChangeItem(item: itemChanged, isItemNew: model.isItemNew)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if itemModel!.item.hasChanges {
-            CoredataUtils.context.refresh(itemModel!.item, mergeChanges: false)
-        }
-        
     }
 }
