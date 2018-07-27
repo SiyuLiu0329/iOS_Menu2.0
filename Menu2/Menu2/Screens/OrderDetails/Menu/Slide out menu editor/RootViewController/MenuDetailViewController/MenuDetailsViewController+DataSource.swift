@@ -25,7 +25,9 @@ extension MenuDetailsViewController {
         if indexPath.row == 0 {
             // use the same type of cell for both 
             let cell = tableView.dequeueReusableCell(withIdentifier: AddNewItemTableViewCell.cellId, for: indexPath) as! AddNewItemTableViewCell
-            cell.textLabel?.text = indexPath.section == 0 ? "Edit Menu Info" : "New Item"
+
+            cell.textLabel?.text = indexPath.section == 0 ? "Edit Menu Info" : "✚ Add Item"
+            cell.textLabel?.textAlignment = .center
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericItemTableViewCell.cellId, for: indexPath) as! GenericItemTableViewCell

@@ -10,7 +10,11 @@ import UIKit
 
 extension OptionsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        model.didSelectOption(at: indexPath.row)
+        if indexPath.row == 0{
+            return 
+        }
+        
+        model.didSelectOption(at: indexPath.row - 1)
         tableView.reloadData()
     }
 }

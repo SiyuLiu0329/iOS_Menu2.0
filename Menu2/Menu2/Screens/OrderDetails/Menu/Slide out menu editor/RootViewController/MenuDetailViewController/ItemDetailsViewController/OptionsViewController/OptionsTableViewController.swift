@@ -10,8 +10,10 @@ import UIKit
 
 class OptionsTableViewController: UITableViewController {
     var model: OptionsModel
+    let cellId = "new"
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: OptionTableViewCell.cellId)
         navigationItem.title = "All Options And Sides"
     }

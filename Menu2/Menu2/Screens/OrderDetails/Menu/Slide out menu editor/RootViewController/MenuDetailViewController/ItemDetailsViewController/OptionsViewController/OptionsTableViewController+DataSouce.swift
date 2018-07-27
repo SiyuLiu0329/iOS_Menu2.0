@@ -14,13 +14,21 @@ extension OptionsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.options.count
+        return model.options.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+            cell.textLabel?.text = "✚ Add Option"
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.textColor = UIColor.themeColour
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: OptionTableViewCell.cellId, for: indexPath) as! OptionTableViewCell
         
-        cell.viewModel = model.getViewModelForOption(at: indexPath.row)
+        cell.viewModel = model.getViewModelForOption(at: indexPath.row - 1)
         return cell
     }
 }

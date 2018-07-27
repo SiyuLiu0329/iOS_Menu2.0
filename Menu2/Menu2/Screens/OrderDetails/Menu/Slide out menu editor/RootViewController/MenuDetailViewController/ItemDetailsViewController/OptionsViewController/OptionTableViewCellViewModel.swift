@@ -13,6 +13,6 @@ struct OptionTableViewCellViewModel {
     var price: Float
     var isInMenu: Bool
     var backgroundColor: UIColor {
-        return isInMenu ? UIColor.themeColour.withAlphaComponent(0.5) : UIColor.white
+        return isInMenu ? UIColor.themeColour.withAlphaComponent(0.3) : UIColor.white
     }
 }
