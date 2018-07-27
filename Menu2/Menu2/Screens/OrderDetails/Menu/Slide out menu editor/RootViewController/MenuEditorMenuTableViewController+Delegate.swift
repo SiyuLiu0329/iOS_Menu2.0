@@ -41,14 +41,21 @@ extension MenuEditorMenuTableViewController {
     
     private func createNewMenu(){
         let alert = UIAlertController(title: "Create Menu", message: "Enter a name for the menu.", preferredStyle: .alert)
-        let submit = UIAlertAction(title: "Submit", style: .default) { (action) in
+        let submit = UIAlertAction(title: "Okay", style: .default) { (action) in
             if let textfield = alert.textFields?[0] {
+                guard !textfield.text!.isEmpty else { return  } // provide user with feedback (that a name should not be empty)
+                // should not accept empty strings
                 if let menu = self.menuModel?.createNewMenu(with: textfield.text ?? "Unnamed Menu") {
                     self.showMenuDetailsFor(menu: menu)
                     self.tableView.reloadData()
                 }
             }
         }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+            // make sure the cell is not selected
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
+        alert.addAction(cancel)
         alert.addAction(submit)
         alert.addTextField { (textfield) in
             textfield.placeholder = "Menu name..."
