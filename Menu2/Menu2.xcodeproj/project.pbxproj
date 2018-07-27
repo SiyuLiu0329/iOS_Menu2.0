@@ -13,6 +13,8 @@
 		DC35ACCA20F05E29009685A3 /* MenuDetailsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */; };
 		DC35ACCC20F05EBA009685A3 /* GenericItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCB20F05EBA009685A3 /* GenericItemTableViewCell.swift */; };
 		DC35ACD020F0612A009685A3 /* MenuEditorMenuTableViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35ACCF20F06129009685A3 /* MenuEditorMenuTableViewController+Delegate.swift */; };
+		DC49F869210AC99C00CB30CD /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49F868210AC99C00CB30CD /* OptionTableViewCell.swift */; };
+		DC49F86B210ACA0900CB30CD /* OptionTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49F86A210ACA0900CB30CD /* OptionTableViewCellViewModel.swift */; };
 		DC50EDD72105810F00B6104B /* Myriad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC50EDD62105800F00B6104B /* Myriad.ttf */; };
 		DC7367F220D4F9F30074DC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F120D4F9F30074DC6D /* AppDelegate.swift */; };
 		DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7367F320D4F9F30074DC6D /* RootViewController.swift */; };
@@ -112,6 +114,8 @@
 		DC35ACC920F05E29009685A3 /* MenuDetailsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDetailsViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DC35ACCB20F05EBA009685A3 /* GenericItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItemTableViewCell.swift; sourceTree = "<group>"; };
 		DC35ACCF20F06129009685A3 /* MenuEditorMenuTableViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuEditorMenuTableViewController+Delegate.swift"; sourceTree = "<group>"; };
+		DC49F868210AC99C00CB30CD /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
+		DC49F86A210ACA0900CB30CD /* OptionTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		DC50EDD62105800F00B6104B /* Myriad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Myriad.ttf; sourceTree = "<group>"; };
 		DC7367EE20D4F9F30074DC6D /* Menu2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7367F120D4F9F30074DC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -470,6 +474,8 @@
 				DCD1A34B2109E15C005D4A2A /* OptionsTableViewController.swift */,
 				DCD1A3512109E922005D4A2A /* OptionsTableViewController+DataSouce.swift */,
 				DCD1A3532109E954005D4A2A /* OptionsTableViewController+Delegates.swift */,
+				DC49F868210AC99C00CB30CD /* OptionTableViewCell.swift */,
+				DC49F86A210ACA0900CB30CD /* OptionTableViewCellViewModel.swift */,
 			);
 			path = OptionsViewController;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				DC930A2A20F1E7EA00BF51E8 /* ItemEditorModel.swift in Sources */,
 				DC9EC05920F8B796005DAAF9 /* GenericItemViewWithInfo.swift in Sources */,
 				DC9D547A20E66B7C00D50908 /* MenuCollectionViewCell+MenuItemDelegate.swift in Sources */,
+				DC49F86B210ACA0900CB30CD /* OptionTableViewCellViewModel.swift in Sources */,
 				DCA5D68920E6218B002E91BA /* MenuCollectionViewCell.swift in Sources */,
 				DCB6270820DBF6560089F72A /* OrderCollectionViewCell+UICollectionViewDataSource.swift in Sources */,
 				DCC5FEDB20F19DB500F19BE5 /* ItemDetailsViewController.swift in Sources */,
@@ -696,6 +703,7 @@
 				DCB1618920F5A5270061516F /* ImagePickerTableViewCell.swift in Sources */,
 				DCD1A3502109E2F1005D4A2A /* CoreDataUtils+Option.swift in Sources */,
 				DCB24D7020E63B7E002E1B1D /* CoreDataUtils+Menu.swift in Sources */,
+				DC49F869210AC99C00CB30CD /* OptionTableViewCell.swift in Sources */,
 				DC35ACC820F05DF9009685A3 /* MenuDetailsViewController+Delegates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

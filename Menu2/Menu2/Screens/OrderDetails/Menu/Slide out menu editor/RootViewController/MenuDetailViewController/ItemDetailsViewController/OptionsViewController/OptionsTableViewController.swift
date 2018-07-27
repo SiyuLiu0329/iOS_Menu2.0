@@ -12,7 +12,7 @@ class OptionsTableViewController: UITableViewController {
     var model: OptionsModel
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
+        tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: OptionTableViewCell.cellId)
         navigationItem.title = "All Options And Sides"
     }
     

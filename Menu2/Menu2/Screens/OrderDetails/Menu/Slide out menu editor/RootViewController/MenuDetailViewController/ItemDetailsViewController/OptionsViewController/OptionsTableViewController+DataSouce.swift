@@ -18,19 +18,9 @@ extension OptionsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
-
-        cell.textLabel?.text = model.options[indexPath.row].name ?? "Unnamed"
+        let cell = tableView.dequeueReusableCell(withIdentifier: OptionTableViewCell.cellId, for: indexPath) as! OptionTableViewCell
         
-        // debug -> use a view model later
-        if let itemOptions = model.item.options {
-            if itemOptions.contains(model.options[indexPath.row]) {
-                cell.contentView.backgroundColor = .gray
-            } else {
-                cell.contentView.backgroundColor = .white
-            }
-        }
-
+        cell.viewModel = model.getViewModelForOption(at: indexPath.row)
         return cell
     }
 }

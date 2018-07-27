@@ -36,6 +36,11 @@ class OptionsModel {
         }
     }
     
+    func getViewModelForOption(at index: Int) -> OptionTableViewCellViewModel {
+        let option = options[index]
+        return OptionTableViewCellViewModel.init(name: option.name ?? "", price: 9.99, isInMenu: item.options?.contains(option) ?? false )
+    }
+    
     
 }
 
