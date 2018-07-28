@@ -20,7 +20,7 @@ extension OptionsTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-            cell.textLabel?.text = "✚ Add Option"
+            cell.textLabel?.text = "✚ New Option"
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.textColor = UIColor.themeColour
             return cell

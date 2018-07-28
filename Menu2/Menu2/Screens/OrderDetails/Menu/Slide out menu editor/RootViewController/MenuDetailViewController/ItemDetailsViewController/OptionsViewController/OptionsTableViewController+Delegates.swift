@@ -49,7 +49,11 @@ extension OptionsTableViewController {
                 !name.isEmpty else { return } // name cannot be empty
             
             if let newIndex = self.model.insertOption(name: name, price: Float(price) ?? 0 ) {
-                self.tableView.insertRows(at: [IndexPath(row: newIndex + 1, section: 0), IndexPath(row: 0, section: 0)], with: .automatic)
+                
+                self.tableView.performBatchUpdates({
+                    self.tableView.insertRows(at: [IndexPath(row: newIndex + 1, section: 0)], with: .automatic)
+                    self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                }, completion: nil)
             }
         }
         

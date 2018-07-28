@@ -12,6 +12,7 @@ class OptionTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        textLabel?.font = UIFont(name: "Myriad Web Pro", size: 19)
     }
     
     required init?(coder aDecoder: NSCoder) {

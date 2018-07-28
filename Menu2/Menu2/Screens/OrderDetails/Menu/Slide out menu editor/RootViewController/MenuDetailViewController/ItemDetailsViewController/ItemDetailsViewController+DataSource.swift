@@ -54,6 +54,7 @@ extension ItemDetailsViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: regularaCellId, for: indexPath)
             cell.selectionStyle = .gray
             cell.textLabel?.text = "Options or sides"
+            cell.textLabel?.textColor = UIColor.themeColour
             cell.accessoryType = .disclosureIndicator
             return cell
         }
