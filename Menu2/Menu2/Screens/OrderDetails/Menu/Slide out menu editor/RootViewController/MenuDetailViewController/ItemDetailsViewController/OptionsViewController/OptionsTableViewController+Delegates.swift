@@ -20,6 +20,27 @@ extension OptionsTableViewController {
         tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if indexPath.row == 0 {
+            return []
+        }
+        
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            let alert = UIAlertController(title: "Delete Item", message: "Are you sure?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+                // delete
+                self.model.deleteOption(index: indexPath.row - 1)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                // also need to update the collection view
+            }   ))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        return [delete]
+    }
+    
     private func addAnOption() {
         let alert = UIAlertController(title: "Create Option", message: "Give a name and a price.", preferredStyle: .alert)
         let submit = UIAlertAction(title: "Okay", style: .default) { (action) in
@@ -27,10 +48,9 @@ extension OptionsTableViewController {
                 let price = alert.textFields?[1].text,
                 !name.isEmpty else { return } // name cannot be empty
             
-            self.model.insertOption(name: name, price: Double(price) ?? 0 )
-            
-            
-            
+            if let newIndex = self.model.insertOption(name: name, price: Float(price) ?? 0 ) {
+                self.tableView.insertRows(at: [IndexPath(row: newIndex + 1, section: 0), IndexPath(row: 0, section: 0)], with: .automatic)
+            }
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in

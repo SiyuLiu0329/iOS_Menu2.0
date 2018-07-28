@@ -26,7 +26,7 @@ class MenuEditorMenuTableViewController: UITableViewController {
     
 
     private func setUpNavBar() {
-        navigationController?.navigationBar.topItem?.title = "Menus"
+        navigationController?.navigationBar.topItem?.title = "Menu Editor"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.onClosePressed))
     }
 

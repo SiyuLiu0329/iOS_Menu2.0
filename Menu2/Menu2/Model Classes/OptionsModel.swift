@@ -41,8 +41,14 @@ class OptionsModel {
         return OptionTableViewCellViewModel.init(name: option.name ?? "", price: 9.99, isInMenu: item.options?.contains(option) ?? false )
     }
     
-    func insertOption(name: String, price: Double) {
-        print(name, price)
+    func insertOption(name: String, price: Float) -> Int? {
+        let option = CoredataUtils.insertOption(named: name, price: price)
+        loadOptions()
+        return options.firstIndex(of: option)
+    }
+    
+    func deleteOption(index: Int) {
+        CoredataUtils.delete(option: options.remove(at: index))
     }
     
     
