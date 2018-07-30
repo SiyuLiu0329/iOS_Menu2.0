@@ -26,6 +26,6 @@ class MenuInfoEditorModel {
     func saveMenuInfo() {
         let name = menuEditorTextfieldViewModels[0].value ?? "Unamed Menu"
         menu.name = name.isEmpty ? "Unnamed Menu" : name
-        CoredataUtils.saveContext()
+        CoredataUtils.saveMainContext()
     }
 }

@@ -13,7 +13,7 @@ extension CoredataUtils {
     static func loadAllMenus() -> [Menu]? {
         let fetchRequest: NSFetchRequest = Menu.fetchRequest()
         do {
-            return try context.fetch(fetchRequest)
+            return try mainContext.fetch(fetchRequest)
         } catch let error {
             print("Error fetching:", error)
         }
@@ -21,19 +21,19 @@ extension CoredataUtils {
     }
     
     static func delete(menu: Menu) {
-        context.delete(menu)
-        saveContext()
+        mainContext.delete(menu)
+        saveMainContext()
     }
     
     static func insertMenu(name: String) -> Menu {
-        let menu = Menu(context: context)
+        let menu = Menu(context: mainContext)
         menu.name = name
-        saveContext()
+        saveMainContext()
         return menu
     }
     
     static func add(item: Item, to menu: Menu) {
         menu.addToItems(item)
-        saveContext()
+        saveMainContext()
     }
 }

@@ -13,7 +13,7 @@ extension CoredataUtils {
     static func fetchOptions() -> [Option]? {
         let fetchReqest: NSFetchRequest = Option.fetchRequest()
         do {
-            return try CoredataUtils.context.fetch(fetchReqest)
+            return try CoredataUtils.mainContext.fetch(fetchReqest)
         } catch {
             print("Error fetching options.")
         }
@@ -21,16 +21,16 @@ extension CoredataUtils {
     }
     
     static func insertOption(named name: String, price: Float) -> Option {
-        let option = Option(context: context)
+        let option = Option(context: mainContext)
         option.name = name
         option.price = price
         option.selected = false
-        saveContext()
+        saveMainContext()
         return option
     }
     
     static func delete(option: Option) {
-        context.delete(option)
-        saveContext()
+        mainContext.delete(option)
+        saveMainContext()
     }
 }

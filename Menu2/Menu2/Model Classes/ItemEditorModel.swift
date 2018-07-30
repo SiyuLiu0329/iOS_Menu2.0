@@ -33,7 +33,7 @@ class ItemEditorModel {
     
     init(menu: Menu) {
         self.menu = menu
-        self.item = Item(context: CoredataUtils.context)
+        self.item = Item(context: CoredataUtils.mainContext)
         let priceText = (item.price == nil) ? "0" : "\(item.price!)"
         let name = item.name ?? "Unamed Item"
         isItemNew = true
@@ -93,7 +93,7 @@ class ItemEditorModel {
         if isItemNew {
             item.menu = menu
         }
-        CoredataUtils.saveContext()
+        CoredataUtils.saveMainContext()
         // sort and calulcate reload index
         return item
     }

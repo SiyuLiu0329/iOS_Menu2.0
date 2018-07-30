@@ -10,21 +10,31 @@ import Foundation
 import CoreData
 
 class CoredataUtils {
-    static let context = ContextManager.shared.persistentContainer.viewContext
+    static let mainContext = ContextManager.shared.persistentContainer.viewContext
     static var childContext: NSManagedObjectContext?
     
     static func createNewShift() -> Shift {
-        let shift = Shift(context: context)
+        let shift = Shift(context: mainContext)
         shift.date = Date()
-        saveContext()
+        saveMainContext()
         return shift
     }
-
-    static func saveContext() {
+    
+    static func save(context: NSManagedObjectContext?) {
         do {
-            try context.save()
+            try context?.save()
+        } catch let error {
+            fatalError("\(error)")
+        }
+    }
+
+    static func saveMainContext() {
+        do {
+            try mainContext.save()
         } catch let error {
             fatalError("Error saving context: \(error)")
         }
     }
+    
+    
 }

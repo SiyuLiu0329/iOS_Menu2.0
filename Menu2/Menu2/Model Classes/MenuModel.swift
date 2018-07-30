@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 class MenuModel {
-    private let context = CoredataUtils.context
     var menus = [Menu]()
     var selectedMenu = 0
     var numberOfMenus: Int {
@@ -50,7 +49,7 @@ extension MenuModel {
     func testGetNumberOfItemsInMenus() -> Int {
         let request: NSFetchRequest = Item.fetchRequest()
         do {
-            return try CoredataUtils.context.fetch(request).count
+            return try CoredataUtils.mainContext.fetch(request).count
         } catch let error {
             print(error)
         }

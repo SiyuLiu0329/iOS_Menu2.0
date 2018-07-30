@@ -13,7 +13,7 @@ extension CoredataUtils {
     static func fetchOrders() -> [Order]? {
         let fetchReqest: NSFetchRequest = Order.fetchRequest()
         do {
-            return try context.fetch(fetchReqest)
+            return try mainContext.fetch(fetchReqest)
         } catch {
             print("Error fetching menus.")
         }
@@ -22,11 +22,8 @@ extension CoredataUtils {
     
     
     static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool, save: Bool) -> Order {
-        let childMoc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType) // store a reference of this context !
-        // need to figure out how to commit changes in this context
-        childMoc.parent = context
-        childContext = childMoc
-        let order = Order(context: childMoc)
+
+        let order = Order(context: mainContext)
         order.paid = paid
         order.number = Int32(number)
         order.served = served
@@ -34,18 +31,18 @@ extension CoredataUtils {
         order.isBooking = isBooking
         order.refunded = refunded
         order.timeCreated = Date()
+        order.shift = shift
         return order
     }
     
-    
-    
-    static func add(item: Item, to order: Order) {
-        item.order = order
-        saveContext()
+    static func insert(item: Item, into order: Order) {
+        // TODO: add item to order, they are NOT in the same context!
+        order.addToItems(item)
+        saveMainContext()
     }
     
     static func delete(order: Order) {
-        context.delete(order)
+        mainContext.delete(order)
     }
     
 

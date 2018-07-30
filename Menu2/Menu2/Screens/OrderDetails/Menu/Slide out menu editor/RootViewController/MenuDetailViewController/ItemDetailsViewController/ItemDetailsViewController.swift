@@ -46,7 +46,7 @@ class ItemDetailsViewController: UITableViewController {
         // discard changes
         guard let item = itemModel?.item else { return }
         if item.hasChanges {
-            CoredataUtils.context.refresh(item, mergeChanges: false)
+            CoredataUtils.mainContext.refresh(item, mergeChanges: false)
         }
         navigationController?.popViewController(animated: true)
     }

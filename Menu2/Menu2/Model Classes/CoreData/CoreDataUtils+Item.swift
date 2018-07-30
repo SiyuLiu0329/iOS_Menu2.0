@@ -11,7 +11,7 @@ import CoreData
 
 extension CoredataUtils {
     static func delete(item: Item) {
-        context.delete(item)
+        mainContext.delete(item)
 //        saveContext()
     }
 }

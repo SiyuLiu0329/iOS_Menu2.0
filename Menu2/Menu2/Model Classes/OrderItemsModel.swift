@@ -24,5 +24,16 @@ class OrderItemsModel {
         if let items = order.items {
             items.forEach({itemsInOrder.append($0 as! Item)})
         }
+        
+        //TODO: remove force unwrapping later
+        itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
+    }
+    
+    func addItemToOrder(item: Item) -> Int? {
+        itemsInOrder.append(item)
+        
+        //TODO: remove force unwrapping later
+        itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
+        return itemsInOrder.firstIndex(where: {$0 == item})
     }
 }

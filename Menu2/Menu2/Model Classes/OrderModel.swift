@@ -86,6 +86,10 @@ class OrderModel {
         }
     }
     
+    
+    /*
+     Load and categorise orders
+     */
     private func loadOrders() {
         guard let shift = shift else { return }
         if let orders = shift.orders {

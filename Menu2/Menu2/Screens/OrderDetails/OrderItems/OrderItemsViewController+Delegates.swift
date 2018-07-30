@@ -28,12 +28,16 @@ extension OrderItemsViewController: UITableViewDelegate {
         return 30
     }
 
-    
+
 }
 
 
 extension OrderItemsViewController: MenuViewControllerDelegate {
     func didAddItem(item: Item) {
-        print(item.name)
+        // Changes not stored atm
+        // Idea: duplicate item in the same context as order then modify it there.
+        if let newIndex = itemModel?.addItemToOrder(item: item) {
+            orderItemsTableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .automatic)
+        }
     }
 }
