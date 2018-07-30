@@ -64,7 +64,18 @@ extension MenuViewController: MenuCollectionViewCellDelegate {
     
     private func showOptionsFor(item: Item) {
         // present a vc that allows user to select items
+        // check if item has any associated options
+        if item.options?.count == 0 {
+            
+        } else {
+            print("has option")
+        }
+        
+        // TODO use a delegate function instead - didAddItem()...
+        guard let delegate = delegate else { return }
+        delegate.didAddItem(item: item)
     }
+    
 }
 
 extension MenuViewController: MenuEditorDelegate {

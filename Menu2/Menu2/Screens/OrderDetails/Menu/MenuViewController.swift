@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: class {
+    func didAddItem(item: Item)
+}
+
 /*
  A view controller responsible for displaying all menu related items. Holds
  - a horizontal scrolling collection view for menus
@@ -17,7 +21,7 @@ import UIKit
  */
 class MenuViewController: UIViewController {
     let menuModel = MenuModel()
-    
+    weak var delegate: MenuViewControllerDelegate?
     let statusBarBackgroundView: UIView = {
         let view = UIView()
         view.frame = UIApplication.shared.statusBarFrame

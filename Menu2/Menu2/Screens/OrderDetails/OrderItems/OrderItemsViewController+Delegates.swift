@@ -30,3 +30,10 @@ extension OrderItemsViewController: UITableViewDelegate {
 
     
 }
+
+
+extension OrderItemsViewController: MenuViewControllerDelegate {
+    func didAddItem(item: Item) {
+        print(item.name)
+    }
+}
