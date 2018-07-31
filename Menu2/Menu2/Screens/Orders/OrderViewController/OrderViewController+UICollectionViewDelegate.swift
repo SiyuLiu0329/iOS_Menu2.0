@@ -27,14 +27,26 @@ extension OrderViewController: UICollectionViewDelegateFlowLayout {
 // new vcs are instantiated by these functions
 extension OrderViewController: OrderCellDalegate {
     func didAddNewBooking() {
+        if let newBooking = orderModel.createNewBooking() {
+            editOrder(order: newBooking, type: .new)
+        }
     }
     
     func didAddNewOrder() {
         // called when the "new order" button is pressed
         // - present a new vc
         // - create a new Order(NSManagedObject)
+        
+        // create a new order and associate with the shift
+        if let newOrder = orderModel.createNewOrder() {
+            editOrder(order: newOrder, type: .new)
+        }
+        
+    }
+    
+    private func editOrder(order: Order, type: OrderType) {
         let splitViewController = OrderSplitViewController()
-        let orderItemViewController = OrderItemsViewController()
+        let orderItemViewController = OrderItemsViewController(type: type)
         let masterViewController = UINavigationController()
         masterViewController.viewControllers = [orderItemViewController]
         let menuViewController = MenuViewController()
@@ -44,11 +56,10 @@ extension OrderViewController: OrderCellDalegate {
         
         menuViewController.delegate =  orderItemViewController
         
-        // create a new order and associate with the shift
-        if let newOrder = orderModel.createNewOrder() {
-            let newOrderModel = OrderItemsModel(order: newOrder)
-            orderItemViewController.itemModel = newOrderModel
-        }
+        
+        let loadOrderModel = OrderItemsModel(order: order)
+        orderItemViewController.itemModel = loadOrderModel
+        orderItemViewController.delegate = self
         
     }
     
@@ -56,22 +67,17 @@ extension OrderViewController: OrderCellDalegate {
         // called when an order is selected
         // - present a vc
         // - pass in the order object
-        let splitViewController = OrderSplitViewController()
-        let orderItemViewController = OrderItemsViewController()
-        let masterViewController = UINavigationController()
-        masterViewController.viewControllers = [orderItemViewController]
-        let menuViewController = MenuViewController()
-        splitViewController.viewControllers = [masterViewController, menuViewController]
-
-        present(splitViewController, animated: true, completion: nil)
-        
-        menuViewController.delegate =  orderItemViewController
-        
         if let order = orderModel.getOrder(in: section, at: index) {
-            let loadOrderModel = OrderItemsModel(order: order)
-            orderItemViewController.itemModel = loadOrderModel
+            editOrder(order: order, type: .existing)
         }
     }
 }
 
 
+extension OrderViewController: OrderItemsViewControllerDelegate {
+    func didFinishEditing(order: Order) {
+        orderModel.insertNewOrderIntoDataSource(order: order)
+        allOrdersCollectionView.reloadData()
+        
+    }
+}

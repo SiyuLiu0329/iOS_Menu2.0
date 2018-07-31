@@ -11,7 +11,10 @@ import CoreData
 
 class CoredataUtils {
     static let mainContext = ContextManager.shared.persistentContainer.viewContext
-    static var childContext: NSManagedObjectContext?
+    static var orderContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+    static func setUpContexts() {
+        orderContext.parent = mainContext
+    }
     
     static func createNewShift() -> Shift {
         let shift = Shift(context: mainContext)
@@ -20,11 +23,18 @@ class CoredataUtils {
         return shift
     }
     
-    static func save(context: NSManagedObjectContext?) {
+    static func saveOrderContext() {
         do {
-            try context?.save()
-        } catch let error {
-            fatalError("\(error)")
+            try orderContext.save()
+            mainContext.performAndWait {
+                do {
+                    try mainContext.save()
+                } catch let me {
+                    print(me)
+                }
+            }
+        } catch let e {
+            print(e)
         }
     }
 

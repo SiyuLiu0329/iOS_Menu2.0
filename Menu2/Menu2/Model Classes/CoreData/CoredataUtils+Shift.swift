@@ -14,7 +14,7 @@ extension CoredataUtils {
         // can use a genertic function later
         let fetchReqest: NSFetchRequest = Shift.fetchRequest()
         do {
-            return try mainContext.fetch(fetchReqest)
+            return try orderContext.fetch(fetchReqest)
         } catch {
             print("Error fetching menus.")
         }

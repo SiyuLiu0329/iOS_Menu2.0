@@ -53,6 +53,16 @@ class OrderModel {
         return nil
     }
     
+    func createNewBooking() -> Order? {
+        if let shift = shift {
+            //TODO: create order in a child context!!
+            let order = CoredataUtils.insertOrder(into: shift, number: numberOfOrders + 1, paid: false, served: false, refunded: false, isBooking: true, bookingArrived: false, save: false)
+            return order
+        }
+        
+        return nil
+    }
+    
     func deleteOrder(order: Order) {
         CoredataUtils.delete(order: order)
     }
@@ -86,6 +96,13 @@ class OrderModel {
         }
     }
     
+    func insertNewOrderIntoDataSource(order: Order) {
+        // categorise order based on their attributes (ie paid, served ...)
+        let sectionIndex = determineSubsectionIndexFor(order: order)
+        sections[sectionIndex].orders.insert(order, at: 0)
+        
+        sections[3].orders.insert(order, at: 0) // All
+    }
     
     /*
      Load and categorise orders
@@ -104,20 +121,25 @@ class OrderModel {
                 let order = obj as! Order
                 
                 // categorise order based on their attributes (ie paid, served ...)
-                if order.paid && order.served {
-                    sections[2].orders.append(order) // completed
-                } else {
-                    
-                    if order.isBooking && !order.bookingArrived {
-                        sections[1].orders.append(order)
-                    } else {
-                        sections[0].orders.append(order) // not completed
-                    }
-                }
+                let sectionIndex = determineSubsectionIndexFor(order: order)
+                sections[sectionIndex].orders.append(order)
                 
                 sections[3].orders.append(order) // All
             }
         }
+    }
+    
+    private func determineSubsectionIndexFor(order: Order) -> Int {
+        if order.paid && order.served {
+            return 2 // completed
+        }
+            
+        if order.isBooking && !order.bookingArrived {
+            return 1
+        } else {
+            return 0
+        }
+        
     }
 }
 

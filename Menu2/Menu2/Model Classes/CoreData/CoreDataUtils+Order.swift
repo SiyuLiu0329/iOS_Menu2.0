@@ -13,7 +13,7 @@ extension CoredataUtils {
     static func fetchOrders() -> [Order]? {
         let fetchReqest: NSFetchRequest = Order.fetchRequest()
         do {
-            return try mainContext.fetch(fetchReqest)
+            return try orderContext.fetch(fetchReqest)
         } catch {
             print("Error fetching menus.")
         }
@@ -22,8 +22,9 @@ extension CoredataUtils {
     
     
     static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool, save: Bool) -> Order {
-
-        let order = Order(context: mainContext)
+    
+//        orderContext.parent = mainContext
+        let order = Order(context: orderContext)
         order.paid = paid
         order.number = Int32(number)
         order.served = served
@@ -31,14 +32,16 @@ extension CoredataUtils {
         order.isBooking = isBooking
         order.refunded = refunded
         order.timeCreated = Date()
+//        order.shift = shift
         order.shift = shift
+        CoredataUtils.saveOrderContext()
         return order
     }
     
     static func insert(item: Item, into order: Order) {
-        // TODO: add item to order, they are NOT in the same context!
-        order.addToItems(item)
-        saveMainContext()
+        let copiedItem = copy(item: item, to: order.managedObjectContext!)
+        order.addToItems(copiedItem)
+        CoredataUtils.saveOrderContext()
     }
     
     static func delete(order: Order) {

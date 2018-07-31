@@ -32,6 +32,7 @@ class OrderItemsModel {
     func addItemToOrder(item: Item) -> Int? {
         itemsInOrder.append(item)
         
+        CoredataUtils.insert(item: item, into: order)
         //TODO: remove force unwrapping later
         itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
         return itemsInOrder.firstIndex(where: {$0 == item})

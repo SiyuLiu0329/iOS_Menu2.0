@@ -23,6 +23,7 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CoredataUtils.setUpContexts()
         view.backgroundColor = UIColor.backgroundColourMain
         button.addTarget(self, action: #selector(self.onButtonPressed), for: .touchUpInside)
         view.addSubview(button)

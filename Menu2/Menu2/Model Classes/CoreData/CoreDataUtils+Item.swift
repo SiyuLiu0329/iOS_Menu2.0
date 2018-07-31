@@ -14,4 +14,16 @@ extension CoredataUtils {
         mainContext.delete(item)
 //        saveContext()
     }
+    
+    static func copy(item: Item, to context: NSManagedObjectContext) -> Item {
+        let newItem = Item(context: context)
+        newItem.name = item.name
+        newItem.imgData = item.imgData
+        newItem.identifier = item.identifier
+        newItem.price = item.price
+        newItem.transferrable = item.transferrable
+        
+        return newItem
+    }
+    
 }
