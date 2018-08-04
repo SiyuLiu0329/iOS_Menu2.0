@@ -16,7 +16,7 @@ extension OrderItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: OrderItemTableViewCell.cellId, for: indexPath) as! OrderItemTableViewCell
         if let model = itemModel {
-            cell.textLabel?.text = model.itemsInOrder[indexPath.row].name ?? "Unamed Item"
+            cell.viewModel = model.getViewModelForItem(at: indexPath.row)
         }
         return cell
     }

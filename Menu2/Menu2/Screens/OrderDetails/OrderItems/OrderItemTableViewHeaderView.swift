@@ -9,6 +9,8 @@
 import UIKit
 
 class OrderItemTableViewHeaderView: UITableViewHeaderFooterView {
+    //TODO: change this view to horizontal list of icons with actions!
+    
     static let viewId = "tableViewHeaderView"
     
     /*

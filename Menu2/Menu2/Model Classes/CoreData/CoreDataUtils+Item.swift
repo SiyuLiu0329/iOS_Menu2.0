@@ -16,6 +16,7 @@ extension CoredataUtils {
     }
     
     static func copy(item: Item, to context: NSManagedObjectContext) -> Item {
+        // TODO: make a true deep copy of the item
         let newItem = Item(context: context)
         newItem.name = item.name
         newItem.imgData = item.imgData

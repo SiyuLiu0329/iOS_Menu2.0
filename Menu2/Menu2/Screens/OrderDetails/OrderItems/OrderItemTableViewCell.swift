@@ -9,17 +9,42 @@
 import UIKit
 
 class OrderItemTableViewCell: UITableViewCell {
+    
+    private let itemNameHeight: CGFloat = 44
+    private let leftRightMargin: CGFloat = 8
+    
+    var viewModel: OrderItemTableViewCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            layoutViews()
+            itemName.text = viewModel.name
+        }
+    }
+    
+    private func layoutViews() {
+        // refresh the layout
+        itemName.frame = CGRect(x: leftRightMargin, y: 0, width: contentView.frame.width - 2 * leftRightMargin, height: itemNameHeight)
+        
+    }
+    
+    var itemName: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.myriad(size: 19)
+        return label
+    }()
+    
+    private func setUpViews() {
+        contentView.addSubview(itemName)
+    }
+    
     static let cellId = "orderItemCell"
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setUpViews()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
 }

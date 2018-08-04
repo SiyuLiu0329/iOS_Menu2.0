@@ -23,7 +23,6 @@ extension CoredataUtils {
     
     static func insertOrder(into shift: Shift, number: Int, paid: Bool, served: Bool, refunded: Bool, isBooking: Bool, bookingArrived: Bool, save: Bool) -> Order {
     
-//        orderContext.parent = mainContext
         let order = Order(context: orderContext)
         order.paid = paid
         order.number = Int32(number)
@@ -32,7 +31,6 @@ extension CoredataUtils {
         order.isBooking = isBooking
         order.refunded = refunded
         order.timeCreated = Date()
-//        order.shift = shift
         order.shift = shift
         CoredataUtils.saveOrderContext()
         return order

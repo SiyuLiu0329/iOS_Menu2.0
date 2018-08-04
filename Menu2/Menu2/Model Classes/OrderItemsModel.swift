@@ -42,4 +42,9 @@ class OrderItemsModel {
         let item = itemsInOrder.remove(at: index)
         CoredataUtils.removeItemFromOrder(item: item)
     }
+    
+    func getViewModelForItem(at index: Int) -> OrderItemTableViewCellViewModel {
+        return OrderItemTableViewCellViewModel(item: itemsInOrder[index])
+    }
 }
+

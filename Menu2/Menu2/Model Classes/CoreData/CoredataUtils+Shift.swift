@@ -11,7 +11,7 @@ import CoreData
 
 extension CoredataUtils {
     static func fetchShifts() -> [Shift]? {
-        // can use a genertic function later
+        // TODO: use a genertic function later
         let fetchReqest: NSFetchRequest = Shift.fetchRequest()
         do {
             return try orderContext.fetch(fetchReqest)
