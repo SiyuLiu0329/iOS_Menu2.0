@@ -22,13 +22,17 @@ extension CoredataUtils {
         newItem.identifier = item.identifier
         newItem.price = item.price
         newItem.transferrable = item.transferrable
+        newItem.quantity = 1
         
         item.options?.forEach({ (option) in
             let option = option as! Option
             let newOption = Option(context: context)
             newOption.name = option.name
             newOption.price = option.price
+//            if option.selected {}
             newItem.addToOptions(newOption)
+            
+            // TODO: make it so an option is only added if the value is set to true
         })
         return newItem
     }

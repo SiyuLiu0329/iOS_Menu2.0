@@ -11,9 +11,11 @@ import UIKit
 struct OrderItemTableViewCellViewModel {
     let name: String
     let price: String
+    let quantity: String
     
     init(item: Item) {
         name = item.name ?? "Unnamed Item"
-        price = Double(item.price ?? 0).toPrice()
+        price = Double(truncating: item.price ?? 0).toPrice()
+        quantity = String(item.quantity)
     }
 }

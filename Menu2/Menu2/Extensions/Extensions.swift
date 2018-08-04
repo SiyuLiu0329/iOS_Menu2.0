@@ -77,3 +77,14 @@ extension UIFont {
         return UIFont(name: "Myriad Web Pro", size: size)!
     }
 }
+
+extension Item {
+    static func ==(lhs: Item, rhs: Item) -> Bool {
+        // TODO: make a deep == : Compare options and other info as well
+        // TODO: possibly make a unique identifier!
+        guard lhs.name == rhs.name else { return false }
+        guard lhs.price == rhs.price else { return false }
+    
+        return true
+    }
+}

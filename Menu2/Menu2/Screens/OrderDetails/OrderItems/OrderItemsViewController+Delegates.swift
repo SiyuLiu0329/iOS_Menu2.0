@@ -53,8 +53,14 @@ extension OrderItemsViewController: MenuViewControllerDelegate {
     func didAddItem(item: Item) {
         // Changes not stored atm
         // Idea: duplicate item in the same context as order then modify it there.
-        if let newIndex = itemModel?.addItemToOrder(item: item) {
-            orderItemsTableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .automatic)
+        if let res = itemModel?.addItemToOrder(item: item),
+            let index = res.index {
+            if res.inserted {
+                orderItemsTableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            } else {
+                orderItemsTableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+            }
+            
         }
     }
 }

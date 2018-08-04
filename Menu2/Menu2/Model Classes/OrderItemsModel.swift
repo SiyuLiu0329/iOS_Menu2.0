@@ -30,15 +30,24 @@ class OrderItemsModel {
         itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
     }
     
-    func addItemToOrder(item: Item) -> Int? {
-        
+    func addItemToOrder(item: Item) -> (index: Int?, inserted: Bool) {
+        // check if item already exists, if so just increment the quanitity
+        // check condition based on "==" of Item
+        for i in 0..<itemsInOrder.count {
+            let it = itemsInOrder[i]
+            if it == item {
+                itemsInOrder[i].quantity += 1
+                CoredataUtils.saveOrderContext()
+                return (i, false)
+            }
+        }
         
         let newItem = CoredataUtils.insert(item: item, into: order)
         // the new item is in the order context
         itemsInOrder.append(newItem)
         //TODO: remove force unwrapping later
         itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
-        return itemsInOrder.firstIndex(where: {$0 == newItem})
+        return (itemsInOrder.firstIndex(where: {$0 == newItem}), true)
     }
     
     func removeItem(at index: Int) {

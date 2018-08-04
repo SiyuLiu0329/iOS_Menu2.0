@@ -16,16 +16,24 @@ class OrderItemTableViewCell: UITableViewCell {
     private let itemNameHeight: CGFloat = 44
     private let leftRightMargin: CGFloat = 8
     private let topBottomMargin: CGFloat = 8
-    private let priceLabelWidth: CGFloat = 100
+    private let priceLabelWidth: CGFloat = 90
+    private let quantityLabelWidth: CGFloat = 28
     
     var viewModel: OrderItemTableViewCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             itemName.text = viewModel.name
             priceLabel.text = viewModel.price
+            quantityLabel.text = viewModel.quantity
         }
     }
-    
+    var quantityLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 19, weight: .medium)
+        return label
+    }()
     
     var itemName: UILabel = {
         let label = UILabel()
@@ -33,6 +41,7 @@ class OrderItemTableViewCell: UITableViewCell {
         label.font = UIFont.myriad(size: 19)
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .darkGray
         return label
     }()
     
@@ -43,10 +52,12 @@ class OrderItemTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.font = UIFont.myriad(size: 19)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .darkGray
         return label
     }()
     
     private func setUpViews() {
+        contentView.addSubview(quantityLabel)
         contentView.addSubview(itemName)
         contentView.addSubview(priceLabel)
         layoutViews()
@@ -54,9 +65,14 @@ class OrderItemTableViewCell: UITableViewCell {
     
     private func layoutViews() {
         NSLayoutConstraint.activate([
+            quantityLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: topBottomMargin),
+            quantityLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: leftRightMargin),
+            quantityLabel.bottomAnchor.constraint(equalTo: itemName.bottomAnchor),
+            quantityLabel.widthAnchor.constraint(equalToConstant: quantityLabelWidth),
+            
             itemName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: topBottomMargin),
-            itemName.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: leftRightMargin),
-            itemName.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -priceLabelWidth),
+            itemName.leftAnchor.constraint(equalTo: quantityLabel.rightAnchor, constant: leftRightMargin),
+            itemName.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -(priceLabelWidth)),
             
             priceLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -leftRightMargin),
             priceLabel.leftAnchor.constraint(equalTo: itemName.rightAnchor, constant: leftRightMargin),
