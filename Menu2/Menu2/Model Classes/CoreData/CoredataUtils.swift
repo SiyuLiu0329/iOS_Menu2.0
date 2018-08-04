@@ -10,7 +10,11 @@ import Foundation
 import CoreData
 
 class CoredataUtils {
+    // the main context, should only be used to edit menus, only saved when
+    // - a mneu is created, a menu's name is changed, an item is edited
     static let mainContext = ContextManager.shared.persistentContainer.viewContext
+    
+    // a context used to manage orders, only saved when a new order is added (when the user taps on add new order or add new booking)
     static var orderContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     static func setUpContexts() {
         orderContext.parent = mainContext
@@ -24,6 +28,7 @@ class CoredataUtils {
     }
     
     static func saveOrderContext() {
+        // saving to persistent store!
         do {
             try orderContext.save()
             mainContext.performAndWait {

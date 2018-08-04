@@ -37,4 +37,9 @@ class OrderItemsModel {
         itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
         return itemsInOrder.firstIndex(where: {$0 == item})
     }
+    
+    func removeItem(at index: Int) {
+        let item = itemsInOrder.remove(at: index)
+        CoredataUtils.removeItemFromOrder(item: item)
+    }
 }

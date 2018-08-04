@@ -78,6 +78,5 @@ extension OrderViewController: OrderItemsViewControllerDelegate {
     func didFinishEditing(order: Order) {
         orderModel.insertNewOrderIntoDataSource(order: order)
         allOrdersCollectionView.reloadData()
-        
     }
 }

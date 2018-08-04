@@ -27,8 +27,25 @@ extension OrderItemsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
-
-
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            // TODO: provide a better message
+            let alert = UIAlertController(title: "Remove Item From Order", message: "Are you sure you want to delete this item.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+                self.itemModel?.removeItem(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                // also need to update the collection view
+            }   ))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        return [delete]
+    }
+    
 }
 
 

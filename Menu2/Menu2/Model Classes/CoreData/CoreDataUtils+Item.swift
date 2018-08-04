@@ -26,4 +26,9 @@ extension CoredataUtils {
         return newItem
     }
     
+    static func removeItemFromOrder(item: Item) {
+        orderContext.delete(item)
+        saveOrderContext()
+    }
+    
 }

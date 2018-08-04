@@ -17,7 +17,6 @@ class MenuEditorMenuTableViewController: UITableViewController {
     weak var menuEditorDelegate: MenuEditorDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(SlideOutMenuTableViewCell.self, forCellReuseIdentifier: SlideOutMenuTableViewCell.cellId)
         tableView.register(CreateNewMenuTableViewCell.self, forCellReuseIdentifier: CreateNewMenuTableViewCell.cellId)
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour
