@@ -36,10 +36,11 @@ extension CoredataUtils {
         return order
     }
     
-    static func insert(item: Item, into order: Order) {
+    static func insert(item: Item, into order: Order) -> Item {
         let copiedItem = copy(item: item, to: order.managedObjectContext!)
         order.addToItems(copiedItem)
         CoredataUtils.saveOrderContext()
+        return copiedItem
     }
     
     static func delete(order: Order) {

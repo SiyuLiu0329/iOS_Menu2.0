@@ -10,8 +10,10 @@ import UIKit
 
 struct OrderItemTableViewCellViewModel {
     let name: String
+    let price: String
     
     init(item: Item) {
         name = item.name ?? "Unnamed Item"
+        price = Double(item.price ?? 0).toPrice()
     }
 }

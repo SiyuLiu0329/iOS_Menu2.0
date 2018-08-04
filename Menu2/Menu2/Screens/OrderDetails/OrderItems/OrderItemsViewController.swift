@@ -53,6 +53,7 @@ class OrderItemsViewController: UIViewController {
         layoutViews()
     }
     
+    
     lazy var orderItemsTableView: OrderItemsTableView = {
         let tableView = OrderItemsTableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -61,6 +62,7 @@ class OrderItemsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour
+        
         return tableView
     }()
     

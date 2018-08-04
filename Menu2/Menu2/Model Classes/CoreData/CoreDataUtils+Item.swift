@@ -12,11 +12,10 @@ import CoreData
 extension CoredataUtils {
     static func delete(item: Item) {
         mainContext.delete(item)
-//        saveContext()
+        saveMainContext()
     }
     
     static func copy(item: Item, to context: NSManagedObjectContext) -> Item {
-        // TODO: make a true deep copy of the item
         let newItem = Item(context: context)
         newItem.name = item.name
         newItem.imgData = item.imgData
@@ -24,6 +23,13 @@ extension CoredataUtils {
         newItem.price = item.price
         newItem.transferrable = item.transferrable
         
+        item.options?.forEach({ (option) in
+            let option = option as! Option
+            let newOption = Option(context: context)
+            newOption.name = option.name
+            newOption.price = option.price
+            newItem.addToOptions(newOption)
+        })
         return newItem
     }
     

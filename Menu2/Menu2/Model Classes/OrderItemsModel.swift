@@ -23,6 +23,7 @@ class OrderItemsModel {
     private func unpackOrder() {
         if let items = order.items {
             items.forEach({itemsInOrder.append($0 as! Item)})
+            
         }
         
         //TODO: remove force unwrapping later
@@ -30,12 +31,14 @@ class OrderItemsModel {
     }
     
     func addItemToOrder(item: Item) -> Int? {
-        itemsInOrder.append(item)
         
-        CoredataUtils.insert(item: item, into: order)
+        
+        let newItem = CoredataUtils.insert(item: item, into: order)
+        // the new item is in the order context
+        itemsInOrder.append(newItem)
         //TODO: remove force unwrapping later
         itemsInOrder = itemsInOrder.sorted(by: {$0.name! < $1.name!})
-        return itemsInOrder.firstIndex(where: {$0 == item})
+        return itemsInOrder.firstIndex(where: {$0 == newItem})
     }
     
     func removeItem(at index: Int) {
