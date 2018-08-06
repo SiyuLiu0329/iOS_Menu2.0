@@ -29,6 +29,7 @@
 		DC8103A520D93B44008EB752 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8103A420D93B44008EB752 /* Extensions.swift */; };
 		DC8294BB20EE649A00DCA9D9 /* MenuDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8294BA20EE649A00DCA9D9 /* MenuDetailsViewController.swift */; };
 		DC8294BD20EE657500DCA9D9 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8294BC20EE657500DCA9D9 /* ItemModel.swift */; };
+		DC829B172117E30900D0EFF9 /* OrderItemsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC829B162117E30900D0EFF9 /* OrderItemsSummaryView.swift */; };
 		DC9064EA21009EC40018210C /* CreateNewMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9064E921009EC40018210C /* CreateNewMenuTableViewCell.swift */; };
 		DC925E4820FDEEF2000A282A /* AddNewItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC925E4720FDEEF2000A282A /* AddNewItemTableViewCell.swift */; };
 		DC930A2A20F1E7EA00BF51E8 /* ItemEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC930A2920F1E7EA00BF51E8 /* ItemEditorModel.swift */; };
@@ -133,6 +134,7 @@
 		DC8103A420D93B44008EB752 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DC8294BA20EE649A00DCA9D9 /* MenuDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsViewController.swift; sourceTree = "<group>"; };
 		DC8294BC20EE657500DCA9D9 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		DC829B162117E30900D0EFF9 /* OrderItemsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsSummaryView.swift; sourceTree = "<group>"; };
 		DC9064E921009EC40018210C /* CreateNewMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMenuTableViewCell.swift; sourceTree = "<group>"; };
 		DC925E4720FDEEF2000A282A /* AddNewItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemTableViewCell.swift; sourceTree = "<group>"; };
 		DC930A2920F1E7EA00BF51E8 /* ItemEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorModel.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				DCC3416920E120250020616F /* OrderItemsViewController.swift */,
+				DC829B162117E30900D0EFF9 /* OrderItemsSummaryView.swift */,
 				DC1F30DD20E7A21500EB1232 /* OrderItemsViewController+Delegates.swift */,
 				DC1F30DF20E7A26100EB1232 /* OrderItemsViewController+DataSource.swift */,
 				DC97842420E853CE00AAAF94 /* OrderItemTableViewCell.swift */,
@@ -635,6 +638,7 @@
 				DCB24D6A20E63A63002E1B1D /* MenuViewController+DataSource.swift in Sources */,
 				DCB6270620DBF2320089F72A /* OrderViewController+UICollectionViewDelegate.swift in Sources */,
 				DC9D547E20E66C3A00D50908 /* MenuItemCell.swift in Sources */,
+				DC829B172117E30900D0EFF9 /* OrderItemsSummaryView.swift in Sources */,
 				DCB24D7220E63BE9002E1B1D /* CoreDataUtils+Item.swift in Sources */,
 				DC8103A520D93B44008EB752 /* Extensions.swift in Sources */,
 				DC73680E20D4FF060074DC6D /* ContextManager.swift in Sources */,

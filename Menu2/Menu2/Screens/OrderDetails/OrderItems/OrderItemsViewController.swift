@@ -66,6 +66,13 @@ class OrderItemsViewController: UIViewController {
         return tableView
     }()
     
+    lazy var orderItemsSummaryView: OrderItemsSummaryView = {
+        let view = OrderItemsSummaryView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
     private func setUpNavBar() {
         // bar colour
         navigationController?.navigationBar.barTintColor = UIColor.white
@@ -99,10 +106,16 @@ class OrderItemsViewController: UIViewController {
     
     private func layoutViews() {
         view.addSubview(orderItemsTableView)
+        view.addSubview(orderItemsSummaryView)
         NSLayoutConstraint.activate([
+            orderItemsSummaryView.heightAnchor.constraint(equalToConstant: 200),
+            orderItemsSummaryView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            orderItemsSummaryView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            orderItemsSummaryView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
             orderItemsTableView.topAnchor.constraint(equalTo: view.topAnchor),
             orderItemsTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             orderItemsTableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            orderItemsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+            orderItemsTableView.bottomAnchor.constraint(equalTo: orderItemsSummaryView.topAnchor)])
     }
 }

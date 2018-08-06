@@ -15,7 +15,7 @@ struct OrderItemTableViewCellViewModel {
     
     init(item: Item) {
         name = item.name ?? "Unnamed Item"
-        price = Double(truncating: item.price ?? 0).toPrice()
+        price = (Double(truncating: item.price ?? 0) * Double(item.quantity)).toPrice()
         quantity = String(item.quantity)
     }
 }

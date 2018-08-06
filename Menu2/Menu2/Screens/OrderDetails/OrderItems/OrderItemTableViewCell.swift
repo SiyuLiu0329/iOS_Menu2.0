@@ -17,7 +17,7 @@ class OrderItemTableViewCell: UITableViewCell {
     private let leftRightMargin: CGFloat = 8
     private let topBottomMargin: CGFloat = 8
     private let priceLabelWidth: CGFloat = 90
-    private let quantityLabelWidth: CGFloat = 28
+    private let quantityLabelWidth: CGFloat = 26
     
     var viewModel: OrderItemTableViewCellViewModel? {
         didSet {
@@ -42,6 +42,7 @@ class OrderItemTableViewCell: UITableViewCell {
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
+//        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -53,6 +54,7 @@ class OrderItemTableViewCell: UITableViewCell {
         label.font = UIFont.myriad(size: 19)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
