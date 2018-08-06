@@ -22,7 +22,12 @@ protocol OrderItemsViewControllerDelegate: class {
  Occupies the area on the left side of split view controller
  */
 class OrderItemsViewController: UIViewController {
-    var itemModel: OrderItemsModel?
+    var itemModel: OrderItemsModel? {
+        didSet {
+            guard let itemModel = itemModel else { return }
+            orderItemsSummaryView.viewModel = OrderItemsSummaryViewModel(order: itemModel.order)
+        }
+    }
     var type: OrderType
     weak var delegate: OrderItemsViewControllerDelegate?
     

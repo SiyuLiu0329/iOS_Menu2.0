@@ -7,8 +7,18 @@
 //
 
 import UIKit
-
+/*
+ A view at the bottom of the screen. Responsible for showing basic info such as date, total price ...
+ */
 class OrderItemsSummaryView: UIView {
+    
+    var viewModel: OrderItemsSummaryViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            payButton.setTitle("Pay \(viewModel.totalPriceText)", for: .normal)
+            // TODO do something if price == 0 (gray out pay??)
+        }
+    }
     
     private let payButtonHeight: CGFloat = 44
 
@@ -17,7 +27,7 @@ class OrderItemsSummaryView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(self.onPayButtonPressed), for: .touchUpInside)
         button.backgroundColor = UIColor.themeColour
-        button.setTitle("Pay", for: .normal)
+        
         button.tintColor = .white
         return button
     }()
@@ -38,12 +48,12 @@ class OrderItemsSummaryView: UIView {
             payButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             payButton.leftAnchor.constraint(equalTo: leftAnchor),
             payButton.rightAnchor.constraint(equalTo: rightAnchor),
-            payButton.heightAnchor.constraint(equalToConstant: payButtonHeight)])
-        
+            payButton.heightAnchor.constraint(equalToConstant: payButtonHeight)
+            ])
     }
     
     @objc private func onPayButtonPressed() {
-        
+        // do pay action
     }
     
 }
