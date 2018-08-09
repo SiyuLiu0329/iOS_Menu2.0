@@ -22,6 +22,7 @@ enum SectionName: String {
 }
 
 class OrderModel {
+    var longPressedOrder: (sectionName: String, index: Int)?
     var shift: Shift?
     var sections: [OrderSection] = [
         (sectionName: SectionName.inProgress.rawValue, orders: []),

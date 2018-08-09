@@ -15,9 +15,7 @@ extension OrderCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! OrderCell
-        if let loadedSection = loadedSection {
-            cell.loadOrder(from: loadedSection.orders[indexPath.row])
-        }
+        cell.order = loadedSection?.orders[indexPath.row]
         
         return cell
     }

@@ -17,6 +17,7 @@ protocol OrderCellDalegate: class {
     func didAddNewOrder()
     func didAddNewBooking()
     func didSelectOrder(in section: String, at index: Int)
+    func didLongPressOrder(in section: String, at index: Int, cell: UICollectionViewCell)
 }
 
 /*

@@ -68,7 +68,7 @@ extension MenuViewController: MenuCollectionViewCellDelegate {
         if item.options?.count == 0 {
             
         } else {
-            print("has option")
+            
         }
         
         // TODO use a delegate function instead - didAddItem()...

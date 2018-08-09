@@ -19,9 +19,6 @@ class OrderItemTableViewHeaderView: UITableViewHeaderFooterView {
     var dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a 'on' d-MMM"
-        label.text = "Created " + dateFormatter.string(from: Date())
         label.textAlignment = .center
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
@@ -31,7 +28,7 @@ class OrderItemTableViewHeaderView: UITableViewHeaderFooterView {
     func setDate(_ date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a 'on' d-MMM"
-        dateLabel.text = "Created " + dateFormatter.string(from: Date())
+        dateLabel.text = "Created " + dateFormatter.string(from: date)
     }
     
     override init(reuseIdentifier: String?) {

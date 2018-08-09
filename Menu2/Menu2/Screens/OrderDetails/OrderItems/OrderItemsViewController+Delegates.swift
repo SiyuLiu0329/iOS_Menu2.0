@@ -20,7 +20,10 @@ extension OrderItemsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard section == 0 else { return nil }
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: OrderItemTableViewHeaderView.viewId)
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: OrderItemTableViewHeaderView.viewId) as! OrderItemTableViewHeaderView
+        if let date = itemModel?.order.timeCreated {
+            view.setDate(date)
+        }
         return view
     }
     
@@ -37,6 +40,8 @@ extension OrderItemsViewController: UITableViewDelegate {
                 self.itemModel?.removeItem(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 // also need to update the collection view
+                
+                self.updateSummary()
             }   ))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
                 return
@@ -62,5 +67,13 @@ extension OrderItemsViewController: MenuViewControllerDelegate {
             }
             
         }
+        
+        updateSummary()
+        
+    }
+    
+    func updateSummary() {
+        guard let order = itemModel?.order else { return }
+        orderItemsSummaryView.viewModel = OrderItemsSummaryViewModel(order: order)
     }
 }

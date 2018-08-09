@@ -48,7 +48,14 @@ class OrderCell: UICollectionViewCell {
         return label
     }()
     
-    func loadOrder(from data: Order) {
+    var order: Order? {
+        didSet {
+            guard let order = order else { return }
+            loadOrder(from: order)
+        }
+    }
+    
+    private func loadOrder(from data: Order) {
         orderNumberLabel.text = "\(data.number)"
     }
     

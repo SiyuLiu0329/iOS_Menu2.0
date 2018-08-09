@@ -22,6 +22,22 @@ class OrderCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    lazy var longPressGestureRecogniser: UILongPressGestureRecognizer = {
+        let gestureRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(self.didLongPress(recogniser:)))
+        return gestureRecogniser
+    }()
+    
+    @objc private func didLongPress(recogniser: UILongPressGestureRecognizer) {
+        let point = recogniser.location(in: orderSectionView)
+        guard recogniser.state == .began else { return }
+        guard let indexPath = orderSectionView.indexPathForItem(at: point) else { return }
+        guard let delegate = delegate else { return }
+        guard let cell = orderSectionView.cellForItem(at: indexPath) else { return }
+        
+        delegate.didLongPressOrder(in: loadedSection?.sectionName ?? "", at: indexPath.row, cell: cell)
+        
+    }
+    
     /*
      This is a collection view with a collection view, orders are displayed in this collection view horizontally
      */
@@ -68,6 +84,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         layoutSectionView()
         backgroundColor = .clear
+        addGestureRecognizer(longPressGestureRecogniser)
     }
     
     required init?(coder aDecoder: NSCoder) {
