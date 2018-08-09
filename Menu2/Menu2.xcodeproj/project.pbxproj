@@ -96,6 +96,7 @@
 		DCD3C1022106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C1012106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift */; };
 		DCD3C1042107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3C1032107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift */; };
 		DCD5947320F1F5BF000853DB /* GenericTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5947220F1F5BF000853DB /* GenericTextFieldCellViewModel.swift */; };
+		DCED714B211D07A7001E76C9 /* OrderPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCED714A211D07A7001E76C9 /* OrderPopoverViewController.swift */; };
 		DCFCACD520F64BEA001A4434 /* GenericPopOverImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +203,7 @@
 		DCD3C1012106F9F900478EE8 /* MenuInfoEditorViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuInfoEditorViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DCD3C1032107261E00478EE8 /* MenuInfoEditorViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuInfoEditorViewController+Delegates.swift"; sourceTree = "<group>"; };
 		DCD5947220F1F5BF000853DB /* GenericTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		DCED714A211D07A7001E76C9 /* OrderPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPopoverViewController.swift; sourceTree = "<group>"; };
 		DCFCACD420F64BEA001A4434 /* GenericPopOverImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPopOverImagePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +230,7 @@
 			children = (
 				DC8103A120D934F9008EB752 /* OrderViewController.swift */,
 				DCB6270520DBF2320089F72A /* OrderViewController+UICollectionViewDelegate.swift */,
+				DCED714C211D07AF001E76C9 /* Popover */,
 				DCB6270120DBEFDD0089F72A /* OrderViewController+UICollectionViewDataSource.swift */,
 				DCB626FD20DBED4D0089F72A /* AllOrdersCollectionView.swift */,
 			);
@@ -499,6 +502,14 @@
 			path = MenuInfoEditor;
 			sourceTree = "<group>";
 		};
+		DCED714C211D07AF001E76C9 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				DCED714A211D07A7001E76C9 /* OrderPopoverViewController.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		DCFE4E2620E6393200BB8B4D /* TitleBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +715,7 @@
 				DCB24D6E20E63B3F002E1B1D /* CoreDataUtils+Order.swift in Sources */,
 				DC97842520E853CE00AAAF94 /* OrderItemTableViewCell.swift in Sources */,
 				DC925E4820FDEEF2000A282A /* AddNewItemTableViewCell.swift in Sources */,
+				DCED714B211D07A7001E76C9 /* OrderPopoverViewController.swift in Sources */,
 				DCC419A920EA357000B98685 /* MenuTitleCollectionView.swift in Sources */,
 				DCBDF3E420EC330C0031E44C /* SlideOutMenuTableViewCell.swift in Sources */,
 				DCD5947320F1F5BF000853DB /* GenericTextFieldCellViewModel.swift in Sources */,

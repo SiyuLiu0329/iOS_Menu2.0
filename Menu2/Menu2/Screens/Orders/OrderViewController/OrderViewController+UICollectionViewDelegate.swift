@@ -73,10 +73,8 @@ extension OrderViewController: OrderCellDalegate {
     }
     
     func didLongPressOrder(in section: String, at index: Int, cell: UICollectionViewCell) {
-        let vc = UIViewController()
-        vc.modalPresentationStyle = .popover
-        vc.popoverPresentationController?.sourceView = cell
-        vc.popoverPresentationController?.sourceRect = cell.bounds
+        let vc = OrderPopoverViewController(sourceView: cell)
+        
         present(vc, animated: true, completion: nil)
     }
 }
