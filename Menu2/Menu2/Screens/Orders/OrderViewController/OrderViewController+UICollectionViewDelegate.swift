@@ -73,8 +73,9 @@ extension OrderViewController: OrderCellDalegate {
     }
     
     func didLongPressOrder(in section: String, at index: Int, cell: UICollectionViewCell) {
-        let vc = OrderPopoverViewController(sourceView: cell)
         
+        let vc = OrderPopoverViewController(sourceView: cell, for: (section: section, index: index))
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
 }
@@ -84,5 +85,15 @@ extension OrderViewController: OrderItemsViewControllerDelegate {
     func didFinishEditing(order: Order) {
         orderModel.insertNewOrderIntoDataSource(order: order)
         allOrdersCollectionView.reloadData()
+    }
+}
+
+
+extension OrderViewController: OrderPopoverViewControllerDelegate {
+    func didDeleteOrder(in section: String, at index: Int) {
+        let deletedLoc = orderModel.deleteOrder(in: section, at: index)
+        if deletedLoc != (-1, -1) {
+            allOrdersCollectionView.reloadData()
+        }
     }
 }

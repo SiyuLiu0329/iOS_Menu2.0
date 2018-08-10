@@ -64,8 +64,18 @@ class OrderModel {
         return nil
     }
     
-    func deleteOrder(order: Order) {
-        CoredataUtils.delete(order: order)
+    func deleteOrder(in sectionName: String, at index: Int) -> (sectionIndex: Int, index: Int) {
+        var order: Order? = nil
+        var sectionIndex = 0
+        for i in 0..<sections.count {
+            if sections[i].sectionName == sectionName {
+                order = sections[i].orders.remove(at: index)
+            }
+            sectionIndex += 1
+        }
+        guard let foundOrder = order else { return (-1, -1) }
+        CoredataUtils.delete(order: foundOrder)
+        return (sectionIndex, index)
     }
     
     var numberOfOrders: Int {

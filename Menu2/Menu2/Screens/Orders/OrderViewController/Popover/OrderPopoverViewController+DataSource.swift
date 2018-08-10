@@ -15,6 +15,9 @@ extension OrderPopoverViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        if indexPath.row == 2 {
+            cell.textLabel?.text = "Delete"
+        }
         return cell
     }
 }

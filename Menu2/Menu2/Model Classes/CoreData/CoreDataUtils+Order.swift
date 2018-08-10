@@ -44,7 +44,7 @@ extension CoredataUtils {
     }
     
     static func delete(order: Order) {
-        mainContext.delete(order)
+        orderContext.delete(order)
     }
     
 
