@@ -8,8 +8,9 @@
 
 import UIKit
 
-class OrderPopoverViewController: UIViewController {
-
+class OrderPopoverViewController: UITableViewController {
+    var cellId = "cellId"
+    let rowHeight: CGFloat = 80
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,8 +21,8 @@ class OrderPopoverViewController: UIViewController {
         modalPresentationStyle = .popover
         popoverPresentationController?.sourceView = sourceView
         popoverPresentationController?.sourceRect = sourceView.bounds
-        preferredContentSize = CGSize(width: 400, height: 300)
-        
+        preferredContentSize = CGSize(width: rowHeight, height: rowHeight * 3)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
     required init?(coder aDecoder: NSCoder) {
