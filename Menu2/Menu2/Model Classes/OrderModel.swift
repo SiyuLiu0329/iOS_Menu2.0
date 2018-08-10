@@ -27,12 +27,21 @@ class OrderModel {
     var sections: [OrderSection] = [
         (sectionName: SectionName.inProgress.rawValue, orders: []),
         (sectionName: SectionName.bookings.rawValue, orders: []),
-        (sectionName: SectionName.completed.rawValue, orders: []),
-        (sectionName: SectionName.all.rawValue, orders: []),
+        (sectionName: SectionName.completed.rawValue, orders: [])
     ]
     
     var nextOrderNumber: Int {
-        return Int(sections[3].orders[0].number + 1)
+        if sections[0].orders.isEmpty {
+            return 1
+        }
+        return Int(sections[0].orders[0].number + 1)
+    }
+    
+    var nextBookingNumber: Int {
+        if sections[1].orders.isEmpty {
+            return 1
+        }
+        return Int(sections[1].orders[0].number + 1)
     }
     
     // look up an order based on section name and index in that section
@@ -61,7 +70,7 @@ class OrderModel {
     func createNewBooking() -> Order? {
         if let shift = shift {
             //TODO: create order in a child context!!
-            let order = CoredataUtils.insertOrder(into: shift, number: nextOrderNumber, paid: false, served: false, refunded: false, isBooking: true, bookingArrived: false, save: false)
+            let order = CoredataUtils.insertOrder(into: shift, number: nextBookingNumber, paid: false, served: false, refunded: false, isBooking: true, bookingArrived: false, save: false)
             return order
         }
         
@@ -117,7 +126,6 @@ class OrderModel {
         let sectionIndex = determineSubsectionIndexFor(order: order)
         sections[sectionIndex].orders.insert(order, at: 0)
         
-        sections[3].orders.insert(order, at: 0) // All
     }
     
     /*
@@ -139,8 +147,6 @@ class OrderModel {
                 // categorise order based on their attributes (ie paid, served ...)
                 let sectionIndex = determineSubsectionIndexFor(order: order)
                 sections[sectionIndex].orders.append(order)
-                
-                sections[3].orders.append(order) // All
             }
         }
     }
