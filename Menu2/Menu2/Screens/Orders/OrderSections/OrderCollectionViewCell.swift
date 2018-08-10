@@ -18,7 +18,9 @@ class OrderCollectionViewCell: UICollectionViewCell {
     weak var delegate: OrderCellDalegate?
     var loadedSection: OrderSection? {
         didSet {
-            orderSectionView.reloadData() // resolve collection view loading problem
+            guard let loadedSection = loadedSection else { return }
+            sectionTitle.text = loadedSection.sectionName
+            // load orders into this section
         }
     }
     
@@ -41,7 +43,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
     /*
      This is a collection view with a collection view, orders are displayed in this collection view horizontally
      */
-    lazy private var orderSectionView: UICollectionView = {
+    lazy var orderSectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -53,14 +55,7 @@ class OrderCollectionViewCell: UICollectionViewCell {
         collectionView.register(OrderCell.self, forCellWithReuseIdentifier: cellId)
         return collectionView
     }()
-    
-    // called in the delegate method to set up this cell
-    func loadOrderSection(fromData data: OrderSection) {
-        // display the title of the section in bold
-        sectionTitle.text = data.sectionName
-        // load orders into this section
-        loadedSection = data
-    }
+
     
     /*
      A horinzontal section divider

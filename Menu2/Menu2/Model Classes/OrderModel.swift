@@ -31,6 +31,10 @@ class OrderModel {
         (sectionName: SectionName.all.rawValue, orders: []),
     ]
     
+    var nextOrderNumber: Int {
+        return Int(sections[3].orders[0].number + 1)
+    }
+    
     // look up an order based on section name and index in that section
     // used to find the order selected ...
     func getOrder(in sectionName: String, at index: Int) -> Order? {
@@ -47,7 +51,7 @@ class OrderModel {
     func createNewOrder() -> Order? {
         if let shift = shift {
             //TODO: create order in a child context!!
-            let order = CoredataUtils.insertOrder(into: shift, number: numberOfOrders + 1, paid: false, served: false, refunded: false, isBooking: false, bookingArrived: false, save: false)
+            let order = CoredataUtils.insertOrder(into: shift, number: nextOrderNumber, paid: false, served: false, refunded: false, isBooking: false, bookingArrived: false, save: false)
             return order
         }
         
@@ -57,7 +61,7 @@ class OrderModel {
     func createNewBooking() -> Order? {
         if let shift = shift {
             //TODO: create order in a child context!!
-            let order = CoredataUtils.insertOrder(into: shift, number: numberOfOrders + 1, paid: false, served: false, refunded: false, isBooking: true, bookingArrived: false, save: false)
+            let order = CoredataUtils.insertOrder(into: shift, number: nextOrderNumber, paid: false, served: false, refunded: false, isBooking: true, bookingArrived: false, save: false)
             return order
         }
         
@@ -70,6 +74,7 @@ class OrderModel {
         for i in 0..<sections.count {
             if sections[i].sectionName == sectionName {
                 order = sections[i].orders.remove(at: index)
+                break
             }
             sectionIndex += 1
         }

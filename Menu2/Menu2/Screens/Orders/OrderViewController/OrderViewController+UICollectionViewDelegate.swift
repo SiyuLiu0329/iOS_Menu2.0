@@ -93,7 +93,15 @@ extension OrderViewController: OrderPopoverViewControllerDelegate {
     func didDeleteOrder(in section: String, at index: Int) {
         let deletedLoc = orderModel.deleteOrder(in: section, at: index)
         if deletedLoc != (-1, -1) {
-            allOrdersCollectionView.reloadData()
+            if let sectionCell = allOrdersCollectionView.cellForItem(at: IndexPath(item: deletedLoc.sectionIndex + 1, section: 0)) as? OrderCollectionViewCell {
+                sectionCell.loadedSection = orderModel.sections[deletedLoc.sectionIndex]
+                sectionCell.orderSectionView.deleteItems(at: [IndexPath(item: deletedLoc.index, section: 0)])
+                // remove from all
+
+                
+               
+            }
+            
         }
     }
 }
