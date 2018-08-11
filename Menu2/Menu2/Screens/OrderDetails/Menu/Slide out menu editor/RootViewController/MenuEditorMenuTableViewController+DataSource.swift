@@ -16,7 +16,7 @@ extension MenuEditorMenuTableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SlideOutMenuTableViewCell.cellId, for: indexPath) as! SlideOutMenuTableViewCell
-        cell.textLabel?.text = menuModel?.menus[indexPath.row - 1].name ?? "Unamed Menu"
+        cell.viewModel = menuModel?.getViewModelForMenu(at: indexPath.row - 1)
         return cell
     }
     

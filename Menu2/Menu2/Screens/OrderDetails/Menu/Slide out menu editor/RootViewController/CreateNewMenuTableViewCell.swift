@@ -14,6 +14,7 @@ class CreateNewMenuTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         textLabel?.text = "✚ Add Menu"
+        textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         textLabel?.textColor = UIColor.themeColour
         textLabel?.textAlignment = .center
         

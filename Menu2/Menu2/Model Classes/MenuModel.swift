@@ -6,7 +6,7 @@
 //  Copyright © 2018 Siyu Liu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class MenuModel {
@@ -41,6 +41,12 @@ class MenuModel {
         var titles = [String]()
         menus.forEach({titles.append($0.name ?? "Unamed")})
         return titles
+    }
+    
+    func getViewModelForMenu(at index: Int) -> SlideOutMenuTableViewCellViewModel {
+        let menu = menus[index]
+        return SlideOutMenuTableViewCellViewModel.init(title: menu.name ?? "Unnamed Menu", icon: UIImage(named:
+            "menu_icon")!)
     }
 }
 

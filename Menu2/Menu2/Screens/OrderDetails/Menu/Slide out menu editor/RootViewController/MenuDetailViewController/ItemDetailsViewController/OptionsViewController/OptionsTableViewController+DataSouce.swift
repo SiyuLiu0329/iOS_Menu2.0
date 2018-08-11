@@ -21,6 +21,7 @@ extension OptionsTableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
             cell.textLabel?.text = "✚ New Option"
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.textColor = UIColor.themeColour
             return cell

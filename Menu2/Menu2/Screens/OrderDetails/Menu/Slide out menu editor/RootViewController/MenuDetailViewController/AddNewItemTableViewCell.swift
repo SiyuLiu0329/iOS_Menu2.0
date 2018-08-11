@@ -16,6 +16,7 @@ class AddNewItemTableViewCell: UITableViewCell {
         accessoryType = .disclosureIndicator
         textLabel?.text = "New Item"
         textLabel?.textColor = UIColor.themeColour
+        textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
     
     required init?(coder aDecoder: NSCoder) {
