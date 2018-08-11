@@ -46,7 +46,6 @@ extension ItemDetailsViewController {
     private func showOptions() {
         guard let item = itemModel?.item else { return }
         let vc = OptionsTableViewController(for: item)
-        
         navigationController?.pushViewController(vc, animated: true)
     }
     

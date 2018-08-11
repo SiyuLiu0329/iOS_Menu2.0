@@ -55,6 +55,7 @@ extension ItemDetailsViewController {
             cell.selectionStyle = .gray
             cell.textLabel?.text = "Options or sides"
             cell.textLabel?.textColor = UIColor.themeColour
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
             cell.accessoryType = .disclosureIndicator
             return cell
         }

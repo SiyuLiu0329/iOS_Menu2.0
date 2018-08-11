@@ -26,11 +26,11 @@ extension CoredataUtils {
         
         item.options?.forEach({ (option) in
             let option = option as! Option
-            let newOption = Option(context: context)
+            let newOption = EffectiveOption(context: context)
             newOption.name = option.name
             newOption.price = option.price
 //            if option.selected {}
-            newItem.addToOptions(newOption)
+            newItem.addToEffectiveOptions(newOption)
             
             // TODO: make it so an option is only added if the value is set to true
         })

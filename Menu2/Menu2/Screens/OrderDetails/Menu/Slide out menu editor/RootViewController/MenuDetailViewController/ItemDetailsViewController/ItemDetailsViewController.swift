@@ -23,7 +23,6 @@ class ItemDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let itemModel = itemModel else { return }
-        setUpNavBar()
         tableView.register(GenericTextFieldCell.self, forCellReuseIdentifier: GenericTextFieldCell.cellId)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: regularaCellId)
         tableView.register(ImagePickerTableViewCell.self, forCellReuseIdentifier: ImagePickerTableViewCell.cellId)
@@ -34,22 +33,14 @@ class ItemDetailsViewController: UITableViewController {
         
     }
     
-    private func setUpNavBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.onSavePressed))
-    }
-   
+
     
-    
-    @objc private func onSavePressed() {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         guard let delegate = delegate else { return }
         guard let itemChanged = itemModel?.commitChanges() else { return }
         guard let model = itemModel else { return }
-        
-        // index...
-        // delegate.didModifyItem(modificationType: ??)
-        
-        navigationController?.popViewController(animated: true)
-        
         delegate.didChangeItem(item: itemChanged, isItemNew: model.isItemNew)
     }
+   
 }

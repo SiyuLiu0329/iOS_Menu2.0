@@ -24,7 +24,6 @@ extension CoredataUtils {
         let option = Option(context: mainContext)
         option.name = name
         option.price = price
-        option.selected = false
         if let item = item {
             item.addToOptions(option)
         }
