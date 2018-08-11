@@ -19,44 +19,25 @@ class OptionsModel {
     }
     
     func loadOptions() {
-        options = CoredataUtils.fetchOptions() ?? []
+        options = item.options?.allObjects as! [Option]
         options = options.sorted(by: {$0.name! < $1.name!})
-    }
-    
-    func didSelectOption(at index: Int) {
-        // called when an option cell is tapped
-        guard let itemOption = item.options else { return }
-        let option = options[index]
-        if itemOption.contains(option) {
-            // if option is already in item, remove it
-            item.removeFromOptions(option)
-        } else {
-            // if option is not in item, add it to the set
-            item.addToOptions(option)
-        }
     }
     
     func getViewModelForOption(at index: Int) -> OptionTableViewCellViewModel {
         let option = options[index]
-        return OptionTableViewCellViewModel.init(name: option.name ?? "", price: 9.99, isInMenu: item.options?.contains(option) ?? false )
+        return OptionTableViewCellViewModel.init(name: option.name ?? "", price: 9.99)
     }
     
     func insertOption(name: String, price: Float) -> Int? {
-        let option = CoredataUtils.insertOption(named: name, price: price)
+        let option = CoredataUtils.insertOption(named: name, price: price, into: item)
         loadOptions()
         return options.firstIndex(of: option)
     }
     
     func deleteOption(index: Int) {
         CoredataUtils.delete(option: options.remove(at: index))
+        loadOptions()
     }
     
     
-}
-
-
-extension OptionsModel {
-    func testInsertOptions() {
-        (1...20).forEach({CoredataUtils.insertOption(named: "Option \($0)", price: Float($0))})
-    }
 }

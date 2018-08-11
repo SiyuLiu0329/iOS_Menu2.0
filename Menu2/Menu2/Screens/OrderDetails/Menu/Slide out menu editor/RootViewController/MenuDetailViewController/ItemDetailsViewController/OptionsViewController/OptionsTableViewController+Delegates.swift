@@ -13,11 +13,7 @@ extension OptionsTableViewController {
         if indexPath.row == 0{
             // add an option
             addAnOption()
-            return 
         }
-        
-        model.didSelectOption(at: indexPath.row - 1)
-        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

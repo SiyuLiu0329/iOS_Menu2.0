@@ -11,8 +11,4 @@ import UIKit
 struct OptionTableViewCellViewModel {
     var name: String
     var price: Float
-    var isInMenu: Bool
-    var backgroundColor: UIColor {
-        return isInMenu ? UIColor.themeColour.withAlphaComponent(0.3) : UIColor.white
-    }
 }

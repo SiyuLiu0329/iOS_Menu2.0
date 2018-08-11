@@ -22,7 +22,6 @@ class OptionTableViewCell: UITableViewCell {
     var viewModel: OptionTableViewCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            contentView.backgroundColor = viewModel.backgroundColor
             textLabel?.text = viewModel.name
             // make a price label
         }

@@ -17,6 +17,7 @@ class MenuEditorMenuTableViewController: UITableViewController {
     weak var menuEditorDelegate: MenuEditorDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = false
         tableView.register(SlideOutMenuTableViewCell.self, forCellReuseIdentifier: SlideOutMenuTableViewCell.cellId)
         tableView.register(CreateNewMenuTableViewCell.self, forCellReuseIdentifier: CreateNewMenuTableViewCell.cellId)
         tableView.backgroundColor = UIColor.collectionViewBackgroundColour

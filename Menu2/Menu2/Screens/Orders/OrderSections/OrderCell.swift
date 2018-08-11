@@ -52,6 +52,7 @@ class OrderCell: UICollectionViewCell {
         didSet {
             guard let order = order else { return }
             loadOrder(from: order)
+            
         }
     }
     

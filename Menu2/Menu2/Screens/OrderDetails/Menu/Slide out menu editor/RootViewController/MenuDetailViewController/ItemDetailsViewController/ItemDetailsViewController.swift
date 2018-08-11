@@ -14,6 +14,8 @@ protocol ItemDetailsViewControllerDelegate: class {
 }
 
 class ItemDetailsViewController: UITableViewController {
+    
+    
     var itemModel: ItemEditorModel?
     weak var delegate: ItemDetailsViewControllerDelegate?
     let regularaCellId = "pad"
@@ -34,22 +36,8 @@ class ItemDetailsViewController: UITableViewController {
     
     private func setUpNavBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.onSavePressed))
-        let customBackButton = UIBarButtonItem(image: UIImage(named: "backArrow") , style: .plain, target: self, action: #selector(self.onBackPressed))
-
-        customBackButton.imageInsets = UIEdgeInsets(top: 2, left: -8, bottom: 0, right: 0)
-        navigationItem.leftBarButtonItem = customBackButton
     }
-    
-    
-    
-    @objc func onBackPressed() {
-        // discard changes
-        guard let item = itemModel?.item else { return }
-        if item.hasChanges {
-            CoredataUtils.mainContext.refresh(item, mergeChanges: false)
-        }
-        navigationController?.popViewController(animated: true)
-    }
+   
     
     
     @objc private func onSavePressed() {

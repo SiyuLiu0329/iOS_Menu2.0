@@ -20,11 +20,14 @@ extension CoredataUtils {
         return nil
     }
     
-    static func insertOption(named name: String, price: Float) -> Option {
+    static func insertOption(named name: String, price: Float, into item: Item?) -> Option {
         let option = Option(context: mainContext)
         option.name = name
         option.price = price
         option.selected = false
+        if let item = item {
+            item.addToOptions(option)
+        }
         saveMainContext()
         return option
     }

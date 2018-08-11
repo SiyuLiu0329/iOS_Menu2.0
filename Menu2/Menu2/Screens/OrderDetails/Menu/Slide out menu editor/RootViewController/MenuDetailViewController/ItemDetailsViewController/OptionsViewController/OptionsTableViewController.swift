@@ -15,7 +15,7 @@ class OptionsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: OptionTableViewCell.cellId)
-        navigationItem.title = "All Options And Sides"
+        navigationItem.title = "Options"
     }
     
     init(for item: Item) {

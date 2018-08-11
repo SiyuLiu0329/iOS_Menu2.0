@@ -26,6 +26,7 @@ class MenuDetailsViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         navigationItem.title = model.menu.name ?? "Unamed Menu"
     }
     
