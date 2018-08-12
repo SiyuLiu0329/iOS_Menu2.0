@@ -8,7 +8,83 @@
 
 import UIKit
 
-class Transition: NSObject {
+protocol ZoomingViewController: class {
+    func zoomingView(for transition: ZoomTransitioningDelegate) -> UIView?
+    func backgroundView(for transition: ZoomTransitioningDelegate) -> UIView?
+    func frameForContainerView(for transition: ZoomTransitioningDelegate) -> CGRect
+    func centerForZoomingView(for transition: ZoomTransitioningDelegate) -> CGPoint
+    func sizeForView(for transition: ZoomTransitioningDelegate) -> CGSize
+}
+
+enum TransitionState {
+    case inital
+    case final
+}
+
+class ZoomTransitioningDelegate: NSObject {
+    var tranistionDuration = 0.4
+    weak var delegate: ZoomingViewController?
+    
+    enum Operation: Int {
+        case none, present, pop
+    }
+    
+    var operation: Operation = .none
+    
+    private let zoomScale: CGFloat = 15
+    private let backgroundScale: CGFloat = 0.7
+    
+    var shadowView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0
+        return view
+    }()
+    
+    
+    
+    
+}
+
+extension ZoomTransitioningDelegate: UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return tranistionDuration
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let delegate = delegate else { return }
+        let container = transitionContext.containerView
+        if let destView = transitionContext.view(forKey: .to) {
+            
+            container.addSubview(shadowView)
+            shadowView.frame = container.frame
+            destView.alpha = 0
+            container.frame = delegate.frameForContainerView(for: self)
+            guard let zoomingView = delegate.zoomingView(for: self) else { return }
+            
+            container.addSubview(zoomingView)
+            zoomingView.center = delegate.centerForZoomingView(for: self)
+            
+            destView.frame = zoomingView.frame
+            container.addSubview(destView)
+            let destViewSize = delegate.sizeForView(for: self)
+            
+            
+            
+            UIView.animate(withDuration: tranistionDuration, delay: 0, options: .curveEaseInOut, animations: {
+                destView.frame = CGRect(x: (container.frame.width / 2) - destViewSize.width / 2, y: (container.frame.height / 2) - destViewSize.height / 2, width: destViewSize.width, height: destViewSize.height)
+                destView.alpha = 1
+                
+                zoomingView.frame = destView.frame
+                self.shadowView.alpha = 0.5
+            }) { (success) in
+                zoomingView.removeFromSuperview()
+                transitionContext.completeTransition(success)
+            }
+        }
+        transitionContext.completeTransition(true)
+    }
+    
     
 }
 

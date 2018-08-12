@@ -20,6 +20,8 @@ protocol MenuViewControllerDelegate: class {
  Occupying the right side of the split view controller
  */
 class MenuViewController: UIViewController {
+    let transition = ZoomTransitioningDelegate()
+    var zoomingViewSnapShot: UIView?
     let menuModel = MenuModel()
     weak var delegate: MenuViewControllerDelegate?
     let statusBarBackgroundView: UIView = {
@@ -94,6 +96,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        transition.delegate = self
         // Do any additional setup after loading the view.
     }
     

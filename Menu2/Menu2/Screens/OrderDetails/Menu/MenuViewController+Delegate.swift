@@ -59,13 +59,17 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
 
 extension MenuViewController: MenuCollectionViewCellDelegate {
     func didSelectitem(_ item: Item, in cell: UICollectionViewCell) {
+        zoomingViewSnapShot = cell.snapshotView(afterScreenUpdates: true)
+        zoomingViewSnapShot?.center = cell.center
         showOptionsFor(item: item)
-    }
+    } 
     
     private func showOptionsFor(item: Item) {
         // present a vc that allows user to select items
         // check if item has any associated options
         let vc = ItemOptionsViewController()
+        vc.transitioningDelegate = self
+//        vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
         
         // TODO use a delegate function instead - didAddItem()...
@@ -74,6 +78,8 @@ extension MenuViewController: MenuCollectionViewCellDelegate {
     }
     
 }
+
+
 
 extension MenuViewController: MenuEditorDelegate {
     func didExitMenuEditor() {

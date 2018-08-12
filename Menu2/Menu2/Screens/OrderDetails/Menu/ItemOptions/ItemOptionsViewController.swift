@@ -15,32 +15,17 @@ class ItemOptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    var contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10;
-        view.clipsToBounds = true
-        return view
-    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overCurrentContext
         
-        view.backgroundColor = UIColor.themeColour
-//        setUpContentView()
+        view.backgroundColor = UIColor.white
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
     }
     
-    private func setUpContentView() {
-        view.addSubview(contentView)
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: topBottomMargin),
-            contentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: leftRightMargin),
-            contentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -leftRightMargin),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -topBottomMargin)])
-    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
