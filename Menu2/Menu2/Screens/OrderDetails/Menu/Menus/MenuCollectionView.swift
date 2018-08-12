@@ -12,6 +12,8 @@ import UIKit
  A horizontal scrolling collection view holding all menus
  */
 class MenuCollectionView: UICollectionView {
+    
+     
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)

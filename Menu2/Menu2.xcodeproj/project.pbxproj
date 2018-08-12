@@ -32,6 +32,7 @@
 		DC829B172117E30900D0EFF9 /* OrderItemsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC829B162117E30900D0EFF9 /* OrderItemsSummaryView.swift */; };
 		DC8942D0211F2EDD00F16470 /* SlideOutMenuTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8942CF211F2EDD00F16470 /* SlideOutMenuTableViewCellViewModel.swift */; };
 		DC8942D2211F36E900F16470 /* ItemOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8942D1211F36E900F16470 /* ItemOptionsViewController.swift */; };
+		DC8942D5211FFCBA00F16470 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8942D4211FFCBA00F16470 /* Transition.swift */; };
 		DC9064EA21009EC40018210C /* CreateNewMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9064E921009EC40018210C /* CreateNewMenuTableViewCell.swift */; };
 		DC925E4820FDEEF2000A282A /* AddNewItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC925E4720FDEEF2000A282A /* AddNewItemTableViewCell.swift */; };
 		DC930A2A20F1E7EA00BF51E8 /* ItemEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC930A2920F1E7EA00BF51E8 /* ItemEditorModel.swift */; };
@@ -143,6 +144,7 @@
 		DC829B162117E30900D0EFF9 /* OrderItemsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsSummaryView.swift; sourceTree = "<group>"; };
 		DC8942CF211F2EDD00F16470 /* SlideOutMenuTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		DC8942D1211F36E900F16470 /* ItemOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOptionsViewController.swift; sourceTree = "<group>"; };
+		DC8942D4211FFCBA00F16470 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		DC9064E921009EC40018210C /* CreateNewMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMenuTableViewCell.swift; sourceTree = "<group>"; };
 		DC925E4720FDEEF2000A282A /* AddNewItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemTableViewCell.swift; sourceTree = "<group>"; };
 		DC930A2920F1E7EA00BF51E8 /* ItemEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorModel.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				DC8942D1211F36E900F16470 /* ItemOptionsViewController.swift */,
+				DC8942D4211FFCBA00F16470 /* Transition.swift */,
 			);
 			path = ItemOptions;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				DC7367F420D4F9F30074DC6D /* RootViewController.swift in Sources */,
 				DCB24D6C20E63B09002E1B1D /* CoredataUtils+Shift.swift in Sources */,
 				DCB24D6A20E63A63002E1B1D /* MenuViewController+DataSource.swift in Sources */,
+				DC8942D5211FFCBA00F16470 /* Transition.swift in Sources */,
 				DCB6270620DBF2320089F72A /* OrderViewController+UICollectionViewDelegate.swift in Sources */,
 				DC9D547E20E66C3A00D50908 /* MenuItemCell.swift in Sources */,
 				DC829B172117E30900D0EFF9 /* OrderItemsSummaryView.swift in Sources */,

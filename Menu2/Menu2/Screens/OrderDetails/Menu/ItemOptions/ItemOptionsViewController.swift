@@ -14,8 +14,6 @@ class ItemOptionsViewController: UIViewController {
     private let topBottomMargin: CGFloat = 100;
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     var contentView: UIView = {
@@ -30,7 +28,9 @@ class ItemOptionsViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .overCurrentContext
-        setUpContentView()
+        
+        view.backgroundColor = UIColor.themeColour
+//        setUpContentView()
     }
     
     private func setUpContentView() {
@@ -45,5 +45,7 @@ class ItemOptionsViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
 }

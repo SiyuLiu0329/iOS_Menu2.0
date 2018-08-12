@@ -9,6 +9,7 @@
 import UIKit
 
 extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     // check which collection view it is ( there are 2 collection views, one used to show menu items the other used to show titles at the bottom of the screen)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == menuCollectionView {
@@ -57,8 +58,7 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDelegate
 }
 
 extension MenuViewController: MenuCollectionViewCellDelegate {
-    func didSelectitem(_ item: Item) {
-        
+    func didSelectitem(_ item: Item, in cell: UICollectionViewCell) {
         showOptionsFor(item: item)
     }
     
@@ -66,7 +66,6 @@ extension MenuViewController: MenuCollectionViewCellDelegate {
         // present a vc that allows user to select items
         // check if item has any associated options
         let vc = ItemOptionsViewController()
-        vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
         
         // TODO use a delegate function instead - didAddItem()...

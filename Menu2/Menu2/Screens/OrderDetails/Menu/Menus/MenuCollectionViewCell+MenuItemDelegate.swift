@@ -26,7 +26,7 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewDele
         guard let delegate = delegate else { return }
         guard let item = itemsModel?.items[indexPath.row] else { return }
         
-        
-        delegate.didSelectitem(item)
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        delegate.didSelectitem(item, in: cell)
     }
 }

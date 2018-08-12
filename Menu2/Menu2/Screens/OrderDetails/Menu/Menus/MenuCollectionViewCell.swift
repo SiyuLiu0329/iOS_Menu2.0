@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuCollectionViewCellDelegate: class {
-    func didSelectitem(_ item: Item)
+    func didSelectitem(_ item: Item, in cell: UICollectionViewCell)
 }
 
 /*
